@@ -24,7 +24,8 @@ Route::group(['middleware' => ['role:admin']], function () {
  });
 
  Route::group(['middleware' => ['permission:publish articles']], function () {
-    
+
  });
 
 require __DIR__.'/auth.php';
+
