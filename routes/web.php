@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\PermissionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,12 +23,20 @@ Route::middleware('auth')->group(function () {
 Route::group(['middleware' => ['role:admin']], function () { 
     Route::get('/admin', function () {
         return view('admin.dashboard');
-    });
+    })->name('admin.dashboard');    
+    
  });
 
  Route::group(['middleware' => ['permission:publish articles']], function () {
 
  });
+
+ // Group routes that need admin role and authentication
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('users', UserController::class);
+    Route::resource('roles', RoleController::class);
+    Route::resource('permissions', PermissionController::class);
+});
 
 require __DIR__.'/auth.php';
 
