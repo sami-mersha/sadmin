@@ -23,8 +23,18 @@ Route::middleware('auth')->group(function () {
 Route::group(['middleware' => ['role:admin']], function () { 
     Route::get('/admin', function () {
         return view('admin.dashboard');
-    })->name('admin.dashboard');    
-    
+    })->name('admin.dashboard');  
+
+    Route::get('/forms', function () {
+        return view('admin.forms');
+    })->name('admin.forms'); 
+    Route::get('/tables', function () {
+        return view('admin.tables');
+    })->name('admin.tables'); 
+    Route::get('/ui-elements', function () {
+        return view('admin.ui-elements');
+    })->name('admin.ui-elements');
+ 
  });
 
  Route::group(['middleware' => ['permission:publish articles']], function () {

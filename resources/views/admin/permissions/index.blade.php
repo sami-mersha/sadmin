@@ -7,7 +7,7 @@
         <!-- Desktop View -->
         <div class="hidden md:block">
             <a href="{{ route('admin.permissions.create') }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-white text-xs uppercase tracking-widest shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mb-4">
-                Create New Permission
+                Add New Permission
             </a>
 
             @if ($permissions->isEmpty())
