@@ -53,16 +53,15 @@ Sample Admin Template using Laravel, Breeze, Spatie, Tailwind Css (Dashboard Tem
    ```bash
    php artisan serve
    ```
-```
 
 9. **Use Credintials to test**  
    Use this default username and password respectively to login 
-   ```bash
+   ```
    admin@example.com
    password
    ```
-   (optional) yuo can use /admin to explore the integrated prebuilt Tailwind Dashboard and its components
-```
+   (optional) you can use /admin to explore the integrated prebuilt Tailwind Dashboard and its components
+
 
 Useful links:
 Laravel and Breeze: https://laravel.com/docs/11.x/starter-kits#breeze-and-blade
