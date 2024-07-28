@@ -1,9 +1,6 @@
 # sadmin
 Sample Admin Template using Laravel, Breeze, Spatie, Tailwind Css (Dashboard Template)
 
-Here’s the revised version formatted for a `README.md` file:
-
-```markdown
 ### Steps to Run After Cloning
 
 1. **Duplicate the `.env.example` File**  
@@ -11,7 +8,7 @@ Here’s the revised version formatted for a `README.md` file:
 
 2. **Configure Database Settings**  
    Open the newly created `.env` file and update the database configuration with your preferred settings. For example:
-   ```dotenv
+   ```bash
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
