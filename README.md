@@ -1,5 +1,5 @@
 # sadmin
-Sample Admin Template using Laravel, Breeze, Spatie, Tailwind Css (Dashboard Template)
+Sample Admin Template using Laravel, Breeze, Spatie, Tailwind Css (Dashboard Template) Intended to eliminate repititive tasks of creating admin with user, role & permission and some basic configurations to enable fast development of Laravel web apps.
 
 ### Steps to Run After Cloning
 
@@ -32,6 +32,7 @@ Sample Admin Template using Laravel, Breeze, Spatie, Tailwind Css (Dashboard Tem
 5. **Run Migrations and Seed the Database**  
    Set up the database by running migrations and seeding:
    ```bash
+   php artisan migrate
    php artisan migrate:fresh --seed
    ```
 
@@ -53,3 +54,18 @@ Sample Admin Template using Laravel, Breeze, Spatie, Tailwind Css (Dashboard Tem
    php artisan serve
    ```
 ```
+
+9. **Use Credintials to test**  
+   Use this default username and password respectively to login 
+   ```bash
+   admin@example.com
+   password
+   ```
+   (optional) yuo can use /admin to explore the integrated prebuilt Tailwind Dashboard and its components
+```
+
+Useful links:
+Laravel and Breeze: https://laravel.com/docs/11.x/starter-kits#breeze-and-blade
+Spatie: https://spatie.be/docs/laravel-permission/v6/installation-laravel
+Tailwind Css: https://tailwindcss.com/docs/guides/laravel
+Tailwind Dashboard Template: https://www.tailwindawesome.com/resources/dashboard-template
