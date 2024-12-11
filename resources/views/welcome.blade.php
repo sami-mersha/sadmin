@@ -5,30 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Tiket Konser</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #141e30, #243b55);
-            color: #fff;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-        }
-
-=======
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"rel="stylesheet"/>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
       <link rel="stylesheet" href="styles.css" />
@@ -2007,20 +1983,16 @@ font-size: var(--normal-font-size);
             font-size: 1.8rem;
         }
 
->>>>>>> landing
         header nav a {
             text-decoration: none;
             color: #fff;
             margin: 0 15px;
             font-weight: bold;
-<<<<<<< HEAD
-=======
             transition: color 0.3s ease;
         }
 
         header nav a:hover {
             color: #f4d03f;
->>>>>>> landing
         }
 
         .hero {
@@ -2121,82 +2093,6 @@ font-size: var(--normal-font-size);
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-    <header>
-        <h1>Tiket Konser</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Events</a>
-            <a href="#">Contact</a>
-            @if (Route::has('login'))
-                            
-                                @auth
-                                    <a href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                    Dashboard</a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
-
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            
-                        @endif
-        </nav>
-    </header>
-
-    <div class="hero">
-        <h2>Rasakan Sensasi Konser Live</h2>
-        <p>Beli tiket konser terbaik untuk menikmati pengalaman tak terlupakan bersama artis favoritmu!</p>
-        <button>Pesan Sekarang</button>
-    </div>
-
-    <section class="events">
-        <h3>Konser Terpopuler</h3>
-        <div class="event">
-            <img src="https://via.placeholder.com/300x200" alt="Konser 1">
-            <div class="info">
-                <h4>Live Music Festival</h4>
-                <p>Bandung, 20 Desember 2024</p>
-                <button>Detail</button>
-            </div>
-        </div>
-
-        <div class="event">
-            <img src="https://via.placeholder.com/300x200" alt="Konser 2">
-            <div class="info">
-                <h4>Jazz Night</h4>
-                <p>Jakarta, 15 Januari 2025</p>
-                <button>Detail</button>
-            </div>
-        </div>
-
-        <div class="event">
-            <img src="https://via.placeholder.com/300x200" alt="Konser 3">
-            <div class="info">
-                <h4>Rock Legends</h4>
-                <p>Surabaya, 10 Februari 2025</p>
-                <button>Detail</button>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Tiket Konser. All rights reserved.</p>
-    </footer>
-</body>
-=======
 
 <header class="header" id="header">
       <nav class="nav">
@@ -2263,7 +2159,7 @@ font-size: var(--normal-font-size);
             <span><i class="ri-truck-line"></i></span>
             <h4>Pemesanan Tiket yang Cepat dan Aman</h4>
             <p>
-              Menyediakan proses pemesanan tiket yang user-friendly memudahkan user memesan tiket
+              Menyediakan proses pemesanan tiket yang user friendly, memudahkan user memesan tiket
             </p>
           </div>
           <div class="choose__card">
@@ -2525,5 +2421,4 @@ font-size: var(--normal-font-size);
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>
->>>>>>> landing
 </html>
