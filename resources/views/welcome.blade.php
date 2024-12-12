@@ -2194,9 +2194,10 @@ font-size: var(--normal-font-size);
 
     <section class="offer__container" id="offer">
       <div class="offer__grid__top">
-        <img src="assets/offer-1.jpg" alt="offer" />
-        <img src="assets/offer-2.jpg" alt="offer" />
-        <img src="assets/offer-3.jpg" alt="offer" />
+        <img src="assets/konser1.jpg" alt="offer" />
+        <img src="assets/konser2.jpg" alt="offer" />
+        <img src="assets/konser3.jpg" alt="offer" />
+     
         <div class="offer__content">
           <h2 class="section__header">Smart Offers</h2>
           <p class="section__subheader">
