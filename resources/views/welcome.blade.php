@@ -2151,7 +2151,7 @@ font-size: var(--normal-font-size);
       <div class="choose__content">
         <h2 class="section__header">Vibestix</h2>
         <p class="section__subheader">
-          Dapatkan tiket untuk konser favoritmu dengan mudah melalui platform kami. 
+          Dapatkan tiket untuk konser favoritmu dengan mudah melalui platform kami gengz. 
           Kami menawarkan akses cepat dan aman untuk berbagai konser dari artis ternama di seluruh dunia.
         </p>
         <div class="choose__grid">
@@ -2394,7 +2394,7 @@ font-size: var(--normal-font-size);
         <div class="footer__content">
           <h4>YANG SEMANGAT DONG YANG SEMANGAT DONG</h4>
           <p>
-            Mini ku kerjakan gacoan ku budhalkan.
+            Mini ku kerjakan gacoan ku budhalkan. Angzayy
           </p>
         </div>
         <div class="footer__form">
