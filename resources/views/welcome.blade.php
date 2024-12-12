@@ -2194,9 +2194,9 @@ font-size: var(--normal-font-size);
 
     <section class="offer__container" id="offer">
       <div class="offer__grid__top">
-        <img src="assets/konser1.jpg" alt="offer" />
-        <img src="assets/konser2.jpg" alt="offer" />
-        <img src="assets/konser3.jpg" alt="offer" />
+        <img src="assets/konser7.jpg" alt="offer" />
+        <img src="assets/konser5.jpg" alt="offer" />
+        <img src="assets/konser6.jpg" alt="offer" />
      
         <div class="offer__content">
           <h2 class="section__header">Smart Offers</h2>
@@ -2207,53 +2207,21 @@ font-size: var(--normal-font-size);
         </div>
       </div>
       <div class="offer__grid__bottom">
-        <img src="assets/offer-4.jpg" alt="offer" />
-        <img src="assets/offer-5.jpg" alt="offer" />
-        <img src="assets/offer-6.jpg" alt="offer" />
-        <img src="assets/offer-7.jpg" alt="offer" />
+        <img src="assets/konser1.jpg" alt="offer" />
+        <img src="assets/konser3.jpg" alt="offer" />
+        <img src="assets/konser2.jpg" alt="offer" />
+        <img src="assets/konser4.jpg" alt="offer" />
       </div>
     </section>
 
-    <section class="section__container craft__container" id="craft">
-      <div class="craft__content">
-        <h2 class="section__header">Crafted with excellent material</h2>
-        <p class="section__subheader">
-          Elevate Your Space with Quality and Style
-        </p>
-        <button class="btn">Explore</button>
-      </div>
-      <div class="craft__image">
-        <div class="craft__image__content">
-          <img src="assets/craft-1.png" alt="craft" />
-          <p>Nordic Chair</p>
-          <h4>$65.00</h4>
-        </div>
-        <a href="#"><i class="ri-add-line"></i></a>
-      </div>
-      <div class="craft__image">
-        <div class="craft__image__content">
-          <img src="assets/craft-2.png" alt="craft" />
-          <p>Wingback Chair</p>
-          <h4>$50.00</h4>
-        </div>
-        <a href="#"><i class="ri-add-line"></i></a>
-      </div>
-      <div class="craft__image">
-        <div class="craft__image__content">
-          <img src="assets/craft-3.png" alt="craft" />
-          <p>Accent Chair</p>
-          <h4>$70.00</h4>
-        </div>
-        <a href="#"><i class="ri-add-line"></i></a>
-      </div>
-    </section>
+    
 
     <section class="section__container modern__container" id="modern">
       <div class="modern__image">
         <img src="assets/dot-bg.png" alt="bg" class="modern__bg" />
-        <img src="assets/modern-1.jpg" alt="modern" class="modern__img-1" />
-        <img src="assets/modern-2.jpg" alt="modern" class="modern__img-2" />
-        <img src="assets/modern-3.jpg" alt="modern" class="modern__img-3" />
+        <img src="assets/bernadya.jpg" alt="modern" class="modern__img-1" />
+        <img src="assets/penonton.jpg" alt="modern" class="modern__img-2" />
+        <img src="assets/slipknot.jpg" alt="modern" class="modern__img-3" />
       </div>
       <div class="modern__content">
         <h2 class="section__header">
@@ -2371,21 +2339,21 @@ font-size: var(--normal-font-size);
       <h2 class="section__header">Recent Blog</h2>
       <div class="blog__grid">
         <div class="blog__card">
-          <img src="assets/blog-1.jpg" alt="blog" />
-          <h4>Mastering Modern Minimalism</h4>
-          <p><span>by</span> DesignSavvySoul <span>on</span> Apr 18th, 2022</p>
+          <img src="assets/noah.jpg" alt="blog" />
+          <h4>The Evolution of NOAH</h4>
+          <p>Since 2000, NOAH, formerly known as Peterpan, has been a legendary force in the Indonesian pop-rock scene.</p>
         </div>
         <div class="blog__card">
-          <img src="assets/blog-2.jpg" alt="blog" />
-          <h4>The Fusion of Tech and Design</h4>
+          <img src="assets/armada.jpg" alt="blog" />
+          <h4>The Journey of Armada</h4>
           <p>
-            <span>by</span> ChicNestInteriors <span>on</span> Nov 10th, 2022
+          Since 2007, Armada has been a prominent name in the Indonesian pop-rock music scene.
           </p>
         </div>
         <div class="blog__card">
-          <img src="assets/blog-3.jpg" alt="blog" />
-          <h4>Eco-Friendly Modern Interiors</h4>
-          <p><span>by</span> HomeStyleHarmony <span>on</span> Feb 25th, 2023</p>
+          <img src="assets/feast.jpg" alt="blog" />
+          <h4>The Rise of .Feast</h4>
+          <p>Since their formation in 2012, .Feast has emerged as a bold and dynamic force in the Indonesian music scene.</p>
         </div>
       </div>
     </section>
