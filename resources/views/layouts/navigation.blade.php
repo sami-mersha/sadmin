@@ -1,11 +1,11 @@
 <nav x-data="{ open: false }" class="bg-white shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-1">
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center">
-                <a href="{{ route('dashboard') }}" class="flex items-center space-x-2">
-                    <img src="{{ asset('assets/removebg.png') }}" alt="Logo" class="h-8 w-8">
-                    <h1 class="font-bold text-xl text-black font-serif">IBSTIK</h1>
+                <a href="{{ route('dashboard') }}" class="flex items-center ">
+                    <img src="{{ asset('assets/removebg.png') }}" alt="Logo" class="h-9 w-8">
+                    <h1 class="font-bold text-xl text-black font-serif">IBSTIC</h1>
                 </a>
             </div>
 
