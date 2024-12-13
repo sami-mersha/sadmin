@@ -2,7 +2,9 @@
     <x-slot name="header">
         <!-- Slider Header -->
         <div class="relative w-full overflow-hidden bg-white">
-            <div id="slider" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+            <div id="slider" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style="scrollbar-width: thin;">
+
+
                 <!-- Slide 1 -->
                 <div class="snap-start flex-shrink-0 w-full">
                     <img src="assets/foto2.jpg" alt="Slide 1" class="w-full h-auto">
@@ -25,13 +27,42 @@
                 </svg>
             </button>
         </div>
+
+
+       <!-- Container Banner -->
+<div class="flex flex-col md:flex-row items-center md:justify-between bg-white shadow-lg rounded-lg overflow-hidden  mx-4 md:mx-8 mt-4">
+    <!-- Bagian Gambar -->
+    <div class="relative w-full md:w-2/3">
+        <img src="assets/feast.jpg" alt="Event Banner" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
+        
+        </div>
+    </div>
+
+    <!-- Bagian Teks -->
+    <div class="w-full md:w-1/3 bg-white p-6">
+        <h2 class="text-2xl font-bold text-gray-800">Musik seru, vibes keren!</h2>
+        <p class="mt-4 text-gray-600">
+            Siapkan energi, ajak teman, dan nikmati malam penuh hits favoritmu! Tiket tersedia sekarang, buruan amankan tempatmu!
+        </p>
+    </div>
+</div>
+
+
+
+
+
     </x-slot>
+
 
     <!-- Section Event Terdekat -->
     <div class="bg-white py-8">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Event Terdekat</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+
                 <!-- Card Event -->
                 <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
                     <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
@@ -75,6 +106,8 @@
                 <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Beli</button>
             </div>
     </div>
+
+
 
     <script>
         const slider = document.getElementById('slider');
@@ -122,5 +155,70 @@
         .bg-white {
             background-color: #ffffff;
         }
+
+        .event-banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.event-photo {
+    width: 100%;
+    height: auto;
+}
+.event-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.event-banner {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.event-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.event-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.event-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.event-text p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.flex.items-center.justify-between {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
     </style>
 </x-app-layout>
