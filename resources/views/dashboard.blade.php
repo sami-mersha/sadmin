@@ -29,11 +29,15 @@
         </div>
 
 
+        
+
+
+
        <!-- Container Banner -->
-<div class="flex flex-col md:flex-row items-center md:justify-between bg-white shadow-lg rounded-lg overflow-hidden  mx-4 md:mx-8 mt-4">
+<div class="flex flex-col md:flex-row items-center md:justify-between bg-white shadow-lg rounded-lg overflow-hidden  mx-4 md:mx-8 mt-40 ">
     <!-- Bagian Gambar -->
     <div class="relative w-full md:w-2/3">
-        <img src="assets/feast.jpg" alt="Event Banner" class="w-full h-full object-cover">
+        <img src="assets/e96c4c47ea7ff8533527af1e8edf3aa5.jpg" alt="Event Banner" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
         <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
         
