@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-1">
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
-            <div class="flex items-center">
+            <div class="flex items-center ml-5">
                 <a href="{{ route('dashboard') }}" class="flex items-center ">
                     <img src="{{ asset('assets/removebg.png') }}" alt="Logo" class="h-9 w-8">
                     <h1 class="font-bold text-xl text-black font-serif">IBSTIC</h1>
