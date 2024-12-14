@@ -93,7 +93,27 @@
                     <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
                     <div class="flex items-center justify-between">
                         <p class="text-xl font-bold text-red-600">Rp 200.000</p>
-                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Beli</button>
+                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+                    <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h5 class="text-lg font-medium text-gray-800 mb-2">Rekomendasi Event</h5>
+                    <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
+                    <div class="flex items-center justify-between">
+                        <p class="text-xl font-bold text-red-600">Rp 200.000</p>
+                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+                    <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h5 class="text-lg font-medium text-gray-800 mb-2">Rekomendasi Event</h5>
+                    <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
+                    <div class="flex items-center justify-between">
+                        <p class="text-xl font-bold text-red-600">Rp 200.000</p>
+                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
                     </div>
                 </div>
 
@@ -104,7 +124,7 @@
                     <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
                     <div class="flex items-center justify-between">
                         <p class="text-xl font-bold text-red-600">Rp 200.000</p>
-                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Beli</button>
+                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
                     </div>
                 </div>
 
@@ -238,15 +258,7 @@
             </ul>
           </div>
 
-          <!-- Kolom 4: Newsletter -->
-          <div class="w-full md:w-1/4">
-            <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
-            <p class="text-gray-400 mb-4">Daftar untuk mendapatkan informasi terbaru dari kami!</p>
-            <form action="#" method="POST">
-              <input type="email" placeholder="Masukkan email Anda" class="w-full p-2 rounded-md mb-4 text-gray-800" required>
-              <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md">Daftar</button>
-            </form>
-          </div>
+          
         </div>
 
         <!-- Footer Bottom -->
