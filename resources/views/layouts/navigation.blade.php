@@ -11,13 +11,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden sm:flex space-x-8">
-                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')" class="text-blue-500 hover:text-blue-600">
+                    <x-nav-link href="#home" :active="request()->routeIs('admin.dashboard')" class="text-blue-500 hover:text-blue-600">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('rekomendasi')" class="text-blue-500 hover:text-blue-600">
+                    <x-nav-link href="#event" :active="request()->routeIs('rekomendasi')" class="text-blue-500 hover:text-blue-600">
                         {{ __('Rekomendasi') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('hubungi.kami')" class="text-blue-500 hover:text-blue-600">
+                    <x-nav-link href="#footer" :active="request()->routeIs('hubungi.kami')" class="text-blue-500 hover:text-blue-600">
                         {{ __('Hubungi Kami') }}
                     </x-nav-link>
                 </div>

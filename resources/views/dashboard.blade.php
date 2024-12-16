@@ -5,7 +5,7 @@
             <div id="slider" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style="scrollbar-width: thin;">
 
                 <!-- Slide 1 -->
-                <div class="snap-start flex-shrink-0 w-full">
+                <div class="snap-start flex-shrink-0 w-full" id="home">
                     <img src="assets/foto2.jpg" alt="Slide 1" class="w-full h-auto">
                 </div>
                 <!-- Slide 2 -->
@@ -28,7 +28,7 @@
         </div>
 
         <h1 class="text-black text-1xl font-bold mt-20">
-            <span class="bg-gradient-to-rt">
+            <span class="bg-gradient-to-rt" id="event">
                 <span>Event Bulan Ini</span>
             </span>
         </h1>

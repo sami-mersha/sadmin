@@ -1,4 +1,4 @@
-<footer class="bg-gray-800 text-white py-8">
+<footer class="bg-gray-800 text-white py-8" id="footer">
       <div class="container mx-auto px-6 md:px-12">
         <div class="flex flex-wrap justify-between">
           <!-- Kolom 1: Tentang -->
@@ -29,7 +29,7 @@
             </ul>
           </div>
 
-          
+
         </div>
 
         <!-- Footer Bottom -->
