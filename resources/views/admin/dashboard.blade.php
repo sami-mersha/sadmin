@@ -1,3 +1,4 @@
+
 <x-admin-layout>
 <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -68,7 +69,7 @@
     </div>
 
     <div class="mt-8">
-        
+
     </div>
 
     <div class="flex flex-col mt-8">
@@ -99,7 +100,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
                                 <div class="text-sm leading-5 text-gray-500">Web dev</div>
@@ -128,7 +129,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
                                 <div class="text-sm leading-5 text-gray-500">Web dev</div>
@@ -157,7 +158,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
                                 <div class="text-sm leading-5 text-gray-500">Web dev</div>
@@ -186,7 +187,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
                                 <div class="text-sm leading-5 text-gray-500">Web dev</div>
@@ -215,7 +216,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
                                 <div class="text-sm leading-5 text-gray-500">Web dev</div>
@@ -244,7 +245,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
                                 <div class="text-sm leading-5 text-gray-500">Web dev</div>
@@ -273,7 +274,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
                                 <div class="text-sm leading-5 text-gray-500">Web dev</div>
@@ -302,7 +303,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
                                 <div class="text-sm leading-5 text-gray-500">Web dev</div>
@@ -325,7 +326,7 @@
     </div>
 
 
-    
+
 
 </x-admin-layout>
 
