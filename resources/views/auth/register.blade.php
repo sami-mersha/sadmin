@@ -53,7 +53,7 @@
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body class="bg-gray -100 flex items-center justify-center min-h-screen">
 
     <!-- Gambar Luar Kiri -->
     <div class="gambarkiri">
@@ -76,21 +76,33 @@
             <form action="#" class="space-y-6">
                 <!-- Input Username -->
                 <div class="relative">
+                    <div class="absolute inset-y-0 left-4 flex items-center">
+                        <img src="assets/people.png" alt="Username Icon" class="w-6 h-6 text-gray-400" />
+                    </div>
                     <input type="text" placeholder="Username"
                            class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <!-- Input Email -->
                 <div class="relative">
+                    <div class="absolute inset-y-0 left-4 flex items-center">
+                        <img src="assets/diskette.png" alt="Email Icon" class="w-6 h-6 text-gray-400" />
+                    </div>
                     <input type="email" placeholder="Email"
                            class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <!-- Input Password -->
                 <div class="relative">
+                    <div class="absolute inset-y-0 left-4 flex items-center">
+                        <img src="assets/unlock.png" alt="Password Icon" class="w-6 h-6 text-gray-400" />
+                    </div>
                     <input type="password" placeholder="Password"
                            class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <!-- Input Confirm Password -->
                 <div class="relative">
+                    <div class="absolute inset-y-0 left-4 flex items-center">
+                        <img src="assets/lock.png" alt="Confirm Password Icon" class="w-6 h-6 text-gray-400" />
+                    </div>
                     <input type="password" placeholder="Confirm Password"
                            class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
@@ -116,7 +128,7 @@
             </p>
             <div class="absolute bottom-0 w-full">
                 <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                    <path d="M0,0V46.29c47.6,21.59,95.2,43.17,144,43.1,48.8-.07,97.6-21.77,146.4-21.28s97.6,23.7,146.4,32.1c48.8,8.4,97.6,3.4,146.4-8.5S727.6,61.59,776,53.1c48.4-8.5,97.6-2.3,146.4,5.4s97.6,18.2,146.4,21.3c48.8,3.1,97.6-1.7,146.4-8.5,48.8-6.8,97.6-15.8,146.4-23.7V0Z" fill="#ffffff"></path>
+                    <path d="M0,0V46.29c47.6,21.59,95.2 ,43.17,144,43.1,48.8-.07,97.6-21.77,146.4-21.28s97.6,23.7,146.4,32.1c48.8,8.4,97.6,3.4,146.4-8.5S727.6,61.59,776,53.1c48.4-8.5,97.6-2.3,146.4,5.4s97.6,18.2,146.4,21.3c48.8,3.1,97.6-1.7,146.4-8.5,48.8-6.8,97.6-15.8,146.4-23.7V0Z" fill="#ffffff"></path>
                 </svg>
             </div>
             <img src="./assets/bawah dalam card.png" alt="vector" class="dalam_bawah" />
