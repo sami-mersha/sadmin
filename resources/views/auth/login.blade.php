@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             overflow:hidden;
+            
           /* Hindari scroll horizontal */
         }
         .gambarkiri img,
@@ -54,6 +55,7 @@
             top: 10%;
             right: 0%;
             max-width: 189px;
+            z-index: -1;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -67,7 +69,7 @@
     </div>
 
     <!-- Container Utama -->
-    <div class="relative bg-white rounded-3xl shadow-2xl flex w-[1150px] h-[550px] overflow-hidden">
+    <div class="relative bg-white rounded-3xl shadow-2xl flex w-[1150px] h-[550px] overflow-hidden z-100 ">
 
         <!-- Kolom Kiri -->
         <div class="w-1/2 flex flex-col justify-center px-10">
