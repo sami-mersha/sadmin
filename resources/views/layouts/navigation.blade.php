@@ -19,7 +19,7 @@
                     </x-nav-link>
                     <x-nav-link href="#footer" :active="request()->routeIs('hubungi.kami')" class="text-blue-500 hover:text-blue-600">
                         {{ __('Hubungi Kami') }}
-                    </x-nav-link>
+                    </x-nav-link>               
                 </div>
 
                 <!-- Profile Dropdown -->

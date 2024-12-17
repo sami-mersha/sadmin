@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             overflow:hidden;
-            
+
           /* Hindari scroll horizontal */
         }
         .gambarkiri img,
@@ -80,11 +80,13 @@
             <!-- Judul -->
             <h2 class="text-center text-2xl font-bold mb-6">Login Ke Vibestic</h2>
             <!-- Form -->
-            <form action="#" class="space-y-6">
+            <form action="{{ route('login')}}" value="__('Email')" class="space-y-6" method="post">
+                @csrf
                 <!-- Input Email -->
                 <div class="relative">
-                    <input type="email" placeholder="Email" 
-                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="email" placeholder="Email"
+                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           name="email">
                     <div class="absolute inset-y-0 left-4 flex items-center">
                         <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2.94 4.5A2.5 2.5 0 0 1 5.5 2h9a2.5 2.5 0 0 1 2.5 2.5v11a.5.5 0 0 1-.854.354l-4.646-4.647a.5.5 0 0 0-.708 0L3.354 15.854A.5.5 0 0 1 2.5 15V4.5z"/>
@@ -93,8 +95,9 @@
                 </div>
                 <!-- Input Password -->
                 <div class="relative">
-                    <input type="password" placeholder="Password" 
-                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" placeholder="Password"
+                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           name="password">
                     <div class="absolute inset-y-0 left-4 flex items-center">
                         <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M2 8a6 6 0 1112 0v3a2 2 0 002 2h1a1 1 0 010 2H3a1 1 0 010-2h1a2 2 0 002-2V8a6 6 0 0112 0zm8 0a4 4 0 10-8 0v3a4 4 0 008 0V8z" clip-rule="evenodd" />
@@ -108,7 +111,7 @@
             </form>
             <!-- Link Register -->
             <p class="text-center text-gray-600 text-sm mt-4">
-                Kamu Belum Punya Akun ? 
+                Kamu Belum Punya Akun ?
                 <a href="#" class="text-blue-500 font-semibold hover:underline">Register!!</a>
             </p>
         </div>

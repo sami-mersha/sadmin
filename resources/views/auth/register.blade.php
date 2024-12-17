@@ -73,14 +73,16 @@
             <!-- Judul -->
             <h2 class="text-center text-2xl font-bold mb-6">Register for Vibestic</h2>
             <!-- Form -->
-            <form action="#" class="space-y-6">
+            <form action="{{route('register')}}" class="space-y-6" method="post">
+                @csrf
                 <!-- Input Username -->
                 <div class="relative">
                     <div class="absolute inset-y-0 left-4 flex items-center">
                         <img src="assets/people.png" alt="Username Icon" class="w-6 h-6 text-gray-400" />
                     </div>
                     <input type="text" placeholder="Username"
-                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           name="username">
                 </div>
                 <!-- Input Email -->
                 <div class="relative">
@@ -88,7 +90,8 @@
                         <img src="assets/diskette.png" alt="Email Icon" class="w-6 h-6 text-gray-400" />
                     </div>
                     <input type="email" placeholder="Email"
-                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           name="email">
                 </div>
                 <!-- Input Password -->
                 <div class="relative">
@@ -96,7 +99,8 @@
                         <img src="assets/unlock.png" alt="Password Icon" class="w-6 h-6 text-gray-400" />
                     </div>
                     <input type="password" placeholder="Password"
-                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           name="password">
                 </div>
                 <!-- Input Confirm Password -->
                 <div class="relative">
@@ -104,7 +108,8 @@
                         <img src="vvassets/lock.png" alt="Confirm Password Icon" class="w-6 h-6 text-gray-400" />
                     </div>
                     <input type="password" placeholder="Confirm Password"
-                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                           class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           name="password">
                 </div>
                 <!-- Tombol Register -->
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg font-semibold shadow-md">
