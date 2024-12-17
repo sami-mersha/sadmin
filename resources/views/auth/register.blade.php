@@ -101,7 +101,7 @@
                 <!-- Input Confirm Password -->
                 <div class="relative">
                     <div class="absolute inset-y-0 left-4 flex items-center">
-                        <img src="assets/lock.png" alt="Confirm Password Icon" class="w-6 h-6 text-gray-400" />
+                        <img src="vvassets/lock.png" alt="Confirm Password Icon" class="w-6 h-6 text-gray-400" />
                     </div>
                     <input type="password" placeholder="Confirm Password"
                            class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">

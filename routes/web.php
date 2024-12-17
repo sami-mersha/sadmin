@@ -6,9 +6,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PermissionController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,21 +19,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::group(['middleware' => ['role:admin']], function () { 
+Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin', function () {
         return view('admin.dashboard');
-    })->name('admin.dashboard');  
+    })->name('admin.dashboard');
 
     Route::get('/forms', function () {
         return view('admin.forms');
-    })->name('admin.forms'); 
+    })->name('admin.forms');
     Route::get('/tables', function () {
         return view('admin.tables');
-    })->name('admin.tables'); 
+    })->name('admin.tables');
     Route::get('/ui-elements', function () {
         return view('admin.ui-elements');
     })->name('admin.ui-elements');
- 
+
  });
 
  Route::group(['middleware' => ['permission:publish articles']], function () {
@@ -49,4 +48,3 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 });
 
 require __DIR__.'/auth.php';
-
