@@ -82,7 +82,7 @@
                     </div>
                     <input type="text" placeholder="Username"
                            class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                           name="username">
+                           name="name">
                 </div>
                 <!-- Input Email -->
                 <div class="relative">
@@ -109,7 +109,7 @@
                     </div>
                     <input type="password" placeholder="Confirm Password"
                            class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                           name="password">
+                           name="password_confirmation">
                 </div>
                 <!-- Tombol Register -->
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg font-semibold shadow-md">
