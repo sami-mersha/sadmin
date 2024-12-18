@@ -12,7 +12,8 @@ class KonserController extends Controller
      */
     public function index()
     {
-        //
+        $konser = konser::get();
+        return view('konser.index', compact('konser'));
     }
 
     /**
@@ -63,3 +64,4 @@ class KonserController extends Controller
         //
     }
 }
+    

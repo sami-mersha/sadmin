@@ -112,7 +112,7 @@
             <!-- Link Register -->
             <p class="text-center text-gray-600 text-sm mt-4">
                 Kamu Belum Punya Akun ?
-                <a href="#" class="text-blue-500 font-semibold hover:underline">Register!!</a>
+                <a href="{{ route('register') }}" class="text-blue-500 font-semibold hover:underline">Register!!</a>
             </p>
         </div>
 

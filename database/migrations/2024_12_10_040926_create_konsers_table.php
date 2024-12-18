@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('lokasi');
             $table->integer('kuota_tiket'); 
             $table->string('image')->nullable();
+            $table->foreignId('detail');
             $table->timestamps();
         });
     }

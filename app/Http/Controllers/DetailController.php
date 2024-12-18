@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tiket;
+use App\Models\Detail;
 use Illuminate\Http\Request;
 
-class TiketController extends Controller
+class DetailController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $tiket = tiket::get();
-        return view('tiket.index', compact('tiket'));
+        $detail = detail::get();
+        return view('detail.index', compact('detail'));
     }
 
     /**
@@ -35,7 +35,7 @@ class TiketController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(tiket $tiket)
+    public function show(Detail $detail)
     {
         //
     }
@@ -43,7 +43,7 @@ class TiketController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(tiket $tiket)
+    public function edit(Detail $detail)
     {
         //
     }
@@ -51,7 +51,7 @@ class TiketController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, tiket $tiket)
+    public function update(Request $request, Detail $detail)
     {
         //
     }
@@ -59,7 +59,7 @@ class TiketController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(tiket $tiket)
+    public function destroy(Detail $detail)
     {
         //
     }

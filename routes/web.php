@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\KonserController;
+use App\Http\Controllers\TiketController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\DetailController;
 
 
 Route::get('/', function () {
@@ -12,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('layouts.purchase.product');
+    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -48,5 +52,10 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::resource('roles', RoleController::class);
     Route::resource('permissions', PermissionController::class);
 });
+
+Route::resource('konser', KonserController::class);
+Route::resource('tiket', TiketController::class);
+Route::resource('order', OrderController::class);
+Route::resource('detail', DetailController::class);
 
 require __DIR__.'/auth.php';
