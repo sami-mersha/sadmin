@@ -1,4 +1,4 @@
-    <nav x-data="{ open: false }" class="bg-white shadow">
+    <nav x-data="{ open: false }" class="bg-white shadow mb-3.5" >
         <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-1">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -19,7 +19,7 @@
                     </x-nav-link>
                     <x-nav-link href="#footer" :active="request()->routeIs('hubungi.kami')" class="text-blue-500 hover:text-blue-600">
                         {{ __('Hubungi Kami') }}
-                    </x-nav-link>               
+                    </x-nav-link>
                 </div>
 
                 <!-- Profile Dropdown -->

@@ -1,8 +1,12 @@
+@include('layouts.app')
 
+@extends('layouts.footer')
+
+<script src="https://cdn.tailwindcss.com"></script>
   <!-- Container -->
-  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-8">
+  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
     <!-- Header Section -->
-    <div class="relative">
+    <div class="relative mb-40">
       <img src="https://via.placeholder.com/1000x400" alt="Event Banner" class="w-full object-cover h-64">
       <div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white w-full">
         <h1 class="text-2xl font-bold">Konser 12 Tahun NDX AKA</h1>
@@ -145,3 +149,5 @@
       </div>
     </div>
   </div>
+
+
