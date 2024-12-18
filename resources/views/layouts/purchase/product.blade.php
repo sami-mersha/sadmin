@@ -49,12 +49,27 @@
       </div>
     </div>
 
+
+    <div class="p-6 md:w-1/2">
+        <h2 class="text-lg font-semibold mb-4">Konser Tiket Sedjiwa</h2>
+        <ul class="text-sm text-gray-600 space-y-2">
+            <div>
+              <h5 class="text-gray-800 font-semibold">Penyelenggara</h5>
+            </div>
+            <div>
+                <h1 class="text-black font-extrabold text-2xl">NDX AKA</h1>
+            </div>
+          <div class="mb-4">
+
+
     <!-- Reviews Section -->
-    <div class="border-t mt-4 px-6 py-4">
-      <h3 class="font-semibold text-gray-700 mb-4">Reviews</h3>
-      <div class="space-y-6">
+    <button class="mt-5    bg-blue-600 hover:bg-blue-700 text-white py-1 px-20  rounded-md shadow">
+        Reviews
+      </button>
+
+
         <!-- Review Card -->
-        <div class="flex items-start space-x-4">
+        <div class="flex items-start space-x-4 mt-20">
           <div class="bg-gray-300 rounded-full h-12 w-12 flex items-center justify-center">
             <span class="text-gray-700 font-bold text-lg">S</span>
           </div>
