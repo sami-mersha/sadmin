@@ -5,12 +5,12 @@
             <div id="slider" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style="scrollbar-width: thin;">
 
                 <!-- Slide 1 -->
-                <div class="snap-start flex-shrink-0 w-full" id="home">
-                    <img src="assets/foto2.jpg" alt="Slide 1" class="w-full h-auto">
+                <div class="snap-start flex-shrink-0 w-full " id="home">
+                    <img src="assets/foto2.jpg" alt="Slide 1" class="w-full h-auto rounded-lg">
                 </div>
                 <!-- Slide 2 -->
                 <div class="snap-start flex-shrink-0 w-full">
-                    <img src="assets/foto3.jpg" alt="Slide 2" class="w-full h-auto">
+                    <img src="assets/foto3.jpg" alt="Slide 2" class="w-full h-auto rounded-lg">
                 </div>
                 <!-- Tambahkan slide lainnya -->
             </div>
@@ -49,34 +49,32 @@
             </div>
         </div>
 
-        <div class="bg-blue-900 text-white py-8 mt-20 h-80 w-full">
-          <div class="text-start text-2xl font-bold ml-20 mb-0">
-            <h2 >Top Event!</h2>
-          </div>
-            <div class="flex justify-center items-center space-x-4">
-                <!-- Card 1 -->
-                <div class="relative flex flex-row items-center space-x-4">
-                    <div class="huruftopevent" style="absolute -top-100 text-6xl font-bold text-gray-300">1</div>
-                    <div class="gambartopevent">
-                        <img src="assets/konser1.jpg" alt="Event 1" class="w-full">
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="relative flex flex-row items-center space-x-4">
-                    <div class="huruftopevent" style="absolute -top-100 text-6xl font-bold text-gray-300">2</div>
-                    <div class="gambartopevent">
-                        <img src="assets/konser2.jpg" alt="Event 2" class="w-full">
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="relative flex flex-row items-center space-x-4">
-                    <div class="huruftopevent" style="absolute -top-100 text-6xl font-bold text-gray-300">3</div>
-                    <div class="gambartopevent">
-                        <img src="assets/konser3.jpg" alt="Event 3" class="w-full">
-                    </div>
-                </div>
+       <div class="bg-blue-900 text-white py-8 mt-20 h-80 w-full" style="background: linear-gradient(180deg, rgb(22, 3, 40), rgb(72, 8, 136));">
+    <div class="text-start text-2xl font-bold ml-20 mb-0">
+        <h2>Top Event!</h2>
+    </div>
+    <div class="flex justify-center items-center space-x-4 h-full w-full">
+        <!-- Card 1 -->
+        <div class="relative flex flex-row items-center space-x-4">
+            <div class="gambartopevent">
+                <img src="assets/konser1.jpg" alt="Event 1" class="w-full">
             </div>
         </div>
+        <!-- Card 2 -->
+        <div class="relative flex flex-row items-center space-x-4">
+            <div class="gambartopevent">
+                <img src="assets/konser2.jpg" alt="Event 2" class="w-full">
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="relative flex flex-row items-center space-x-4">
+            <div class="gambartopevent">
+                <img src="assets/konser3.jpg" alt="Event 3" class="w-full">
+            </div>
+        </div>
+    </div>
+</div>
+
 
     </x-slot>
 
@@ -132,8 +130,13 @@
         </div>
     </div>
 
+    <div class="flex justify-center items-center mt-5">
+    <img src="./assets/image3.png" alt="Gambar" class="max-w-full max-h-full">
+</div>
+
+
     <!-- Informasi untuk Event Creator -->
-    <div class="container mx-auto px-1 py-20 flex flex-col md:flex-row items-center md:justify-between h-screen" style="background-color: white;">
+    <div class="container mx-auto px-1 py-20 flex flex-col md:flex-row items-center md:justify-between" style="background-color: white;">
 
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -184,48 +187,6 @@
             </div>
         </div>
     </div>
-
-    <div class="container mx-auto px-4 py-6">
-      <div class="flex flex-col md:flex-row bg-white border border-blue-200 rounded-lg overflow-hidden shadow-md">
-        <!-- Bagian Kiri -->
-        <div class="flex items-center justify-center bg-blue-800 text-white px-6 py-4">
-          <div>
-            <h1 class="text-2xl font-bold">HITZ</h1>
-            <p class="text-sm font-semibold">Hiburan untuk Netizen</p>
-          </div>
-        </div>
-
-        <!-- Bagian Tengah -->
-        <div class="flex-1 bg-blue-900 text-white px-6 py-4">
-          <p class="text-lg font-semibold">KE EVENT IDAMAN</p>
-          <p class="text-lg font-semibold">BAYAR BELAKANGAN</p>
-          <p class="text-sm font-light italic mt-2">*Kuota Terbatas</p>
-        </div>
-
-        <!-- Bagian Kanan -->
-        <div class="flex bg-white text-gray-800 px-6 py-4">
-          <!-- Promo Cards -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
-            <div class="text-center border border-gray-300 rounded-lg p-4">
-              <h2 class="text-xl font-bold">Indodana</h2>
-              <p class="text-sm">Cashback</p>
-              <p class="text-2xl font-bold">100k</p>
-            </div>
-            <div class="text-center border border-gray-300 rounded-lg p-4">
-              <h2 class="text-xl font-bold">Gopay Later</h2>
-              <p class="text-sm">Cicilan</p>
-              <p class="text-2xl font-bold">0%</p>
-            </div>
-            <div class="text-center border border-gray-300 rounded-lg p-4">
-              <h2 class="text-xl font-bold">SPayLater</h2>
-              <p class="text-sm">Cashback</p>
-              <p class="text-2xl font-bold">100k</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
     @extends('layouts.footer')
 
@@ -341,21 +302,11 @@
   }
 
   .gambartopevent{
-  width: 200px;
-  heigh: 70px;
+
+  width: 300px;
+  heigh: 100px;
   }
 
-  .huruftopevent {
-  font-size: 200px;
-  font-weight: bold;
-  color: #333; /* Warna angka */
-  position: relative;
-  text-shadow:
-  -2px -2px 0 #fff, /* Bayangan untuk stroke */
-  2px -2px 0 #fff,
-  -2px  2px 0 #fff,
-  2px  2px 0 #fff;
-  }
 
 
   </style>
