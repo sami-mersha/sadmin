@@ -154,7 +154,7 @@
             <div class="space-y-6">
                 <!-- Card 1 -->
                 <div class="flex items-center space-x-4 bg-white shadow-lg rounded-lg p-4">
-                    <img src="assets/feast.jpg" alt="Event 1" class="w-24 h-16 rounded-lg object-cover">
+                <img src="assets/feast.jpg" alt="Event" class="w-52 h-auto rounded-lg object-cover">
                     <div>
                         <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
                         <p class="text-sm text-gray-500 flex items-center">
@@ -165,7 +165,7 @@
 
                 <!-- Card 2 -->
                 <div class="flex items-center space-x-4 bg-white shadow-lg rounded-lg p-4">
-                    <img src="assets/feast.jpg" alt="Event 2" class="w-24 h-16 rounded-lg object-cover">
+                <img src="assets/feast.jpg" alt="Event" class="w-52 h-auto rounded-lg object-cover">
                     <div>
                         <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
                         <p class="text-sm text-gray-500 flex items-center">
@@ -176,7 +176,8 @@
 
                 <!-- Card 3 -->
                 <div class="flex items-center space-x-4 bg-white shadow-lg rounded-lg p-4">
-                    <img src="assets/feast.jpg" alt="Event 3" class="w-24 h-16 rounded-lg object-cover">
+                <img src="assets/feast.jpg" alt="Event" class="w-52 h-auto rounded-lg object-cover">
+
                     <div>
                         <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
                         <p class="text-sm text-gray-500 flex items-center">

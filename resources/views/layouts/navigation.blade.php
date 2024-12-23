@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="shadow mb-0" style="background: linear-gradient(180deg, rgb(22, 3, 40), rgb(72, 8, 136)); height: 5rem; margin: 0; padding: 0;">
+<nav x-data="{ open: false }" class="shadow mb-0" style="background: linear-gradient(180deg, rgb(22, 3, 40), rgb(72, 8, 136)); height: 7rem; margin: 0; padding: 0;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
         <!-- Logo -->
         <div class="flex items-center">
@@ -22,7 +22,7 @@
             <a href="#home" class="text-white hover:text-blue-400 font-medium">
                 Home
             </a>
-            <a href="#rekomendasi" class="text-white hover:text-blue-400 font-medium">
+            <a href="#event" class="text-white hover:text-blue-400 font-medium">
                 Rekomendasi
             </a>
             <a href="#hubungi-kami" class="text-white hover:text-blue-400 font-medium">
@@ -31,22 +31,31 @@
         </div>
 
         <!-- Profile -->
-        <div class="relative flex items-center space-x-3">
+        <div class="relative flex items-center space-x-3" @click.away="open = false">
             <!-- Profile Icon -->
-            <img src="{{ asset('assets/user.png') }}" alt="Profile" class="h-10 w-10 rounded-full cursor-pointer" @click="open = !open">
-            <span class="text-white font-medium cursor-pointer" @click="open = !open">Hi, {{ Auth::user()->name }}</span>
+            <img 
+                src="{{ asset('assets/user.png') }}" 
+                alt="Profile" 
+                class="h-10 w-10 rounded-full cursor-pointer" 
+                @click="open = !open"
+            >
+            <span 
+                class="text-white font-medium cursor-pointer" 
+                @click="open = !open"
+            >
+                Hi, {{ Auth::user()->name }}
+            </span>
 
             <!-- Dropdown Menu -->
             <div 
                 x-show="open" 
-                @click.away="open = false" 
                 x-transition:enter="transition ease-out duration-200" 
                 x-transition:enter-start="opacity-0 transform scale-95" 
                 x-transition:enter-end="opacity-100 transform scale-100" 
                 x-transition:leave="transition ease-in duration-150" 
                 x-transition:leave-start="opacity-100 transform scale-100" 
                 x-transition:leave-end="opacity-0 transform scale-95" 
-                class="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-xl z-50"
+                class="absolute top-full mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-xl z-50"
             >
                 <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
                     {{ __('Profile') }}
