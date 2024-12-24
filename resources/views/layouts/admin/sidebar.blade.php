@@ -15,12 +15,12 @@
     <nav class="mt-10">
 
 
-        <a class="flex items-center px-6 py-2 mt-4 {{ Route::currentRouteNamed('admin.forms') ? 'text-gray-100' : 'text-gray-500' }} hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="{{ route('admin.forms') }}">
+        <a class="flex items-center px-6 py-2 mt-4 {{ Route('admin.konser.index') ? 'text-gray-100' : 'text-gray-500' }} hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="{{ route('admin.konser.index') }}">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
             </svg>
 
-            <span class="mx-3">Event</span>
+            <span class="mx-3">Konser</span>
         </a>
 
         <a class="flex items-center px-6 py-2 mt-4 {{ Route::currentRouteNamed('admin.tables') ? 'text-gray-100' : 'text-gray-500' }} hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="{{ route('admin.tables') }}">

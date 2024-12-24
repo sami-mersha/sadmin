@@ -12,7 +12,7 @@ class KonserController extends Controller
      */
     public function index()
     {
-        $konser = konser::get();
+        $konser = konser::all();
         return view('konser.index', compact('konser'));
     }
 
@@ -21,7 +21,7 @@ class KonserController extends Controller
      */
     public function create()
     {
-        //
+        return view('konser.create');
     }
 
     /**
@@ -29,15 +29,36 @@ class KonserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'deskripsi' => 'required',
+            'tanggal' => 'required',
+            'lokasi' => 'required',
+            'kuota_tiket' => 'required',
+            'image' => 'required',
+        ], [
+            'nama.required' => 'Nama tidak boleh kosong',
+            'deskripsi.required' => 'Email tidak boleh kosong',
+            'tanggal.required' => 'Telp tidak boleh kosong',
+            'lokasi.required' => 'lokasi tidak boleh kosong',
+            'kuota_tiket.required' => 'tiket tidak boleh kosong',
+            'image.required' => 'image tidak boleh kosong',
+        ]);
+
+        // Simpan data
+        Konser::create($request->all());
+
+        // Redirect jika berhasil
+        return redirect()->route('konser.index')->with('success', 'konser berhasil ditambahkan.');
     }
+    
 
     /**
      * Display the specified resource.
      */
     public function show(konser $konser)
     {
-        //
+        return view('konser.show');
     }
 
     /**
@@ -45,7 +66,7 @@ class KonserController extends Controller
      */
     public function edit(konser $konser)
     {
-        //
+        return view('konser.edit', compact('konser'));
     }
 
     /**
@@ -53,7 +74,24 @@ class KonserController extends Controller
      */
     public function update(Request $request, konser $konser)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'deskripsi' => 'required',
+            'tanggal' => 'required',
+            'lokasi' => 'required',
+            'kuota_tiket' => 'required',
+            'image' => 'required',
+        ], [
+            'nama.required' => 'Nama tidak boleh kosong',
+            'deskripsi.required' => 'Email tidak boleh kosong',
+            'tanggal.required' => 'Telp tidak boleh kosong',
+            'lokasi.required' => 'lokasi tidak boleh kosong',
+            'kuota_tiket.required' => 'tiket tidak boleh kosong',
+            'image.required' => 'image tidak boleh kosong',
+        ]);
+
+        $konser->update($request->all());
+        return redirect()->route('konser.index')->with('success', 'konser berhasil diperbarui.');
     }
 
     /**
@@ -61,7 +99,9 @@ class KonserController extends Controller
      */
     public function destroy(konser $konser)
     {
-        //
+        $konser->delete();
+        return redirect()->route('konser.index')->with('success', 'konser dihapus dan No diurutkan ulang dengan sukses.');
     }
+
 }
     

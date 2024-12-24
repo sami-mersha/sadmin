@@ -1,61 +1,16 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\Admin\PermissionController;
-use App\Http\Controllers\KonserController;
-use App\Http\Controllers\TiketController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\DetailController;
-
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Import rute untuk user
+require __DIR__.'/user.php';
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Import rute untuk admin
+require __DIR__.'/admin.php';
 
-Route::group(['middleware' => ['role:admin']], function () {
-    Route::get('/admin', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
-
-    Route::get('/forms', function () {
-        return view('admin.forms');
-    })->name('admin.forms');
-    Route::get('/tables', function () {
-        return view('admin.tables');
-    })->name('admin.tables');
-    Route::get('/ui-elements', function () {
-        return view('admin.ui-elements');
-    })->name('admin.ui-elements');
-
- });
-
- Route::group(['middleware' => ['permission:publish articles']], function () {
-
- });
-
- // Group routes that need admin role and authentication
-Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::resource('users', UserController::class);
-    Route::resource('roles', RoleController::class);
-    Route::resource('permissions', PermissionController::class);
-});
-
-Route::resource('konser', KonserController::class);
-Route::resource('tiket', TiketController::class);
-Route::resource('order', OrderController::class);
-Route::resource('detail', DetailController::class);
-
+// Import rute untuk autentikasi
 require __DIR__.'/auth.php';

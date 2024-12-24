@@ -84,18 +84,21 @@
             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Event Terdekat</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
 
+                @foreach ($konsers as $data)
                 <!-- Card Event -->
                 <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
                     <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
-                    <h5 class="text-lg font-medium text-gray-800 mb-2">Rekomendasi Event</h5>
-                    <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
+                    <h5 class="text-lg font-medium text-gray-800 mb-2">{{ $data->nama }}
+                    </h5>
+                    <p class="text-sm text-gray-500 mb-2">{{ $data->created_at }}</p>
                     <div class="flex items-center justify-between">
-                        <p class="text-xl font-bold text-red-600">Rp 200.000</p>
-                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
+                        <p class="text-xl font-bold text-red-600">{{ $data->lokasi }}</p>
+                        <a href="{{ route('konser.show', $data->id) }}" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</a>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+                {{-- <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
                     <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
                     <h5 class="text-lg font-medium text-gray-800 mb-2">Rekomendasi Event</h5>
                     <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
@@ -103,9 +106,9 @@
                         <p class="text-xl font-bold text-red-600">Rp 200.000</p>
                         <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+                {{-- <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
                     <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
                     <h5 class="text-lg font-medium text-gray-800 mb-2">Rekomendasi Event</h5>
                     <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
@@ -113,10 +116,10 @@
                         <p class="text-xl font-bold text-red-600">Rp 200.000</p>
                         <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Tambahkan card lainnya -->
-                <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+                {{-- <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
                     <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
                     <h5 class="text-lg font-medium text-gray-800 mb-2">Rekomendasi Event</h5>
                     <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
@@ -124,7 +127,7 @@
                         <p class="text-xl font-bold text-red-600">Rp 200.000</p>
                         <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
