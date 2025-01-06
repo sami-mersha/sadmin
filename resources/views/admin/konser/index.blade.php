@@ -33,9 +33,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($konser as $index => $data)
+                        @foreach ($konser as $data)
                             <tr class="border-b border-gray-200">
-                                <td class="px-4 py-2 text-sm text-gray-800">{{ $index + 1 }}</td>
+                                <td class="px-4 py-2 text-sm text-gray-800">{{ $loop->iteration + 1 }}</td>
                                 <td class="px-4 py-2 text-sm text-gray-800">{{ $data->nama }}</td>
                                 <td class="px-4 py-2 text-sm text-gray-800">{{ $data->tanggal }}</td>
                                 <td class="px-4 py-2 text-sm text-gray-800">{{ $data->lokasi }}</td>
