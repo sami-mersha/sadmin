@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('deskripsi')->nullable();
             $table->date('tanggal');
             $table->string('lokasi');
-            $table->integer('kuota_tiket'); 
+            $table->integer('kuota_tiket');
             $table->string('image')->nullable();
             $table->foreignId('detail');
             $table->timestamps();

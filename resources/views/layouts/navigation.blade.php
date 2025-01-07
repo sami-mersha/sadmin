@@ -17,10 +17,16 @@
             </div>
 
             <!-- User Section -->
-            <div class="flex items-center gap-4">
-                <img class="h-10 w-10 rounded-full border-2 border-gray-300" src="https://via.placeholder.com/150" alt="User">
-                <p class="text-sm font-medium text-gray-900">Hi, Sasti Juni</p>
-            </div>
+            <!-- User Section -->
+<div class="flex items-center gap-4">
+    <img class="h-10 w-10 rounded-full border-2 border-gray-300" src="https://via.placeholder.com/150" alt="User">
+    <p class="text-sm font-medium text-gray-900">Hi, Sasti Juni</p>
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" class="text-sm font-medium text-red-600 hover:text-red-800">Logout</button>
+    </form>
+</div>
+
         </div>
     </div>
 </header>

@@ -107,9 +107,9 @@ class KonserController extends Controller
         }
         $konser->delete();
 
-        
+
         return redirect()->route('admin.konser.index')->with('success', 'hewan dihapus dan ID diurutkan ulang dengan sukses.');
     }
 
-   
+
 }

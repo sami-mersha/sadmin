@@ -51,7 +51,7 @@ class KonserController extends Controller
         // Redirect jika berhasil
         return redirect()->route('konser.index')->with('success', 'konser berhasil ditambahkan.');
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -66,7 +66,7 @@ class KonserController extends Controller
      */
     public function edit(konser $konser)
     {
-        return view('konser.edit', compact('konser'));
+        return view('konser.edit', compact(var_name: 'konser'));
     }
 
     /**
@@ -104,4 +104,3 @@ class KonserController extends Controller
     }
 
 }
-    

@@ -102,7 +102,7 @@
     <div id="editModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
         <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
             <h3 class="text-lg font-medium text-gray-800 mb-4">Edit Konser</h3>
-            <form action="{{ route('admin.konser.update', $data ->id) }}" method="POST" enctype="multipart/form-data" id="editForm">
+            <form action="{{ route('admin.konser.update', $data ->id)}}" method="POST" enctype="multipart/form-data" id="editForm">
                 @csrf
                 @method('PUT')
                 <div class="mb-4">
