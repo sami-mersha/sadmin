@@ -1,7 +1,83 @@
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+      padding: 20px;
+    }
+
+    .card {
+      border: 2px dashed #00bfff;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-content h4 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 0 8px;
+      color: #333;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 12px;
+    }
+
+    .card-content .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ff5722;
+      margin: 0 0 12px;
+    }
+
+    .card-content .button {
+      background: #007bff;
+      color: #fff;
+      text-align: center;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .card-content .button:hover {
+      background: #0056b3;
+    }
+  </style>
+
 <x-app-layout>
     <x-slot name="header">
         <!-- Slider Header -->
-        <div class="relative w-full overflow-hidden bg-white">
+        <div class="relative w-full overflow-hidden bg-white mb-40 mt-48">
             <div id="slider" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style="scrollbar-width: thin;">
 
                 <!-- Slide 1 -->
@@ -26,6 +102,76 @@
                 </svg>
             </button>
         </div>
+
+        <div class="container mb-20">
+            <div class="card">
+              <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
+              <div class="card-content">
+                <h4>Rekomendasi Event</h4>
+                <p>Tanggal: 18 Januari 2025</p>
+                <p>Lokasi: Jember</p>
+                <p>Stok: 120 Tiket</p>
+                <p class="price">Rp 200.000</p>
+                <a href="#" class="button">Detail</a>
+              </div>
+            </div>
+
+
+            <div class="card">
+                <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
+                <div class="card-content">
+                  <h4>Rekomendasi Event</h4>
+                  <p>Tanggal: 18 Januari 2025</p>
+                  <p>Lokasi: Jember</p>
+                  <p>Stok: 120 Tiket</p>
+                  <p class="price">Rp 200.000</p>
+                  <a href="#" class="button">Detail</a>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
+                <div class="card-content">
+                  <h4>Rekomendasi Event</h4>
+                  <p>Tanggal: 18 Januari 2025</p>
+                  <p>Lokasi: Jember</p>
+                  <p>Stok: 120 Tiket</p>
+                  <p class="price">Rp 200.000</p>
+                  <a href="#" class="button">Detail</a>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
+                <div class="card-content">
+                  <h4>Rekomendasi Event</h4>
+                  <p>Tanggal: 18 Januari 2025</p>
+                  <p>Lokasi: Jember</p>
+                  <p>Stok: 120 Tiket</p>
+                  <p class="price">Rp 200.000</p>
+                  <a href="#" class="button">Detail</a>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
+                <div class="card-content">
+                  <h4>Rekomendasi Event</h4>
+                  <p>Tanggal: 18 Januari 2025</p>
+                  <p>Lokasi: Jember</p>
+                  <p>Stok: 120 Tiket</p>
+                  <p class="price">Rp 200.000</p>
+                  <a href="#" class="button">Detail</a>
+                </div>
+              </div>
+
+            <!-- Duplikat kartu ini untuk menambahkan lebih banyak kartu -->
+          </div>
+
+
 
         <h1 class="text-black text-1xl font-bold mt-20">
             <span class="bg-gradient-to-rt" id="event">
