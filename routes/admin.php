@@ -24,6 +24,11 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/ui-elements', function () {
         return view('admin.ui-elements');
     })->name('ui-elements');
+    
+    Route::get('/ui-elements-review', function () {
+        return view('admin.ui-elements-review');
+    })->name('ui-elements-review');
+    
 
     // Manajemen pengguna, peran, dan izin
     Route::resource('users', UserController::class);
