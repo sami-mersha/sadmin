@@ -6,21 +6,17 @@
       background-color: #f9f9f9;
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
-      padding: 20px;
-    }
 
     .card {
-      border: 2px dashed #00bfff;
+      border: 1px solid black;
       border-radius: 10px;
       overflow: hidden;
       background: #fff;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
-    }
+      width: 300px;            /* Menentukan lebar card */
+      margin: 0 10px;          /* Memberikan margin kiri dan kanan */
+}
 
     .card:hover {
       transform: scale(1.03);
@@ -72,6 +68,32 @@
     .card-content .button:hover {
       background: #0056b3;
     }
+    .flex justify-center {
+      justify-content:  center;
+    }
+
+    .container {
+    display: flex;
+    flex-wrap: wrap;         /* Membuat card-wrap ke baris berikutnya */
+    justify-content: center; /* Memusatkan card dalam container */
+    gap: 20px;               /* Memberikan jarak antar card */
+    padding: 10px;           /* Padding sekitar container */
+}
+
+        .card {
+            width: 300px;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 10px;
+        }
+
   </style>
 
 <x-app-layout>
@@ -103,240 +125,96 @@
             </button>
         </div>
 
-        <div class="container mb-20">
-            <div class="card">
-              <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
-              <div class="card-content">
-                <h4>Rekomendasi Event</h4>
-                <p>Tanggal: 18 Januari 2025</p>
-                <p>Lokasi: Jember</p>
-                <p>Stok: 120 Tiket</p>
-                <p class="price">Rp 200.000</p>
-                <a href="#" class="button">Detail</a>
-              </div>
-            </div>
-
-
+        <div class="container">
             <div class="card">
                 <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
                 <div class="card-content">
-                  <h4>Rekomendasi Event</h4>
-                  <p>Tanggal: 18 Januari 2025</p>
-                  <p>Lokasi: Jember</p>
-                  <p>Stok: 120 Tiket</p>
-                  <p class="price">Rp 200.000</p>
-                  <a href="#" class="button">Detail</a>
+                    <h4>Rekomendasi Event</h4>
+                    <p>Tanggal: 18 Januari 2025</p>
+                    <p>Lokasi: Jember</p>
+                    <p>Stok: 120 Tiket</p>
+                    <p class="price">Rp 200.000</p>
+                    <a href="#" class="button">Detail</a>
                 </div>
-              </div>
+            </div>
 
-
-              <div class="card">
+            <div class="card">
                 <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
                 <div class="card-content">
-                  <h4>Rekomendasi Event</h4>
-                  <p>Tanggal: 18 Januari 2025</p>
-                  <p>Lokasi: Jember</p>
-                  <p>Stok: 120 Tiket</p>
-                  <p class="price">Rp 200.000</p>
-                  <a href="#" class="button">Detail</a>
+                    <h4>Rekomendasi Event</h4>
+                    <p>Tanggal: 18 Januari 2025</p>
+                    <p>Lokasi: Jember</p>
+                    <p>Stok: 120 Tiket</p>
+                    <p class="price">Rp 200.000</p>
+                    <a href="#" class="button">Detail</a>
                 </div>
-              </div>
+            </div>
 
-
-              <div class="card">
+            <div class="card">
                 <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
                 <div class="card-content">
-                  <h4>Rekomendasi Event</h4>
-                  <p>Tanggal: 18 Januari 2025</p>
-                  <p>Lokasi: Jember</p>
-                  <p>Stok: 120 Tiket</p>
-                  <p class="price">Rp 200.000</p>
-                  <a href="#" class="button">Detail</a>
+                    <h4>Rekomendasi Event</h4>
+                    <p>Tanggal: 18 Januari 2025</p>
+                    <p>Lokasi: Jember</p>
+                    <p>Stok: 120 Tiket</p>
+                    <p class="price">Rp 200.000</p>
+                    <a href="#" class="button">Detail</a>
                 </div>
-              </div>
+            </div>
+        </div>
 
 
-              <div class="card">
+        <div class="container">
+            <div class="card">
                 <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
                 <div class="card-content">
-                  <h4>Rekomendasi Event</h4>
-                  <p>Tanggal: 18 Januari 2025</p>
-                  <p>Lokasi: Jember</p>
-                  <p>Stok: 120 Tiket</p>
-                  <p class="price">Rp 200.000</p>
-                  <a href="#" class="button">Detail</a>
+                    <h4>Rekomendasi Event</h4>
+                    <p>Tanggal: 18 Januari 2025</p>
+                    <p>Lokasi: Jember</p>
+                    <p>Stok: 120 Tiket</p>
+                    <p class="price">Rp 200.000</p>
+                    <a href="#" class="button">Detail</a>
                 </div>
-              </div>
-
-            <!-- Duplikat kartu ini untuk menambahkan lebih banyak kartu -->
-          </div>
-
-
-
-        <h1 class="text-black text-1xl font-bold mt-20">
-            <span class="bg-gradient-to-rt" id="event">
-                <span>Event Bulan Ini</span>
-            </span>
-        </h1>
-        <div class="flex flex-col md:flex-row items-center md:justify-between bg-white shadow-lg rounded-lg overflow-hidden mx-4 md:mx-8 mt-8">
-            <!-- Bagian Gambar -->
-            <div class="relative w-full md:w-2/3">
-                <img src="assets/e96c4c47ea7ff8533527af1e8edf3aa5.jpg" alt="Event Banner" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-                <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4"></div>
             </div>
 
-            <!-- Bagian Teks -->
-            <div class="w-full md:w-1/3 bg-white p-6">
-                <h2 class="text-2xl font-bold text-gray-800">Musik seru, vibes keren!</h2>
-                <p class="mt-4 text-gray-600">
-                    Siapkan energi, ajak teman, dan nikmati malam penuh hits favoritmu! Tiket tersedia sekarang, buruan amankan tempatmu!
-                </p>
+            <div class="card">
+                <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
+                <div class="card-content">
+                    <h4>Rekomendasi Event</h4>
+                    <p>Tanggal: 18 Januari 2025</p>
+                    <p>Lokasi: Jember</p>
+                    <p>Stok: 120 Tiket</p>
+                    <p class="price">Rp 200.000</p>
+                    <a href="#" class="button">Detail</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
+                <div class="card-content">
+                    <h4>Rekomendasi Event</h4>
+                    <p>Tanggal: 18 Januari 2025</p>
+                    <p>Lokasi: Jember</p>
+                    <p>Stok: 120 Tiket</p>
+                    <p class="price">Rp 200.000</p>
+                    <a href="#" class="button">Detail</a>
+                </div>
             </div>
         </div>
 
-       <div class="bg-blue-900 text-white py-8 mt-20 h-80 w-full" style="background: linear-gradient(180deg, rgb(22, 3, 40), rgb(72, 8, 136));">
-    <div class="text-start text-2xl font-bold ml-20 mb-0">
-        <h2>Top Event!</h2>
-    </div>
-    <div class="flex justify-center items-center space-x-4 h-full w-full">
-        <!-- Card 1 -->
-        <div class="relative flex flex-row items-center space-x-4">
-            <div class="gambartopevent">
-                <img src="assets/konser1.jpg" alt="Event 1" class="w-full">
-            </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="relative flex flex-row items-center space-x-4">
-            <div class="gambartopevent">
-                <img src="assets/konser2.jpg" alt="Event 2" class="w-full">
-            </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="relative flex flex-row items-center space-x-4">
-            <div class="gambartopevent">
-                <img src="assets/konser3.jpg" alt="Event 3" class="w-full">
-            </div>
-        </div>
-    </div>
+
+
+<center class="flex justify-center">
+<div>
+    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        Lainnya
+      </button>
 </div>
+</center>
 
 
-    </x-slot>
-
-    <!-- Section Event Terdekat -->
-    <div class="bg-white py-8">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Event Terdekat</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-
-                @foreach ($konsers as $data)
-                <!-- Card Event -->
-                <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
-                    <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
-                    <h5 class="text-lg font-medium text-gray-800 mb-2">{{ $data->nama }}
-                    </h5>
-                    <p class="text-sm text-gray-500 mb-2">{{ $data->created_at }}</p>
-                    <div class="flex items-center justify-between">
-                        <p class="text-xl font-bold text-red-600">{{ $data->lokasi }}</p>
-                        <a href="{{ route('konser.show', $data->id) }}" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</a>
-                    </div>
-                </div>
-                @endforeach
-
-                {{-- <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
-                    <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
-                    <h5 class="text-lg font-medium text-gray-800 mb-2">Rekomendasi Event</h5>
-                    <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
-                    <div class="flex items-center justify-between">
-                        <p class="text-xl font-bold text-red-600">Rp 200.000</p>
-                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
-                    </div>
-                </div> --}}
-
-                {{-- <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
-                    <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
-                    <h5 class="text-lg font-medium text-gray-800 mb-2">Rekomendasi Event</h5>
-                    <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
-                    <div class="flex items-center justify-between">
-                        <p class="text-xl font-bold text-red-600">Rp 200.000</p>
-                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
-                    </div>
-                </div> --}}
-
-                <!-- Tambahkan card lainnya -->
-                {{-- <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
-                    <img src="assets/foto3.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-lg mb-4">
-                    <h5 class="text-lg font-medium text-gray-800 mb-2">Rekomendasi Event</h5>
-                    <p class="text-sm text-gray-500 mb-2">18 Januari 2025</p>
-                    <div class="flex items-center justify-between">
-                        <p class="text-xl font-bold text-red-600">Rp 200.000</p>
-                        <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Detail</button>
-                    </div>
-                </div> --}}
-
-            </div>
-        </div>
-    </div>
-
-    <div class="flex justify-center items-center mt-5">
-    <img src="./assets/image3.png" alt="Gambar" class="max-w-full max-h-full">
-</div>
 
 
-    <!-- Informasi untuk Event Creator -->
-    <div class="container mx-auto px-1 py-20 flex flex-col md:flex-row items-center md:justify-between" style="background-color: white;">
-
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Kolom Kiri -->
-            <div>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                    Informasi yang perlu kamu ketahui sebagai event creator
-                </h2>
-                <p class="text-gray-600">
-                    Beberapa artikel yang perlu kamu ketahui sebelum membuat event di Artatix agar eventmu menjadi berkesan untuk semua penonton!
-                </p>
-            </div>
-
-            <!-- Kolom Kanan -->
-            <div class="space-y-6">
-                <!-- Card 1 -->
-                <div class="flex items-center space-x-4 bg-white shadow-lg rounded-lg p-4">
-                <img src="assets/feast.jpg" alt="Event" class="w-52 h-auto rounded-lg object-cover">
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
-                        <p class="text-sm text-gray-500 flex items-center">
-                            <span class="material-icons text-gray-400 mr-2">event</span> 18 Januari 2025
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="flex items-center space-x-4 bg-white shadow-lg rounded-lg p-4">
-                <img src="assets/feast.jpg" alt="Event" class="w-52 h-auto rounded-lg object-cover">
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
-                        <p class="text-sm text-gray-500 flex items-center">
-                            <span class="material-icons text-gray-400 mr-2">event</span> 18 Januari 2025
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="flex items-center space-x-4 bg-white shadow-lg rounded-lg p-4">
-                <img src="assets/feast.jpg" alt="Event" class="w-52 h-auto rounded-lg object-cover">
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
-                        <p class="text-sm text-gray-500 flex items-center">
-                            <span class="material-icons text-gray-400 mr-2">event</span> 18 Januari 2025
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     @extends('layouts.footer')
 

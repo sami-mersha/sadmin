@@ -23,10 +23,3 @@ Route::middleware('auth')->group(function () {
 Route::get('/konser/{konser}', [KonserController::class, 'show'])->name('konser.show');
 Route::get('/tiket', [TiketController::class, 'index'])->name('tiket.index');
 Route::get('/tiket/{tiket}', [TiketController::class, 'show'])->name('tiket.show');
-
-// Rute untuk user yang sudah login
-// Route::middleware('auth')->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });

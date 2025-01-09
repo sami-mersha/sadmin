@@ -1,13 +1,14 @@
 <header class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-lg bg-white/80 py-4 shadow-md backdrop-blur-lg md:top-6 md:rounded-3xl">
-    <div class="px-6">
+    <div class="px-6 mb-2">
         <div class="flex items-center justify-between">
             <!-- Logo Section -->
             <div class="flex items-center">
-                <a aria-current="page" class="flex items-center" href="/">
-                    <img class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo">
-                    <p class="ml-3 text-lg font-semibold text-gray-900">VIBSTIK</p>
+                <a href="{{ route('dashboard') }}" class="flex items-center">
+                    <img src="{{ asset('assets/removebg.png') }}" alt="Logo" class="h-10 w-10">
+                    <h1 class="font-bold text-xl text-black mt-1">IBSTIK</h1>
                 </a>
             </div>
+
 
             <!-- Navigation Links -->
             <div class="hidden md:flex md:items-center md:gap-6">
@@ -17,16 +18,47 @@
             </div>
 
             <!-- User Section -->
-            <!-- User Section -->
-<div class="flex items-center gap-4">
-    <img class="h-10 w-10 rounded-full border-2 border-gray-300" src="https://via.placeholder.com/150" alt="User">
-    <p class="text-sm font-medium text-gray-900">Hi, Sasti Juni</p>
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit" class="text-sm font-medium text-red-600 hover:text-red-800">Logout</button>
-    </form>
-</div>
+            <div x-data="{ open: false }" class="relative flex items-center gap-4">
+                <!-- Profile Section -->
+                <img class="h-10 w-10 rounded-full border-2 border-gray-300" src="https://via.placeholder.com/150" alt="User">
+                <button @click="open = !open" class="text-sm font-medium text-gray-900 focus:outline-none">
+                    Hi, {{ Auth::user()->name }}
+                </button>
 
+                <!-- Dropdown Menu -->
+               <div>
+                <button
+  data-popover-target="menu"
+  class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+  Open Menu
+</button>
+<ul
+  role="menu"
+  data-popover="menu"
+  data-popover-placement="bottom"
+  class="absolute z-10 min-w-[180px] overflow-auto rounded-lg border border-slate-200 bg-white p-1.5 shadow-lg shadow-sm focus:outline-none"
+>
+  <li
+    role="menuitem"
+    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+  >
+    {`Menu Item 1`}
+  </li>
+  <li
+    role="menuitem"
+    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+  >
+    {`Menu Item 2`}
+  </li>
+  <li
+    role="menuitem"
+    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+  >
+    {`Menu Item 3`}
+  </li>
+</ul>
+               </div>
+            </div>
         </div>
     </div>
 </header>
@@ -49,4 +81,3 @@
         </div>
     </div>
 </section>
-
