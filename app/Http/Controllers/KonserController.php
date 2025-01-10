@@ -66,7 +66,7 @@ class KonserController extends Controller
      */
     public function edit(konser $konser)
     {
-        return view('konser.edit', compact(var_name: 'konser'));
+        return view('konser.edit', compact('konser'));
     }
 
     /**
@@ -91,7 +91,7 @@ class KonserController extends Controller
         ]);
 
         $konser->update($request->all());
-        return redirect()->route('konser.index')->with('success', 'konser berhasil diperbarui.');
+        return redirect()->route('konser.index')->with('success', 'konsers updated successfully.');
     }
 
     /**

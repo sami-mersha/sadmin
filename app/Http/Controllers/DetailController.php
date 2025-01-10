@@ -12,7 +12,7 @@ class DetailController extends Controller
      */
     public function index()
     {
-        $detail = detail::get();
+        $detail = detail::all();
         return view('detail.index', compact('detail'));
     }
 
@@ -21,7 +21,7 @@ class DetailController extends Controller
      */
     public function create()
     {
-        //
+        return view('detail.index');
     }
 
     /**

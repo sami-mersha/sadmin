@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tikets', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('konser_id');
+            $table->foreignId('konser_id')->constrained()->onDelete('cascade');
             $table->string('jenis_tiket');
             $table->integer('harga_tiket');
             $table->integer('jumlah_tiket');

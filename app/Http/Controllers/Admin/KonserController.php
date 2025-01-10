@@ -58,10 +58,10 @@ class KonserController extends Controller
     public function edit($id)
     {
         $konser=Konser::findOrfail($id);
-        return view('admin.konser.edit', compact('konser'));
+        return ('admin.konser.edit', compact('konser'));
     }
 
-    public function update(Request $request, $id)
+    public function updaviewte(Request $request, $id)
     {
 
         // dd($request);
