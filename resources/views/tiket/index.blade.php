@@ -12,7 +12,7 @@
             <i class="fa-solid fa-layer-group text-5xl text-[#4A628A]"></i>
                 <h3 class="text-2xl font-semibold text-[#4A628A]">Total Genre</h3>
                 <p class="text-5xl font-bold text-[#091057] mt-4">{{ $genre->count() }}</p>
-                <p class="text-gray-700 mt-2">Jumlah genre yang tersedia di sistem</p>  
+                <p class="text-gray-700 mt-2">Jumlah genre yang tersedia di sistem</p>
             </div>
 
             <!-- Card Tabel Genre -->
@@ -73,7 +73,7 @@
             scrollbar-width :none;
         }
     </style>
-        
+
         <!-- Script for alert timer -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
