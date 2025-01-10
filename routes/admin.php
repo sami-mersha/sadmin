@@ -17,9 +17,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
         return view('admin.forms');
     })->name('forms');
 
-    Route::get('/tables', function () {
-        return view('admin.tables');
-    })->name('tables');
+    Route::name('promo.index')->get('/promo', function () {
+        return view('admin.promo.index');
+    });
 
     Route::get('/ui-elements', function () {
         return view('admin.ui-elements');
