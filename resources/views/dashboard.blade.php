@@ -98,6 +98,34 @@
 
 <x-app-layout>
     <x-slot name="header">
+
+       <div>
+        <section class="w-full">
+            <div class="relative w-full min-h-screen bg-[url('https://images.unsplash.com/photo-1449844908441-8829872d2607?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw2fHxob21lfGVufDB8MHx8fDE3MTA0MDE1NDZ8MA&ixlib=rb-4.0.3&q=80&w=1080')] bg-cover bg-center flex flex-col justify-center items-center text-white">
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+                <!-- Hero Content -->
+                <div class="relative z-10 text-center">
+                    <h1 class="text-4xl font-bold md:text-5xl">Mulai Petualangan Musikmu di Sini!</h1>
+                    <p class="mt-4 text-lg md:text-xl">Temukan Konser Favoritmu di Sini! Dapatkan tiket ke momen tak terlupakan, langsung dari ujung jarimu.</p>
+                </div>
+
+                <!-- Search Bar -->
+                <label
+                class="mx-auto mt-40 relative bg-white w-full max-w-4xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
+                for="search-bar">
+                <input id="search-bar" placeholder="Pilih tiket anda"
+                    class="px-6 py-2 w-full rounded-md flex-1 outline-none bg-white text-gray-700">
+                <button
+                    class="w-full md:w-auto px-6 py-3 bg-blue-600 text-white fill-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded-xl transition-all disabled:opacity-70">
+                    <span class="text-sm font-semibold whitespace-nowrap truncate mx-auto">
+                        Search
+                    </span>
+                </button>
+            </label>
+       </div>
+
         <!-- Slider Header -->
         <div class="relative w-full overflow-hidden bg-white mb-40 mt-48">
             <div id="slider" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style="scrollbar-width: thin;">

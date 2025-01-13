@@ -23,3 +23,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/konser/{konser}', [KonserController::class, 'show'])->name('konser.show');
 Route::get('/tiket', [TiketController::class, 'index'])->name('tiket.index');
 Route::get('/tiket/{tiket}', [TiketController::class, 'show'])->name('tiket.show');
+
+
+Route::get('/lainnya', function () {
+    return view('profile.detail-profile');
+});
