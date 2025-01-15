@@ -12,7 +12,7 @@ class PromoController extends Controller
 {
     public function index()
     {
-        $promo = promo::all();
+        $promo = promo::paginate(10);
         return view('admin.promo.index', compact('promo'));
     }
 
@@ -41,17 +41,15 @@ class PromoController extends Controller
             'status_promo' => $request->status_promo,
         ]);
 
-        return response()->json([
-            'message' => 'Data berhasil disimpan!',
-            'data' => $promo,
-        ], 201);
-    }
+        return redirect()->route('admin.promo.index')->with('success', 'Data berhasil disimpan!');
+}
 
     public function edit($id)
     {
         $promo = promo::findOrFail($id);
         return view('admin.promo.edit', compact('promo'));
     }
+    
 
     public function update(Request $request, $id)
 {

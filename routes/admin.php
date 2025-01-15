@@ -41,12 +41,17 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::post('/konser', [KonserController::class, 'store'])->name('konser.store');
     Route::put('/konser/{id}', [KonserController::class, 'update'])->name('konser.update');
     Route::delete('/konser/{id}', [KonserController::class, 'destroy'])->name('konser.destroy');
+    Route::resource('tiket', TiketController::class)->except(['show']);
     // Route::resource('admin/konser', KonserController::class);
 
 
     //punyae promo
     Route::resource('promo', PromoController::class);
 
+    Route::get('admin/promo/create', [PromoController::class, 'create'])->name('admin.promo.create');
+    Route::post('admin/promo/store', [PromoController::class, 'store'])->name('admin.promo.store');
+    Route::get('/admin/promo/{id}/edit', [PromoController::class, 'edit'])->name('admin.promo.edit');
+    Route::put('/admin/promo/{id}', [PromoController::class, 'update'])->name('admin.promo.update');
+    
 
-    Route::resource('tiket', TiketController::class)->except(['show']);
 });
