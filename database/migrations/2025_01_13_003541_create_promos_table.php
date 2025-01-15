@@ -11,21 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tikets', function (Blueprint $table) {
+        Schema::create('promos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('konser_id')->constrained()->onDelete('cascade');
-            $table->string('jenis_tiket');
-            $table->integer('harga_tiket');
-            $table->integer('jumlah_tiket');
+            $table->string('code_promo');
+            $table->string('nilai_diskon');
+            $table->date('tanggal_mulai');
+            $table->date('tanggal_berakhir');
+            $table->string('status_promo');
             $table->timestamps();
         });
-    }   
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('tikets');
+        Schema::dropIfExists('promos');
     }
 };

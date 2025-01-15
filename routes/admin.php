@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PromoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
@@ -24,11 +25,11 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/ui-elements', function () {
         return view('admin.ui-elements');
     })->name('ui-elements');
-    
+
     Route::get('/ui-elements-review', function () {
         return view('admin.ui-elements-review');
     })->name('ui-elements-review');
-    
+
 
     // Manajemen pengguna, peran, dan izin
     Route::resource('users', UserController::class);
@@ -41,6 +42,10 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::put('/konser/{id}', [KonserController::class, 'update'])->name('konser.update');
     Route::delete('/konser/{id}', [KonserController::class, 'destroy'])->name('konser.destroy');
     // Route::resource('admin/konser', KonserController::class);
+
+
+    //punyae promo
+    Route::resource('promo', PromoController::class);
 
 
     Route::resource('tiket', TiketController::class)->except(['show']);
