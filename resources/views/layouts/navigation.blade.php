@@ -17,8 +17,10 @@ button:active {
 </style>
 
 
-<header class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-lg bg-white/80 py-4 shadow-md backdrop-blur-lg md:top-6 md:rounded-3xl">
-  <div class="px-6 mb-2">
+<header class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-lg bg-white/80 py-4 shadow-md backdrop-blur-lg md:top-6 md:rounded-3xl ">
+
+    
+    <div class="px-6 mb-2">
       <div class="flex items-center justify-between">
           <!-- Logo Section -->
           <div class="flex items-center">
@@ -40,11 +42,15 @@ button:active {
 
               <!-- Dropdown Menu -->
               <div x-data="{ open: false }" class="relative flex items-center gap-4">
-                <!-- Profile Section -->
+                @if(Auth::check())
                 <button @click="open = !open" class="flex items-center gap-2 text-sm font-medium text-gray-900 focus:outline-none">
                     <img class="h-10 w-10 rounded-full border-2 border-gray-300" src="https://via.placeholder.com/150" alt="User">
                     Hi, {{ Auth::user()->name }}
                 </button>
+            @else
+                <a href="{{ route('login') }}" class="text-sm font-medium text-gray-900">Login</a>
+            @endif
+
 
                 <!-- Dropdown Menu -->
                 <ul

@@ -26,5 +26,15 @@ Route::get('/tiket/{tiket}', [TiketController::class, 'show'])->name('tiket.show
 
 
 Route::get('/lainnya', function () {
-    return view('profile.detail-profile');
-});
+    return view('layouts.purchase.lainnya');
+})->name('lainnya');
+
+
+Route::get('/detail', function () {
+    return view('layouts.purchase.product');
+})->name('product');
+
+
+Route::get('/buy-ticket', function () {
+    return view('layouts.purchase.user-beli');
+})->name('product');

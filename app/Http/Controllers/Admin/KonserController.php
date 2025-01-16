@@ -70,13 +70,11 @@ class KonserController extends Controller
 
     public function edit($id)
     {
-        $konser = Konser::findOrFail($id);
-        return view('admin.konser.edit', compact('konser'));
     }
 
     public function update(Request $request, $id)
 {
-    
+
     $request->validate([
         'nama' => 'required|string|max:255',
         'deskripsi' => 'required|string|max:1000',

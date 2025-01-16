@@ -159,7 +159,7 @@ nav {
 }
 
 .header__container {
-  
+
   max-width: fit-content;
   text-align: center;
   color: var(--white);
@@ -815,7 +815,7 @@ nav {
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
-     }   
+     }
     }
 
     /* base */
@@ -887,7 +887,7 @@ body.dark-theme{
 
 /*
  color change in some parts pff
-the wesite, in the dark 
+the wesite, in the dark
 */
 .dark-theme .home__search,
 .dark-theme .swiper-button-next,
@@ -991,7 +991,7 @@ the wesite, in the dark
     }
 
     .nav__logo{
-        color: #fff; 
+        color: #fff;
         display: inline-flex;
         align-items: center;
         column-gap: .25rem;
@@ -1052,7 +1052,7 @@ the wesite, in the dark
 
     .scroll-header .nav__logo{
         color: var(--first-color);
-        
+
     }
 
     .scroll-header .change-theme{
@@ -1790,13 +1790,13 @@ the wesite, in the dark
 }
 .section__title{
     font-size: 2.25rem;
-} 
+}
 .section__subtitle{
     font-size: var(--normal-font-size);
 }
 .nav{
     height: calc(var(--header-height) + 1.5rem);
-    
+
 
 }
 .nav__menu{
@@ -2105,14 +2105,14 @@ font-size: var(--normal-font-size);
           <i class="bx bx-moon change-theme" id="theme-button"></i>
 
           @if (Route::has('login'))
-                            
+
                             @auth
                                 <a href="{{ url('/dashboard') }}"
                                     class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                 Dashboard</a>
                             @else
-                                
-                            <a 
+
+                            <a
                                     href="{{ route('login') }}"
                                     class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                 >
@@ -2128,16 +2128,16 @@ font-size: var(--normal-font-size);
                                     </a>
                                 @endif
                             @endauth
-                        
+
                     @endif
       </nav>
-  </header>    
-    
+  </header>
+
     <div class="section__container header__container" id="home">
-      <h1>Make Your Interior More Minimalistic & Modern</h1>
+      <h1>Mulai petualangan musik di sini dengan  cepat</h1>
       <p>
-        Turn your room with panto into a lot more minimalistic and modern with
-        ease and speed
+        Temukan konser musik yang kamu sukai dengan mudah melalui platform kami gengz.
+        Kami menawarkan akses cepat dan aman untuk berbagai konser dari artis ternama di seluruh dunia.
       </p>
       <form action="/">
         <input type="text" placeholder="Search furniture" />
@@ -2145,13 +2145,13 @@ font-size: var(--normal-font-size);
       </form>
       <a href="#choose"><i class="ri-arrow-down-double-line"></i></a>
     </div>
-    
+
     <section class="section__container choose__container" id="choose">
       <img class="choose__bg" src="assets/3.png" alt="bg" />
       <div class="choose__content">
         <h2 class="section__header">Vibestix</h2>
         <p class="section__subheader">
-          Dapatkan tiket untuk konser favoritmu dengan mudah melalui platform kami gengz. 
+          Dapatkan tiket untuk konser favoritmu dengan mudah melalui platform kami gengz.
           Kami menawarkan akses cepat dan aman untuk berbagai konser dari artis ternama di seluruh dunia.
         </p>
         <div class="choose__grid">
@@ -2173,16 +2173,16 @@ font-size: var(--normal-font-size);
             <span><i class="ri-customer-service-2-line"></i></span>
             <h4>24/7 Support</h4>
             <p>
-              Rasakan ketenangan pikiran dengan mengetahui bahwa tim kami 
+              Rasakan ketenangan pikiran dengan mengetahui bahwa tim kami
               yang berdedikasi tersedia sepanjang waktu
             </p>
           </div>
           <div class="choose__card">
             <span><i class="ri-loop-right-line"></i></span>
-            <h4>Hassle Free Returns</h4>
+            <h4>konser terpercaya
+            </h4>
             <p>
-              We believe in the perfect match, and if it doesn't quite fit, we
-              make returning items a breeze
+                menyediakan banyak konser terpercaya yang siap untuk anda nikmati disela Waktu anda
             </p>
           </div>
         </div>
@@ -2197,13 +2197,14 @@ font-size: var(--normal-font-size);
         <img src="assets/konser7.jpg" alt="offer" />
         <img src="assets/konser5.jpg" alt="offer" />
         <img src="assets/konser6.jpg" alt="offer" />
-     
+
         <div class="offer__content">
-          <h2 class="section__header">Smart Offers</h2>
+          <h2 class="section__header">Jelajahi Konser</h2>
           <p class="section__subheader">
-            Explore exclusive deals to transform your interior with style
+            Eksplor tiket konsermu sekarang hanya di vibestix
+
           </p>
-          <button class="btn">Explore Now</button>
+          <button class="btn">jelajahi sekarang</button>
         </div>
       </div>
       <div class="offer__grid__bottom">
@@ -2214,7 +2215,7 @@ font-size: var(--normal-font-size);
       </div>
     </section>
 
-    
+
 
     <section class="section__container modern__container" id="modern">
       <div class="modern__image">
@@ -2225,44 +2226,49 @@ font-size: var(--normal-font-size);
       </div>
       <div class="modern__content">
         <h2 class="section__header">
-          We help you design modern interior design
+            Kami Membantu Anda Menikmati Pengalaman Musik Live Terbaik
+
         </h2>
         <p class="section__subheader">
-          Transform Your Space with Our Contemporary Interior Design Expertise:
-          Let us guide you in crafting sleek and stylish interiors that reflect
-          your unique taste and lifestyle
+            Hadirkan Momen Tak Terlupakan dengan Vibestix – Aplikasi Pembelian Tiket Konser Terbaik Anda.
+            Jadikan impian Anda menonton konser dan festival musik favorit menjadi kenyataan bersama kami.
+
         </p>
         <div class="modern__grid">
           <div class="modern__card">
             <span><i class="ri-checkbox-blank-circle-line"></i></span>
             <p>
-              Our team specializes in creating customized interior designs that
-              embrace modern aesthetics.
+                Temukan Konser Idaman Anda
+                Kami menyediakan tiket untuk berbagai konser dan festival musik terkini, dari artis lokal hingga internasional.
+
             </p>
           </div>
           <div class="modern__card">
             <span><i class="ri-checkbox-blank-circle-line"></i></span>
             <p>
-              We stay at the forefront of design trends, ensuring your space is
-              stylish and innovative.
+                Pengalaman Pemesanan yang Mudah dan Cepat
+                Akses fitur pencarian yang disesuaikan dengan genre atau artis favorit Anda, sehingga Anda tidak akan melewatkan konser impian.
+
             </p>
           </div>
           <div class="modern__card">
             <span><i class="ri-checkbox-blank-circle-line"></i></span>
             <p>
-              Modern interior design isn't just about aesthetics; it's about
-              functionality and comfort too.
+                Selalu Terdepan dengan Informasi Terbaru
+                Dapatkan pemberitahuan tentang jadwal konser terbaru, penawaran eksklusif, dan tiket early bird untuk menikmati pengalaman terbaik.
+
             </p>
           </div>
           <div class="modern__card">
             <span><i class="ri-checkbox-blank-circle-line"></i></span>
             <p>
-              We take care of all aspects of the design process, from concept to
-              procurement and installation.
+                Lebih dari Sekadar Tiket
+                Nikmati kemudahan mulai dari pembelian tiket hingga berbagai keuntungan eksklusif, seperti tiket reguler dan akses VIP.
+
             </p>
           </div>
         </div>
-        <button class="btn">Explore</button>
+        <button class="btn">Jelajahi</button>
       </div>
     </section>
 
@@ -2276,11 +2282,9 @@ font-size: var(--normal-font-size);
           <div class="swiper-slide">
             <div class="testimonial__card">
               <p>
-                Working with them was an absolute pleasure! Their modern design
-                expertise completely transformed my home into a contemporary
-                haven. I now have a space that not only looks stunning but also
-                feels incredibly comfortable. I couldn't be happier with the
-                results
+                Luar biasa! Dengan Vibestix, saya tidak pernah ketinggalan konser favorit saya. Proses pembelian tiketnya sangat mudah, dan saya langsung mendapatkan notifikasi ketika ada acara baru. Aplikasi ini benar-benar mengubah cara saya menikmati musik live."
+                - Andi Pratama, Pecinta Musik dan Festival Enthusiast
+
               </p>
               <img src="assets/profile-pic-1.jpg" alt="testimonial" />
               <h4>Sam William</h4>

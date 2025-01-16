@@ -31,13 +31,13 @@
             @endisset
 
             <!-- Page Content -->
-
-            <main>
-
-                {{$slot}}
-
-            </main>
-
-        </div>
+<!-- Slot untuk menampilkan header -->
+                @isset($header)
+                    <main class="bg-white shadow">
+                        <div >
+                            {{ $slot }}
+                        </div>
+                    </main>
+                @endisset
     </body>
 </html>
