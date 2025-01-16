@@ -92,16 +92,11 @@
 
         <div class="form-group">
             <div class="input-container">
-                <label for="promo-code">Nama Konser</label>
-                <select class="mt-4" id="discount-value" name="nilai_diskon">
-                    <option value="10" {{ $promo->nilai_diskon == '10' ? 'selected' : '' }}>10%</option>
-                    <option value="20" {{ $promo->nilai_diskon == '20' ? 'selected' : '' }}>20%</option>
-                    <option value="30" {{ $promo->nilai_diskon == '30' ? 'selected' : '' }}>30%</option>
-                </select>
-            
+                <label for="promo-code">Kode Promo</label>
+                <input class="mt-4" type="text" id="promo-code" name="code_promo" value="{{ $promo->code_promo }}" placeholder="Masukan Code Promo">
             </div>
             <div class="input-container">
-                <label for="discount-value">Jenis Tiket</label>
+                <label for="discount-value">Nilai Diskon</label>
                 <select class="mt-4" id="discount-value" name="nilai_diskon">
                     <option value="10" {{ $promo->nilai_diskon == '10' ? 'selected' : '' }}>10%</option>
                     <option value="20" {{ $promo->nilai_diskon == '20' ? 'selected' : '' }}>20%</option>

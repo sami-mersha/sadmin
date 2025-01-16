@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\konser;
+use App\Models\Konser;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
     public function index()
     {
-        $konsers = konser::all();
+        $konsers = Konser::all();
         return view('dashboard', compact('konsers'));
     }
 }

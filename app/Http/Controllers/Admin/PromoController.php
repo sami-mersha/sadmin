@@ -98,6 +98,6 @@ class PromoController extends Controller
         $promo->delete();
 
 
-        return redirect()->route('admin.promo.index')->with('success', 'hewan dihapus dan ID diurutkan ulang dengan sukses.');
+        return redirect()->route('admin.promo.index')->with('success', 'Data dihapus dan ID diurutkan ulang dengan sukses.');
     }
 }

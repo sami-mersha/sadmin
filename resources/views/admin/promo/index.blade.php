@@ -41,7 +41,7 @@
                     <tr class="text-gray-700">
                         <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $index + 1 }}</td>
                         <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $p->code_promo }}</td>
-                        <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $p->nilai_diskon }}</td>
+                        <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $p->nilai_diskon }}%</td>
                         <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $p->tanggal_mulai }}</td>
                         <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $p->tanggal_berakhir }}</td>
                         <td class="border-b border-gray-300 px-4 py-2 text-center">

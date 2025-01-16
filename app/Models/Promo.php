@@ -17,4 +17,9 @@ class Promo extends Model
         'tanggal_berakhir',
         'status_promo',
     ];
+    
+    public function promos()
+    {
+        return $this->hasMany(Promo::class);
+    }
 }

@@ -1,11 +1,10 @@
 <x-admin-layout>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Promo</title>
+    <title>Tambah Konser</title>
     <style>
         .form-container {
             background-color: #ffffff;
@@ -32,7 +31,7 @@
             flex: 1;
         }
 
-        .form-group input, .form-group select {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
@@ -40,7 +39,6 @@
             font-size: 14px;
             background-color: #f9f9f9;
             margin-bottom: 30px;
-            height: 70px;
         }
 
         .form-actions {
@@ -84,58 +82,60 @@
     </style>
 </head>
 <body>
-
 <div class="form-container">
-    <form action="{{ route('admin.promo.update', $promo->id) }}" method="POST">
+    <form action="{{ route('admin.konser.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
+        <div class="form-group">
+            <div class="input-container">
+                <label for="nama">Nama Konser</label>
+                <input type="text" name="nama" id="nama" placeholder="Masukkan Nama Konser" required>
+            </div>
+            <div class="input-container">
+                <label for="tanggal">Tanggal</label>
+                <input type="date" name="tanggal" id="tanggal" required>
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="input-container">
-                <label for="promo-code">Nama Konser</label>
-                <select class="mt-4" id="discount-value" name="nilai_diskon">
-                    <option value="10" {{ $promo->nilai_diskon == '10' ? 'selected' : '' }}>10%</option>
-                    <option value="20" {{ $promo->nilai_diskon == '20' ? 'selected' : '' }}>20%</option>
-                    <option value="30" {{ $promo->nilai_diskon == '30' ? 'selected' : '' }}>30%</option>
-                </select>
-            
+                <label for="jam">Jam</label>
+                <input type="time" name="jam" id="jam" required>
             </div>
             <div class="input-container">
-                <label for="discount-value">Jenis Tiket</label>
-                <select class="mt-4" id="discount-value" name="nilai_diskon">
-                    <option value="10" {{ $promo->nilai_diskon == '10' ? 'selected' : '' }}>10%</option>
-                    <option value="20" {{ $promo->nilai_diskon == '20' ? 'selected' : '' }}>20%</option>
-                    <option value="30" {{ $promo->nilai_diskon == '30' ? 'selected' : '' }}>30%</option>
+                <label for="lokasi">Lokasi</label>
+                <select name="lokasi" id="lokasi" required>
+                    <option value="" disabled selected>Pilih Lokasi</option>
+                    <option value="Trenggalek">Trenggalek</option>
+                    <option value="Pasuruan">Pasuruan</option>
+                    <option value="Jember">Jember</option>
+                    <option value="Banyuwangi">Banyuwangi</option>
+                    <option value="Probolinggo">Probolinggo</option>
                 </select>
             </div>
         </div>
 
         <div class="form-group">
             <div class="input-container">
-                <label for="start-date">Tanggal Mulai</label>
-                <input class="mt-4" type="date" id="start-date" name="tanggal_mulai" value="{{ $promo->tanggal_mulai }}" placeholder="Masukan Tanggal Mulai">
-            </div>
-            <div class="input-container">
-                <label for="end-date">Tanggal Berakhir</label>
-                <input class="mt-4" type="date" id="end-date" name="tanggal_berakhir" value="{{ $promo->tanggal_berakhir }}" placeholder="Masukan Tanggal Berakhir">
+                <label for="deskripsi">Deskripsi</label>
+                <textarea name="deskripsi" id="deskripsi" rows="3" placeholder="Masukkan Deskripsi" required></textarea>
             </div>
         </div>
 
         <div class="form-group">
             <div class="input-container">
-                <label for="status">Status Promo</label>
-                <input class="mt-4" type="text" id="status" name="status_promo" value="{{ $promo->status_promo }}" readonly style="width: 100%">
+                <label for="image">Gambar</label>
+                <input type="file" name="image" id="image" accept="image/*">
             </div>
         </div>
 
         <div class="form-actions">
-            <button class="cancel" onclick="window.history.back();">Batal</button>
-            <button type="submit" class="bg-blue-700 text-white px-6 py-2 text-lg rounded-xl hover:bg-blue-500">Simpan</button>
+            <button type="button" class="cancel" onclick="window.history.back();" onmouseover="this.style.backgroundColor='red'; this.style.color='white';" onmouseout="this.style.backgroundColor='#e0e0e0'; this.style.color='#333';">
+                Batal
+            </button>
+            <button type="submit" class="save">Simpan</button>
         </div>
     </form>
 </div>
-
 </body>
 </html>
-
 </x-admin-layout>
