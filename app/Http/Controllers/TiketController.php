@@ -33,16 +33,22 @@ class TiketController extends Controller
 
     $validatedData = $request->validate([
         'konser_id' => 'required|exists:konser,id',
+        'nama' => 'required|string|max:25',
         'jenis_tiket' => 'required|string|max:255',
         'harga_tiket' => 'required|integer|min:0',
         'jumlah_tiket' => 'required|integer|min:0',
+        'status' => 'required|string|max:255',
+        'detail' => 'nullable|string|max:1000',
     ]);
 
     $tiket = new Tiket();
     $tiket->konser_id = $validatedData['konser_id'];
+    $tiket->nama = $validatedData['nama'];
     $tiket->jenis_tiket = $validatedData['jenis_tiket'];
     $tiket->harga_tiket = $validatedData['harga_tiket'];
     $tiket->jumlah_tiket = $validatedData['jumlah_tiket'];
+    $tiket->status = $validatedData['status'];
+    $tiket->detail = $validatedData['detail'] ?? null;
     $tiket->save();
 
     return redirect()->route('tiket.index')->with('success', 'Tiket created successfully');
@@ -68,18 +74,31 @@ class TiketController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tiket $tiket)
+    public function update(Request $request, $id)
 {
 
     $validatedData = $request->validate([
         'konser_id' => 'required|exists:konser,id',
+        'nama' => 'required|string|max:255',
         'jenis_tiket' => 'required|string|max:255',
         'harga_tiket' => 'required|integer|min:0',
         'jumlah_tiket' => 'required|integer|min:0',
+        'status' => 'required|string|max:255',
+        'detail' => 'nullable|string|max:1000',
     ]);
 
 
-    $tiket->update($validatedData);
+    $tiket = Tiket::findOrFail($id);
+
+    // Update data tiket
+    $tiket->konser_id = $validatedData['konser_id'];
+    $tiket->nama = $validatedData['nama'];
+    $tiket->jenis_tiket = $validatedData['jenis_tiket'];
+    $tiket->harga_tiket = $validatedData['harga_tiket'];
+    $tiket->jumlah_tiket = $validatedData['jumlah_tiket'];
+    $tiket->status = $validatedData['status'];
+    $tiket->detail = $validatedData['detail'] ?? null;
+    $tiket->save();
 
     return redirect()->route('tiket.index')->with('success', 'Tiket updated successfully');
 }

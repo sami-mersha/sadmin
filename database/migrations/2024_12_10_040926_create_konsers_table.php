@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('konsers', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('deskripsi')->nullable();
             $table->date('tanggal');
+            $table->datetimes('jam');
             $table->string('lokasi');
+            $table->string('deskripsi');
             $table->integer('kuota_tiket');
             $table->string('image')->nullable();
             $table->foreignId('detail');

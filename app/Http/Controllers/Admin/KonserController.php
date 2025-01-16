@@ -23,85 +23,123 @@ class KonserController extends Controller
 
     public function store(Request $request)
     {
+        // Validasi input
         $request->validate([
-            'nama' => 'required',
-            'deskripsi' => 'required',
-            'tanggal' => 'required',
-            'lokasi' => 'required',
-            'kuota_tiket' => 'required',
-            'image' => 'required',
+            'nama' => 'required|string|max:255',
+            'deskripsi' => 'required|string|max:1000',
+            'tanggal' => 'required|date',
+            'jam' => 'required|date_format:Y-m-d H:i:s',
+            'lokasi' => 'required|string|max:255',
+            'kuota_tiket' => 'required|integer|min:1',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'detail' => 'required|exists:details,id',
         ], [
             'nama.required' => 'Nama tidak boleh kosong',
-            'deskripsi.required' => 'Email tidak boleh kosong',
-            'tanggal.required' => 'Telp tidak boleh kosong',
-            'lokasi.required' => 'lokasi tidak boleh kosong',
-            'kuota_tiket.required' => 'tiket tidak boleh kosong',
-            'image.required' => 'image tidak boleh kosong',
+            'deskripsi.required' => 'Deskripsi tidak boleh kosong',
+            'tanggal.required' => 'Tanggal tidak boleh kosong',
+            'jam.required' => 'Jam tidak boleh kosong',
+            'jam.date_format' => 'Jam harus dalam format Y-m-d H:i:s',
+            'lokasi.required' => 'Lokasi tidak boleh kosong',
+            'kuota_tiket.required' => 'Kuota tiket tidak boleh kosong',
+            'kuota_tiket.min' => 'Kuota tiket minimal 1',
+            'image.image' => 'File harus berupa gambar',
+            'image.mimes' => 'Format gambar harus jpeg, png, atau jpg',
+            'image.max' => 'Ukuran gambar maksimal 2MB',
+            'detail.required' => 'Detail tidak boleh kosong',
+            'detail.exists' => 'Detail harus merujuk pada ID yang valid di tabel details',
         ]);
 
-        $path = $request->file('image')->store('images', 'public');
 
-        // Simpan data
+        $path = $request->file('image') ? $request->file('image')->store('images', 'public') : null;
+
+
         Konser::create([
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi,
             'tanggal' => $request->tanggal,
+            'jam' => $request->jam,
             'lokasi' => $request->lokasi,
             'kuota_tiket' => $request->kuota_tiket,
             'image' => $path,
+            'detail' => $request->detail,
         ]);
 
-        // Redirect jika berhasil
-        return redirect()->route('admin.konser.index')->with('success', 'konser berhasil ditambahkan.');
+
+        return redirect()->route('admin.konser.index')->with('success', 'Konser berhasil ditambahkan.');
     }
 
     public function edit($id)
     {
         $konser = Konser::findOrFail($id);
-return view('admin.konser.edit', compact('konser'));
-
+        return view('admin.konser.edit', compact('konser'));
     }
 
-    public function updaviewte(Request $request, $id)
-    {
+    public function update(Request $request, $id)
+{
+    
+    $request->validate([
+        'nama' => 'required|string|max:255',
+        'deskripsi' => 'required|string|max:1000',
+        'tanggal' => 'required|date',
+        'jam' => 'required|date_format:Y-m-d H:i:s',
+        'lokasi' => 'required|string|max:255',
+        'kuota_tiket' => 'required|integer|min:1',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'detail' => 'required|exists:details,id',
+    ], [
+        'nama.required' => 'Nama tidak boleh kosong',
+        'deskripsi.required' => 'Deskripsi tidak boleh kosong',
+        'tanggal.required' => 'Tanggal tidak boleh kosong',
+        'jam.required' => 'Jam tidak boleh kosong',
+        'jam.date_format' => 'Jam harus dalam format Y-m-d H:i:s',
+        'lokasi.required' => 'Lokasi tidak boleh kosong',
+        'kuota_tiket.required' => 'Kuota tiket tidak boleh kosong',
+        'kuota_tiket.min' => 'Kuota tiket minimal 1',
+        'image.image' => 'File harus berupa gambar',
+        'image.mimes' => 'Format gambar harus jpeg, png, atau jpg',
+        'image.max' => 'Ukuran gambar maksimal 2MB',
+        'detail.required' => 'Detail tidak boleh kosong',
+        'detail.exists' => 'Detail harus merujuk pada ID yang valid di tabel details',
+    ]);
 
-        // dd($request);
-        $request->validate([
-            'nama' => 'required',
-            'deskripsi' => 'required',
-            'tanggal' => 'required',
-            'lokasi' => 'required',
-            'kuota_tiket' => 'required',
-            'image' => 'nullable',
-        ], [
-            'nama.required' => 'Nama tidak boleh kosong',
-            'deskripsi.required' => 'Email tidak boleh kosong',
-            'tanggal.required' => 'Telp tidak boleh kosong',
-            'lokasi.required' => 'lokasi tidak boleh kosong',
-            'kuota_tiket.required' => 'tiket tidak boleh kosong',
-        ]);
 
-        $konser = konser::findOrFail($id);
+    $konser = Konser::findOrFail($id);
 
-        $data = $request->all();
-        if ($request->hasFile('image')) {
-            // Delete the old image if it exists
-            if ($konser->image && Storage::disk('public')->exists($konser->image)) {
-                Storage::disk('public')->delete($konser->image);
-            }
 
-            // Store the new image
-            $path = $request->file('image')->store('images', 'public');
-            // $hewan->image = $path;
-            $data['image'] = $path;
+    $data = $request->all();
+
+
+    if ($request->hasFile('image')) {
+
+        if ($konser->image && Storage::disk('public')->exists($konser->image)) {
+            Storage::disk('public')->delete($konser->image);
         }
-        $konser->update($data);
-        return redirect()->route('admin.konser.index')->with('success', 'konser berhasil diperbarui.');
+
+
+        $path = $request->file('image')->store('images', 'public');
+        $data['image'] = $path;
     }
+
+
+    $konser->update([
+        'nama' => $data['nama'],
+        'deskripsi' => $data['deskripsi'],
+        'tanggal' => $data['tanggal'],
+        'jam' => $data['jam'],
+        'lokasi' => $data['lokasi'],
+        'kuota_tiket' => $data['kuota_tiket'],
+        'image' => $data['image'] ?? $konser->image,
+        'detail' => $data['detail'],
+    ]);
+
+
+    return redirect()->route('admin.konser.index')->with('success', 'Konser berhasil diperbarui.');
+}
+
 
     public function destroy($id)
     {
-       $konser=Konser::findOrFail($id);
+        $konser = Konser::findOrFail($id);
         // Hapus gambar jika ada
         if ($konser->image && Storage::disk('public')->exists($konser->image)) {
             Storage::disk('public')->delete($konser->image);
@@ -111,6 +149,4 @@ return view('admin.konser.edit', compact('konser'));
 
         return redirect()->route('admin.konser.index')->with('success', 'hewan dihapus dan ID diurutkan ulang dengan sukses.');
     }
-
-
 }
