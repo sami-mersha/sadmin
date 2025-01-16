@@ -34,10 +34,11 @@
                                 <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
                             </ul>
                             <p class="text-lg font-bold text-orange-600 mt-4">Rp 200.000</p>
-                            <a href="#"
+                            <a href="{{ route('product') }}"
                                 class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-full hover:bg-blue-700 transition">
                                 Detail
                             </a>
+
                         </div>
                     </div>
 
@@ -52,10 +53,10 @@
                                 <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
                             </ul>
                             <p class="text-lg font-bold text-orange-600 mt-4">Rp 200.000</p>
-                            <a href="#"
-                                class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-full hover:bg-blue-700 transition">
-                                Detail
-                            </a>
+                            <a href="{{ route('product') }}"
+                            class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-full hover:bg-blue-700 transition">
+                            Detail
+                        </a>
                         </div>
                     </div>
                     <!-- Tambahkan Card Lagi Jika Diperlukan -->
