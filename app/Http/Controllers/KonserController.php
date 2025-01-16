@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\konser;
+use App\Models\Konser;
 use Illuminate\Http\Request;
 
 class KonserController extends Controller
@@ -12,8 +12,8 @@ class KonserController extends Controller
      */
     public function index()
     {
-        $konser = konser::all();
-        return view('konser.index', compact('konser'));
+        $konser = Konser::all();
+        return view('admin.konser.index', compact('konser'));
     }
 
     /**
@@ -21,7 +21,7 @@ class KonserController extends Controller
      */
     public function create()
     {
-        return view('konser.create');
+        return view('admin.konser.create');
     }
 
     /**
@@ -36,9 +36,7 @@ class KonserController extends Controller
         'jam' => 'required|date_format:Y-m-d H:i:s',
         'lokasi' => 'required|string|max:255',
         'deskripsi' => 'required|string|max:1000',
-        'kuota_tiket' => 'required|integer|min:1',
         'image' => 'nullable|string|max:255',
-        'detail' => 'required|exists:details,id',
     ], [
         'nama.required' => 'Nama tidak boleh kosong',
         'tanggal.required' => 'Tanggal tidak boleh kosong',
@@ -46,11 +44,8 @@ class KonserController extends Controller
         'jam.date_format' => 'Jam harus dalam format Y-m-d H:i:s',
         'lokasi.required' => 'Lokasi tidak boleh kosong',
         'deskripsi.required' => 'Deskripsi tidak boleh kosong',
-        'kuota_tiket.required' => 'Kuota tiket tidak boleh kosong',
-        'kuota_tiket.min' => 'Kuota tiket minimal 1',
         'image.required' => 'Image tidak boleh kosong',
-        'detail.required' => 'Detail tidak boleh kosong',
-        'detail.exists' => 'Detail harus merujuk pada ID yang valid di tabel details',
+
     ]);
 
 
@@ -60,9 +55,7 @@ class KonserController extends Controller
         'jam' => $request->jam,
         'lokasi' => $request->lokasi,
         'deskripsi' => $request->deskripsi,
-        'kuota_tiket' => $request->kuota_tiket,
         'image' => $request->image,
-        'detail' => $request->detail,
     ]);
 
 
@@ -99,9 +92,7 @@ class KonserController extends Controller
             'jam' => 'required|date_format:Y-m-d H:i:s',
             'lokasi' => 'required|string|max:255',
             'deskripsi' => 'required|string|max:1000',
-            'kuota_tiket' => 'required|integer|min:1',
             'image' => 'nullable|string|max:255',
-            'detail' => 'required|exists:details,id',
         ], [
             'nama.required' => 'Nama tidak boleh kosong',
             'tanggal.required' => 'Tanggal tidak boleh kosong',
@@ -109,11 +100,7 @@ class KonserController extends Controller
             'jam.date_format' => 'Jam harus dalam format Y-m-d H:i:s',
             'lokasi.required' => 'Lokasi tidak boleh kosong',
             'deskripsi.required' => 'Deskripsi tidak boleh kosong',
-            'kuota_tiket.required' => 'Kuota tiket tidak boleh kosong',
-            'kuota_tiket.min' => 'Kuota tiket minimal 1',
             'image.required' => 'Image tidak boleh kosong',
-            'detail.required' => 'Detail tidak boleh kosong',
-            'detail.exists' => 'Detail harus merujuk pada ID yang valid di tabel details',
         ]);
 
 
@@ -126,9 +113,7 @@ class KonserController extends Controller
             'jam' => $request->jam,
             'lokasi' => $request->lokasi,
             'deskripsi' => $request->deskripsi,
-            'kuota_tiket' => $request->kuota_tiket,
             'image' => $request->image,
-            'detail' => $request->detail,
         ]);
 
 

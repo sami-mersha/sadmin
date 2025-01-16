@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\KonserController;
-use App\Http\Controllers\TiketController;
+use App\Http\Controllers\Admin\TiketController;
 
 // Rute untuk admin
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
@@ -37,17 +37,24 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::resource('permissions', PermissionController::class);
 
     // Manajemen konser dan tiket
+    Route::resource('konsers', KonserController::class);
     Route::get('/konser', [KonserController::class, 'index'])->name('konser.index');
-    Route::post('/konser', [KonserController::class, 'store'])->name('konser.store');
-    Route::put('/konser/{id}', [KonserController::class, 'update'])->name('konser.update');
-    Route::delete('/konser/{id}', [KonserController::class, 'destroy'])->name('konser.destroy');
-    Route::resource('tiket', TiketController::class)->except(['show']);
+    Route::get('konsers/create', [KonserController::class, 'create'])->name('admin.konsers.create');
+    Route::post('admin/konser/store', [KonserController::class, 'store'])->name('admin.konser.store');
+    Route::put('/admin/konser/{id}', [KonserController::class, 'update'])->name('admin.konser.update');
+    Route::delete('/admin/konser/{id}', [KonserController::class, 'destroy'])->name('admin.konser.destroy');
+    Route::resource('konser', KonserController::class)->except(['show']);
+
+
     // Route::resource('admin/konser', KonserController::class);
-
-
+    Route::resource('tiket', TiketController::class)->except(['show']);
+    Route::get('/tiket', [TiketController::class, 'index'])->name('tiket.index');
+    Route::get('admin/tiket/create', [TiketController::class, 'create'])->name('admin.tiket.create');
+    Route::post('admin/tiket/store', [TiketController::class, 'store'])->name('admin.tiket.store');
+    Route::get('/admin/tiket/{id}/edit', [TiketController::class, 'edit'])->name('admin.tiket.edit');
+    Route::put('/admin/tiket/{id}', [TiketController::class, 'update'])->name('admin.tiket.update');
     //punyae promo
     Route::resource('promo', PromoController::class);
-
     Route::get('admin/promo/create', [PromoController::class, 'create'])->name('admin.promo.create');
     Route::post('admin/promo/store', [PromoController::class, 'store'])->name('admin.promo.store');
     Route::get('/admin/promo/{id}/edit', [PromoController::class, 'edit'])->name('admin.promo.edit');

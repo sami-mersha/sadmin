@@ -18,9 +18,7 @@ return new class extends Migration
             $table->datetimes('jam');
             $table->string('lokasi');
             $table->string('deskripsi');
-            $table->integer('kuota_tiket');
             $table->string('image')->nullable();
-            $table->foreignId('detail');
             $table->timestamps();
         });
     }

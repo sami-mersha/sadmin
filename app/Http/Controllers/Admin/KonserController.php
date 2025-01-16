@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\konser;
+use App\Models\Konser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
+
 class KonserController extends Controller
 {
     public function index()
     {
-        $konser = konser::all();
-        return view('admin.konser.index', compact('konser'));
+        $konsers = Konser::with('promos')->paginate(10); // Load relasi promos
+        return view('admin.konser.index', compact('konsers'));
     }
+    
+    
 
     public function create()
     {
@@ -28,25 +31,19 @@ class KonserController extends Controller
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string|max:1000',
             'tanggal' => 'required|date',
-            'jam' => 'required|date_format:Y-m-d H:i:s',
+            'jam' => 'required|date_format:H:i', // Ubah validasi jam
             'lokasi' => 'required|string|max:255',
-            'kuota_tiket' => 'required|integer|min:1',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'detail' => 'required|exists:details,id',
         ], [
             'nama.required' => 'Nama tidak boleh kosong',
             'deskripsi.required' => 'Deskripsi tidak boleh kosong',
             'tanggal.required' => 'Tanggal tidak boleh kosong',
             'jam.required' => 'Jam tidak boleh kosong',
-            'jam.date_format' => 'Jam harus dalam format Y-m-d H:i:s',
+            'jam.date_format' => 'Jam harus dalam format H:i',
             'lokasi.required' => 'Lokasi tidak boleh kosong',
-            'kuota_tiket.required' => 'Kuota tiket tidak boleh kosong',
-            'kuota_tiket.min' => 'Kuota tiket minimal 1',
             'image.image' => 'File harus berupa gambar',
             'image.mimes' => 'Format gambar harus jpeg, png, atau jpg',
             'image.max' => 'Ukuran gambar maksimal 2MB',
-            'detail.required' => 'Detail tidak boleh kosong',
-            'detail.exists' => 'Detail harus merujuk pada ID yang valid di tabel details',
         ]);
 
 
@@ -59,9 +56,7 @@ class KonserController extends Controller
             'tanggal' => $request->tanggal,
             'jam' => $request->jam,
             'lokasi' => $request->lokasi,
-            'kuota_tiket' => $request->kuota_tiket,
             'image' => $path,
-            'detail' => $request->detail,
         ]);
 
 
@@ -79,25 +74,19 @@ class KonserController extends Controller
         'nama' => 'required|string|max:255',
         'deskripsi' => 'required|string|max:1000',
         'tanggal' => 'required|date',
-        'jam' => 'required|date_format:Y-m-d H:i:s',
+        'jam' => 'required|date_format:H:i', // Ubah validasi jam
         'lokasi' => 'required|string|max:255',
-        'kuota_tiket' => 'required|integer|min:1',
         'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-        'detail' => 'required|exists:details,id',
     ], [
         'nama.required' => 'Nama tidak boleh kosong',
         'deskripsi.required' => 'Deskripsi tidak boleh kosong',
         'tanggal.required' => 'Tanggal tidak boleh kosong',
         'jam.required' => 'Jam tidak boleh kosong',
-        'jam.date_format' => 'Jam harus dalam format Y-m-d H:i:s',
+        'jam.date_format' => 'Jam harus dalam format H:i',
         'lokasi.required' => 'Lokasi tidak boleh kosong',
-        'kuota_tiket.required' => 'Kuota tiket tidak boleh kosong',
-        'kuota_tiket.min' => 'Kuota tiket minimal 1',
         'image.image' => 'File harus berupa gambar',
         'image.mimes' => 'Format gambar harus jpeg, png, atau jpg',
         'image.max' => 'Ukuran gambar maksimal 2MB',
-        'detail.required' => 'Detail tidak boleh kosong',
-        'detail.exists' => 'Detail harus merujuk pada ID yang valid di tabel details',
     ]);
 
 
@@ -125,9 +114,7 @@ class KonserController extends Controller
         'tanggal' => $data['tanggal'],
         'jam' => $data['jam'],
         'lokasi' => $data['lokasi'],
-        'kuota_tiket' => $data['kuota_tiket'],
         'image' => $data['image'] ?? $konser->image,
-        'detail' => $data['detail'],
     ]);
 
 

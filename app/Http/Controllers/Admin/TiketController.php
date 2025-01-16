@@ -15,17 +15,19 @@ class TiketController extends Controller
     }
 
     public function create()
-    {
-        return view('admin.tiket.create');
-    }
+{
+    $tiket = Tiket::with('konser')->get(); // Pastikan model `Konser` sesuai
+    return view('admin.tiket.create', compact('tiket'));
+}
 
     public function store(Request $request)
     {
         $request->validate([
             'konser_id' => 'required|exists:konser,id',
             'jenis_tiket' => 'required|string|max:255',
-            'harga_tiket' => 'required|integer|min:0',
+            'harga_tiket' => 'required|string|min:0',
             'jumlah_tiket' => 'required|integer|min:1',
+            'status_tiket' => 'required|string|max:255',
         ]);
 
         Tiket::create([
@@ -33,6 +35,7 @@ class TiketController extends Controller
             'jenis_tiket' => $request->jenis_tiket,
             'harga_tiket' => $request->harga_tiket,
             'jumlah_tiket' => $request->jumlah_tiket,
+            'status_tiket' => $request->status_tiket,
         ]);
 
         return redirect()->route('admin.tiket.index')->with('success', 'Tiket berhasil ditambahkan.');
@@ -50,8 +53,9 @@ class TiketController extends Controller
         $request->validate([
             'konser_id' => 'required|exists:konser,id',
             'jenis_tiket' => 'required|string|max:255',
-            'harga_tiket' => 'required|integer|min:0',
+            'harga_tiket' => 'required|string|min:0',
             'jumlah_tiket' => 'required|integer|min:1',
+            'status_tiket' => 'required|string|max:255',
         ]);
 
         $tiket = Tiket::findOrFail($id);
@@ -60,6 +64,7 @@ class TiketController extends Controller
             'jenis_tiket' => $request->jenis_tiket,
             'harga_tiket' => $request->harga_tiket,
             'jumlah_tiket' => $request->jumlah_tiket,
+            'status_tiket' => $request->status_tiket,
         ]);
 
         return redirect()->route('admin.tiket.index')->with('success', 'Tiket berhasil diperbarui.');

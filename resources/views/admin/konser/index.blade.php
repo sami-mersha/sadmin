@@ -1,181 +1,75 @@
 <x-admin-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
-            {{ __('Konser') }}
-        </h2>
-    </x-slot>
-
-    <div class="container mx-auto mt-6 px-6">
-        <div class="bg-[#D1E9F6] rounded-lg shadow-lg p-6">
-
-            @if (session()->has('error'))
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert" id="error-alert">
-                    {{ session('error') }}
-                </div>
-            @endif
-
-            <div class="flex justify-end mb-4">
-                <button class="bg-green-600 text-white font-medium px-4 py-2 rounded-lg" onclick="openModal('addModal')">Tambah Konser</button>
-            </div>
-
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow">
-                    <thead>
-                        <tr>
-                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-800">No</th>
-                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-800">Nama</th>
-                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-800">Tanggal</th>
-                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-800">Lokasi</th>
-                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-800">Kuota Tiket</th>
-                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-800">Deskripsi</th>
-                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-800">Gambar</th>
-                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-800">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($konser as $data)
-                            <tr class="border-b border-gray-200">
-                                <td class="px-4 py-2 text-sm text-gray-800">{{ $loop->iteration + 1 }}</td>
-                                <td class="px-4 py-2 text-sm text-gray-800">{{ $data->nama }}</td>
-                                <td class="px-4 py-2 text-sm text-gray-800">{{ $data->tanggal }}</td>
-                                <td class="px-4 py-2 text-sm text-gray-800">{{ $data->lokasi }}</td>
-                                <td class="px-4 py-2 text-sm text-gray-800">{{ $data->kuota_tiket }}</td>
-                                <td class="px-4 py-2 text-sm text-gray-800">{{ $data->deskripsi }}</td>
-                                <td class="px-4 py-2">
-                                    <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->judul }}" class="w-16 h-16 object-cover rounded">
-                                </td>
-                                <td class="px-4 py-2">
-                                    <button class="text- font-medium rounded-lg text-sm px-4 py-2" onclick="openModal('editModal', {{ $data->id }})">Edit</button>
-                                    <form action="{{ route('admin.konser.destroy', $data->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Apakah Kamu Yakin Ingin Hapus Data?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="text-red">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+    <div class="bg-white min-h-screen px-5"> 
+        
+        <div class="flex justify-between items-center px-5 py-5">
+            <h1 class="text-2xl font-bold">Manajemen Konser</h1>
+            <div class="flex items-center space-x-4">
+                <select class="border border-gray-300 rounded px-2 py-1 text-gray-500 focus:outline-none appearance-none w-28 pr-3">
+                    <option>October</option>
+                </select>
+                <a href="{{ route('admin.konser.create') }}">
+                    <button class="bg-blue-700 text-white px-6 py-2 text-lg rounded-xl hover:bg-blue-500">
+                        + Tambah Konser
+                    </button>
+                </a>
             </div>
         </div>
+
+        <table class="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
+            <thead class="bg-gray-100 text-gray-700 font-bold rounded-md">
+                <tr>
+                    <th class="px-4 py-2">No</th>
+                    <th class="px-4 py-2">Nama Konser</th>
+                    <th class="px-4 py-2">Tanggal</th>
+                    <th class="px-4 py-2">Lokasi</th>
+                    <th class="px-4 py-2">Detail</th>
+                    <th class="px-4 py-2 text-center">Aksi</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($konsers as $key => $konser)
+                    <tr class="text-gray-700">
+                        <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $key + 1 }}</td>
+                        <td class="border-b border-gray-300 px-4 py-2">{{ $konser->nama }}</td>
+                        <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $konser->tanggal }}</td>
+                        <td class="border-b border-gray-300 px-4 py-2">{{ $konser->lokasi }}</td>
+                        <td class="border-b border-gray-300 px-4 py-2 text-center">
+                            <a href="{{ route('konsers.show', $konser->id) }}">
+                                <button class="w-full h-8 flex items-center justify-center px-4 py-2 rounded text-gray-600 bg-indigo-200 hover:opacity-80 focus:outline-none">
+                                    Detail
+                                </button>
+                            </a>
+                        </td>
+                        <td class="border-b border-gray-300 px-4 py-2 text-center">
+                            <div class="flex justify-center gap-2">
+                                <a href="{{ route('konsers.edit', $konser->id) }}">
+                                    <button class="border px-3 py-2 rounded hover:bg-green-600 hover:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                        </svg>
+                                    </button>
+                                </a>
+                                <form action="{{ route('konsers.destroy', $konser->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus konser ini?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="border text-red-700 px-3 py-2 rounded hover:bg-red-600 hover:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+        @if(session('success'))
+            <div class="mt-4 text-green-600">
+                {{ session('success') }}
+            </div>
+        @endif
     </div>
-
-    <!-- Modal Tambah -->
-    <div id="addModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-            <h3 class="text-lg font-medium text-gray-800 mb-4">Tambah Konser</h3>
-            <form action="{{ route('admin.konser.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Nama Konser</label>
-                    <input type="text" name="nama" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Tanggal</label>
-                    <input type="date" name="tanggal" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Lokasi</label>
-                    <input type="text" name="lokasi" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Kuota Tiket</label>
-                    <input type="number" name="kuota_tiket" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                    <input type="text" name="deskripsi" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Gambar</label>
-                    <input type="file" name="image" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="flex justify-end">
-                    <button type="button" class="bg-gray-500 text-white font-medium px-4 py-2 rounded-lg mr-2" onclick="closeModal('addModal')">Batal</button>
-                    <button type="submit" class="bg-green-600 text-white font-medium px-4 py-2 rounded-lg">Simpan</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal Edit -->
-    <div id="editModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-            <h3 class="text-lg font-medium text-gray-800 mb-4">Edit Konser</h3>
-            <form action="{{ route('admin.konser.update', $data->id)}}" method="POST" enctype="multipart/form-data" id="editForm">
-                @csrf
-                @method('PUT')
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Judul</label>
-                    <input type="text" name="nama" id="editnama" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Tanggal</label>
-                    <input type="date" name="tanggal" id="editTanggal" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Lokasi</label>
-                    <input type="text" name="lokasi" id="editLokasi" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Tiket</label>
-                    <input type="number" name="kuota_tiket" id="editTiket" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">deskripsi</label>
-                    <input type="text" name="deskripsi" id="editTiket" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700">Gambar</label>
-                    <input type="file" name="image" id="editImage" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
-                </div>
-                <div class="flex justify-end">
-                    <button type="button" class="bg-gray-500 text-white font-medium px-4 py-2 rounded-lg mr-2" onclick="closeModal('editModal')">Batal</button>
-                    <button type="submit" class="bg-yellow-500 text-white font-medium px-4 py-2 rounded-lg">Simpan</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <style>
-        .custom-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .custom-scroll {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-
-    <script>
-        function openModal(modalId, dataId = null) {
-            const modal = document.getElementById(modalId);
-            if (modalId === 'editModal' && dataId) {
-                fetch(`/konser/${dataId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('editForm').action = `/konser/${dataId}`;
-                        document.getElementById('editJudul').value = data.judul;
-                        document.getElementById('editTanggal').value = data.tanggal;
-                        document.getElementById('editHarga').value = data.harga;
-                    });
-            }
-            modal.classList.remove('hidden');
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.classList.add('hidden');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const errorAlert = document.getElementById('error-alert');
-            if (errorAlert) {
-                setTimeout(() => {
-                    errorAlert.style.display = 'none';
-                }, 2000);
-            }
-        });
-    </script>
 </x-admin-layout>
