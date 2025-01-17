@@ -66,6 +66,8 @@ class KonserController extends Controller
 
     public function edit($id)
     {
+        // return redirect()->route('admin.konser.edit');
+        return view('admin.konser.edit');
     }
 
     public function update(Request $request, $id)

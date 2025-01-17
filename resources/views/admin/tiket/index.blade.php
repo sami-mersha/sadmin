@@ -28,7 +28,7 @@
             <tbody>
                 @foreach ($tiket as $t)
                     <tr class="text-gray-700">
-                        <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $t->konser->nama_konser ?? '-' }}</td>
+                        <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $t->konser->nama ?? '-' }}</td>
                         <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $t->jenis_tiket }}</td>
                         <td class="border-b border-gray-300 px-4 py-2 text-center">{{ number_format($t->harga_tiket, 0, ',', '.') }}</td>
                         <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $t->jumlah_tiket }}</td>

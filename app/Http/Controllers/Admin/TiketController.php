@@ -5,25 +5,28 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Tiket;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\konser;
 
 class TiketController extends Controller
 {
     public function index()
     {
         $tiket = Tiket::with('konser')->get();
+        // dd($tiket->toArray());
         return view('admin.tiket.index', compact('tiket'));
     }
 
     public function create()
 {
-    $tiket = Tiket::with('konser')->get(); // Pastikan model `Konser` sesuai
-    return view('admin.tiket.create', compact('tiket'));
+    $konser = konser::all();
+    // dd($konser->toArray()); // Pastikan model `Konser` sesuai
+    return view('admin.tiket.create', compact('konser'));
 }
 
     public function store(Request $request)
     {
         $request->validate([
-            'konser_id' => 'required|exists:konser,id',
+            'konser_id' => 'required|exists:konsers,id',
             'jenis_tiket' => 'required|string|max:255',
             'harga_tiket' => 'required|string|min:0',
             'jumlah_tiket' => 'required|integer|min:1',

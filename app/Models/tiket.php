@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class tiket extends Model
 {
     use HasFactory;
-    protected $fillable = [ 'konser_id', 'nama', 'jenis_tiket', 'harga_tiket', 'jumlah_tiket', 'status', 'detail'];
+    protected $fillable = [ 'konser_id', 'jenis_tiket', 'harga_tiket', 'jumlah_tiket', 'status_tiket'];
 
     public function konser(){
         return $this->belongsTo(Konser::class);

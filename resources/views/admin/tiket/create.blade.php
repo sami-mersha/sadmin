@@ -96,9 +96,9 @@
                 <label for="konser_id">Nama Konser</label>
                 <select id="konser_id" name="konser_id" class="mt-4">
                     <option value="">Pilih Konser</option>
-                    @foreach ($tiket as $t)
-                        <option value="{{ $t->konser->id }}" {{ old('konser_id') == $t->konser->id ? 'selected' : '' }}>
-                            {{ $t->konser->nama_konser }}
+                    @foreach ($konser as $t)
+                        <option value="{{ $t->id }}" {{ old('konser_id') == $t->id ? 'selected' : '' }}>
+                            {{ $t->nama }}
                         </option>
                     @endforeach
                 </select>
