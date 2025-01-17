@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->date('tanggal');
-            $table->datetime('jam');
+            $table->time('jam');
             $table->string('lokasi');
             $table->string('deskripsi');
             $table->string('image')->nullable();

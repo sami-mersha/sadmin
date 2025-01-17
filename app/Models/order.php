@@ -12,3 +12,4 @@ class order extends Model
         return $this->belongsTo(tiket::class, 'tiket_id');
     }
 }
+    
