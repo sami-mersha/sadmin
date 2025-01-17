@@ -15,7 +15,7 @@ class konser extends Model
     }
 
     public function tiket(){
-        return $this->belongsTo(Tiket::class,'tiket_id');
+        return $this->hasMany(Tiket::class,'tiket_id');
     }
 
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('jumlah_tiket');
             $table->string('status');
             $table->string('detail');
+            $table->foreignId('konser_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

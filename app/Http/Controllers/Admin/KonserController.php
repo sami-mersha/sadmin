@@ -13,7 +13,8 @@ class KonserController extends Controller
 {
     public function index()
     {
-        $konsers = Konser::with('promos')->paginate(10); // Load relasi promos
+        $konsers = Konser::all();
+        // dd($konsers->toArray()); // Load relasi promos
         return view('admin.konser.index', compact('konsers'));
     }
     

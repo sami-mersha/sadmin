@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('lokasi');
             $table->string('deskripsi');
             $table->string('image')->nullable();
-            $table->foreignId('tiket_id')->constrained();
             $table->timestamps();
         });
     }

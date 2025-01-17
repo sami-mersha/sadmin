@@ -11,6 +11,6 @@ class tiket extends Model
     protected $fillable = [ 'konser_id', 'nama', 'jenis_tiket', 'harga_tiket', 'jumlah_tiket', 'status', 'detail'];
 
     public function konser(){
-        return $this->hasMany(Konser::class);
+        return $this->belongsTo(Konser::class);
     }
 }

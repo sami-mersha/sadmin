@@ -38,7 +38,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
     // Manajemen konser dan tiket
     Route::resource('konsers', KonserController::class);
-    Route::get('/konser', [KonserController::class, 'index'])->name('konser.index');
+    // Route::get('/konser', [KonserController::class, 'index'])->name('konser.index');
     Route::get('konsers/create', [KonserController::class, 'create'])->name('admin.konsers.create');
     Route::post('admin/konser/store', [KonserController::class, 'store'])->name('admin.konser.store');
     Route::put('/admin/konser/{id}', [KonserController::class, 'update'])->name('admin.konser.update');
