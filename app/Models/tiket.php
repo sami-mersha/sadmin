@@ -10,7 +10,7 @@ class tiket extends Model
     use HasFactory;
     protected $fillable = [ 'konser_id', 'nama', 'jenis_tiket', 'harga_tiket', 'jumlah_tiket', 'status', 'detail'];
 
-    public function konser (){
+    public function konser(){
         return $this->hasMany(Konser::class);
     }
 }

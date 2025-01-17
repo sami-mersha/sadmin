@@ -37,4 +37,4 @@ Route::get('/detail', function () {
 
 Route::get('/buy-ticket', function () {
     return view('layouts.purchase.user-beli');
-})->name('product');
+})->name('buy-ticket');
