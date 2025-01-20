@@ -547,7 +547,7 @@ nav {
 }
 
 .footer {
-  background-color: var(--primary-color);
+  background-color: #000957;
 }
 
 .footer__container {

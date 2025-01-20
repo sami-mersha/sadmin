@@ -106,10 +106,8 @@
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
-        </div>
 
         <!-- Jenis Tiket -->
-        <div class="form-group">
             <div class="input-container">
                 <label for="jenis_tiket">Jenis Tiket</label>
                 <select id="jenis_tiket" name="jenis_tiket" class="mt-4">
@@ -134,10 +132,8 @@
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
-        </div>
 
         <!-- Jumlah Tiket -->
-        <div class="form-group">
             <div class="input-container">
                 <label for="jumlah_tiket">Jumlah Tiket</label>
                 <input type="number" id="jumlah_tiket" name="jumlah_tiket" class="mt-4" 

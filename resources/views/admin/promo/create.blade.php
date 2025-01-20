@@ -98,10 +98,8 @@
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
-        </div>
 
         <!-- Nilai Diskon -->
-        <div class="form-group">
             <div class="input-container">
                 <label for="discount-value">Nilai Diskon</label>
                 <select class="mt-4" id="discount-value" name="nilai_diskon">
@@ -150,7 +148,9 @@
 
         <!-- Form Actions -->
         <div class="form-actions">
-            <button type="button" class="cancel" onclick="window.history.back();">Batal</button>
+        <button type="button" class="cancel" onclick="window.history.back();" onmouseover="this.style.backgroundColor='red'; this.style.color='white';" onmouseout="this.style.backgroundColor='#e0e0e0'; this.style.color='#333';">
+                Batal
+            </button>
             <button type="submit" class="save">Simpan</button>
         </div>
     </form>

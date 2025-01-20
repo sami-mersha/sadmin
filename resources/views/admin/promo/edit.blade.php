@@ -91,15 +91,14 @@
         @method('PUT')
 
         <div class="form-group">
-            <div class="input-container">
-                <label for="promo-code">Nama Konser</label>
-                <select class="mt-4" id="discount-value" name="nilai_diskon">
-                    <option value="10" {{ $promo->nilai_diskon == '10' ? 'selected' : '' }}>10%</option>
-                    <option value="20" {{ $promo->nilai_diskon == '20' ? 'selected' : '' }}>20%</option>
-                    <option value="30" {{ $promo->nilai_diskon == '30' ? 'selected' : '' }}>30%</option>
-                </select>
-            
+        <div class="input-container">
+                <label for="promo-code">Kode Promo</label>
+                <input class="mt-4" type="text" id="promo-code" name="code_promo" placeholder="Masukan Kode Promo" value="{{ $promo->code_promo }}">
+                @error('code_promo')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
+
             <div class="input-container">
                 <label for="discount-value">Jenis Tiket</label>
                 <select class="mt-4" id="discount-value" name="nilai_diskon">
@@ -129,7 +128,9 @@
         </div>
 
         <div class="form-actions">
-            <button class="cancel" onclick="window.history.back();">Batal</button>
+            <button type="button" class="cancel" onclick="window.history.back();" onmouseover="this.style.backgroundColor='red'; this.style.color='white';" onmouseout="this.style.backgroundColor='#e0e0e0'; this.style.color='#333';">
+                Batal
+            </button>
             <button type="submit" class="bg-blue-700 text-white px-6 py-2 text-lg rounded-xl hover:bg-blue-500">Simpan</button>
         </div>
     </form>
