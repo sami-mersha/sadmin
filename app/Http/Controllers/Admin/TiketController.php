@@ -11,8 +11,16 @@ class TiketController extends Controller
 {
     public function index()
     {
-        $tiket = Tiket::with('konser')->get();
-        // dd($tiket->toArray());
+        $search = request()->input('search');
+if ($search) {
+    // Mengambil tiket berdasarkan konser_id atau kriteria lain
+    $tiket = tiket::whereHas('konser', function($query) use ($search) {
+        $query->where('nama', 'like', '%' . $search . '%');
+    })->orWhere('konser_id', 'like', '%' . $search . '%')->get();
+} else {
+    // Ambil semua tiket dengan relasi konser
+    $tiket = tiket::with('konser')->get();
+}
         return view('admin.tiket.index', compact('tiket'));
     }
 
