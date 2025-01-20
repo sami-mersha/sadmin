@@ -54,7 +54,7 @@
                         <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $key + 1 }}</td>
                         <td class="border-b border-gray-300 px-4 py-2">{{ $konser->nama }}</td>
                         <td class="border-b border-gray-300 px-4 py-2 text-center">{{ $konser->tanggal }}</td>
-                        <td class="border-b border-gray-300 px-4 py-2">{{ $konser->lokasi }}</td>
+                        <td class="border-b border-gray-300 px-4 py-2">{{ $konser->location }}</td>
                         <td class="border-b border-gray-300 px-4 py-2 text-center">
                             <a href="{{ route('admin.konsers.show', $konser->id) }}">
                                 <button class="w-full h-8 flex items-center justify-center px-4 py-2 rounded text-gray-600 bg-indigo-200 hover:opacity-80 focus:outline-none">
