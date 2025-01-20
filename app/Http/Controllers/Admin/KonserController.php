@@ -74,7 +74,9 @@ class KonserController extends Controller
     public function edit($id)
     {
         // return redirect()->route('admin.konser.edit');
-        return view('admin.konser.edit');
+        $konser = Konser::findOrFail($id);
+        $lokasi = Lokasi::all();
+        return view('admin.konser.edit', compact('konser', 'lokasi'));
     }
 
     public function update(Request $request, $id)
@@ -84,8 +86,8 @@ class KonserController extends Controller
         'nama' => 'required|string|max:255',
         'deskripsi' => 'required|string|max:1000',
         'tanggal' => 'required|date',
-        'jam' => 'required|date_format:H:i', // Ubah validasi jam
-        'lokasi' => 'required|string|max:255',
+        'jam' => 'required', // Ubah validasi jam
+        'lokasi_id' => 'required|string|max:255',
         'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
     ], [
         'nama.required' => 'Nama tidak boleh kosong',
@@ -123,7 +125,7 @@ class KonserController extends Controller
         'deskripsi' => $data['deskripsi'],
         'tanggal' => $data['tanggal'],
         'jam' => $data['jam'],
-        'lokasi' => $data['lokasi'],
+        'lokasi_id' => $data['lokasi_id'],
         'image' => $data['image'] ?? $konser->image,
     ]);
 

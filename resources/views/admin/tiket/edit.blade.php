@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Promo</title>
+    <title>Edit Tiket</title>
     <style>
+        /* Tambahkan styling serupa dengan form create */
         .form-container {
             background-color: #ffffff;
             padding: 60px 70px;
@@ -86,51 +87,86 @@
 <body>
 
 <div class="form-container">
-    <form action="{{ route('admin.promo.update', $promo->id) }}" method="POST">
+    <!-- Form untuk mengedit data tiket -->
+    <form action="{{ route('admin.tiket.update', $tiket->id) }}" method="POST">
         @csrf
         @method('PUT')
 
+        <!-- Nama Konser -->
         <div class="form-group">
             <div class="input-container">
-                <label for="promo-code">Kode Promo</label>
-                <input class="mt-4" type="text" id="promo-code" name="code_promo" value="{{ $promo->code_promo }}" placeholder="Masukan Code Promo">
-            </div>
-            <div class="input-container">
-                <label for="discount-value">Nilai Diskon</label>
-                <select class="mt-4" id="discount-value" name="nilai_diskon">
-                    <option value="10" {{ $promo->nilai_diskon == '10' ? 'selected' : '' }}>10%</option>
-                    <option value="20" {{ $promo->nilai_diskon == '20' ? 'selected' : '' }}>20%</option>
-                    <option value="30" {{ $promo->nilai_diskon == '30' ? 'selected' : '' }}>30%</option>
+                <label for="konser_id">Nama Konser</label>
+                <select id="konser_id" name="konser_id" class="mt-4">
+                    <option value="">Pilih Konser</option>
+                    @foreach ($konser as $t)
+                        <option value="{{ $t->id }}" {{ old('konser_id', $tiket->konser_id) == $t->id ? 'selected' : '' }}>
+                            {{ $t->nama }}
+                        </option>
+                    @endforeach
                 </select>
+                @error('konser_id')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
+            </div>
+
+        <!-- Jenis Tiket -->
+            <div class="input-container">
+                <label for="jenis_tiket">Jenis Tiket</label>
+                <select id="jenis_tiket" name="jenis_tiket" class="mt-4">
+                    <option value="">Pilih Jenis Tiket</option>
+                    <option value="Regular" {{ old('jenis_tiket', $tiket->jenis_tiket) == 'Regular' ? 'selected' : '' }}>Regular</option>
+                    <option value="VIP" {{ old('jenis_tiket', $tiket->jenis_tiket) == 'VIP' ? 'selected' : '' }}>VIP</option>
+                    <option value="VVIP" {{ old('jenis_tiket', $tiket->jenis_tiket) == 'VVIP' ? 'selected' : '' }}>VVIP</option>
+                </select>
+                @error('jenis_tiket')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
         </div>
 
+        <!-- Harga Tiket -->
         <div class="form-group">
             <div class="input-container">
-                <label for="start-date">Tanggal Mulai</label>
-                <input class="mt-4" type="date" id="start-date" name="tanggal_mulai" value="{{ $promo->tanggal_mulai }}" placeholder="Masukan Tanggal Mulai">
+                <label for="harga_tiket">Harga Tiket</label>
+                <input type="text" id="harga_tiket" name="harga_tiket" class="mt-4"
+                       placeholder="Masukan Harga Tiket" value="{{ old('harga_tiket', $tiket->harga_tiket) }}">
+                @error('harga_tiket')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
+
+        <!-- Jumlah Tiket -->
             <div class="input-container">
-                <label for="end-date">Tanggal Berakhir</label>
-                <input class="mt-4" type="date" id="end-date" name="tanggal_berakhir" value="{{ $promo->tanggal_berakhir }}" placeholder="Masukan Tanggal Berakhir">
+                <label for="jumlah_tiket">Jumlah Tiket</label>
+                <input type="number" id="jumlah_tiket" name="jumlah_tiket" class="mt-4"
+                       placeholder="Masukan Jumlah Tiket" value="{{ old('jumlah_tiket', $tiket->jumlah_tiket) }}">
+                @error('jumlah_tiket')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
         </div>
 
+        <!-- Status Tiket -->
         <div class="form-group">
             <div class="input-container">
-                <label for="status">Status Promo</label>
-                <input class="mt-4" type="text" id="status" name="status_promo" value="{{ $promo->status_promo }}" readonly style="width: 100%">
+                <label for="status_tiket">Status Tiket</label>
+                <select id="status_tiket" name="status_tiket" class="mt-4">
+                    <option value="Aktif" {{ old('status_tiket', $tiket->status_tiket) == 'Aktif' ? 'selected' : '' }}>Aktif</option>
+                    <option value="Tidak Aktif" {{ old('status_tiket', $tiket->status_tiket) == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif</option>
+                </select>
+                @error('status_tiket')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
         </div>
 
+        <!-- Form Actions -->
         <div class="form-actions">
-            <button class="cancel" onclick="window.history.back();">Batal</button>
-            <button type="submit" class="bg-blue-700 text-white px-6 py-2 text-lg rounded-xl hover:bg-blue-500">Simpan</button>
+            <button type="button" class="cancel" onclick="window.history.back();">Batal</button>
+            <button type="submit" class="save">Simpan</button>
         </div>
     </form>
 </div>
-
 </body>
 </html>
-
 </x-admin-layout>

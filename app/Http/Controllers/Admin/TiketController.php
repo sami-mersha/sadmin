@@ -47,14 +47,15 @@ class TiketController extends Controller
     public function edit($id)
     {
         $tiket = Tiket::findOrFail($id);
-        return view('admin.tiket.edit', compact('tiket'));
+        $konser = Konser::all();
+        return view('admin.tiket.edit', compact('tiket', 'konser'));
     }
 
     public function update(Request $request, $id)
     {
         // Validasi input
         $request->validate([
-            'konser_id' => 'required|exists:konser,id',
+            'konser_id' => 'required|exists:konsers,id',
             'jenis_tiket' => 'required|string|max:255',
             'harga_tiket' => 'required|string|min:0',
             'jumlah_tiket' => 'required|integer|min:1',

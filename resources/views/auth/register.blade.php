@@ -119,7 +119,7 @@
             <!-- Link Login -->
             <p class="text-center text-gray-600 text-sm mt-4">
                 Already have an account?
-                <a href="#" class="text-blue-500 font-semibold hover:underline">Login!</a>
+                <a href="login" class="text-blue-500 font-semibold hover:underline">Login!</a>
             </p>
         </div>
 
