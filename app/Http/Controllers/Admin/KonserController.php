@@ -20,7 +20,7 @@ class KonserController extends Controller
         }else {
             $konsers = Konser::with('lokasi')->get();  
         }
-        // dd($konsers->toArray()); // Load relasi promos
+        // dd($konsers->toArray()); // Load relasi promo
         return view('admin.konser.index', compact('konsers'));
     }
     

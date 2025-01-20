@@ -1,5 +1,5 @@
 <x-admin-layout>
-            <!-- Menampilkan pesan sukses jika ada -->
+            <!-- Menampilkan pesan sukses jik ada -->
             @if(session('success'))
     <div id="success-message" class="bg-green-500 text-white text-center py-2 mb-4 rounded-md">
         {{ session('success') }}
