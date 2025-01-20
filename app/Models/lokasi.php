@@ -9,6 +9,6 @@ class lokasi extends Model
     protected $fillable=['location'];
 
     public function konser(){
-        return $this->belongsToMany(konser::class);
+        return $this->hasMany(konser::class);
     }
 }
