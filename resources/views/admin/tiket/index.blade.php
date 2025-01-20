@@ -6,7 +6,7 @@
     </div>
 @endif
 
-    <div class="bg-white min-h-screen px-5 rounded-lg"> 
+    <div class="bg-white min-h-screen px-5 rounded-lg">
         <div class="flex justify-between items-center px-5 py-5">
             <h1 class="text-2xl font-bold">Manajemen Tiket</h1>
             <div class="flex items-center space-x-4">
@@ -17,7 +17,7 @@
                 </svg>
             </span>
 
-            <input id="search-input" class="w-32 pl-10 pr-4 rounded-full form-input sm:w-64 focus:border-indigo-600" 
+            <input id="search-input" class="w-32 pl-10 pr-4 rounded-full form-input sm:w-64 focus:border-indigo-600"
                 type="text" placeholder="Search for something">
         </div>
                 <a href="{{ route('admin.tiket.create') }}">
@@ -32,7 +32,7 @@
                     <option>October</option>
                 </select>
             </div>
-        
+
         <table class="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
             <thead class="bg-gray-100 text-gray-700 font-bold rounded-md">
                 <tr>
