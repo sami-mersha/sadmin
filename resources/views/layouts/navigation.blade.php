@@ -19,7 +19,7 @@ button:active {
 
 <header class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-lg bg-white/80 py-4 shadow-md backdrop-blur-lg md:top-6 md:rounded-3xl ">
 
-    
+
     <div class="px-6 mb-2">
       <div class="flex items-center justify-between">
           <!-- Logo Section -->

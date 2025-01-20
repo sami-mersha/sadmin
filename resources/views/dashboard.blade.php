@@ -106,6 +106,21 @@
                 padding: 10px;
             }
 
+             /* Custom style for box layout */
+             .event-box {
+                     width: 350px; /* Atur lebar box sesuai keinginan */
+                     padding: 25px;
+                        margin: 0 auto; /* Pusatkan box */
+                    }
+        .event-box img {
+            height: 300px;
+            height: 30%;
+            object-fit: cover;
+        }
+        .event-details {
+            font-size: 14px;
+        }
+
     </style>
 
     <x-app-layout>
@@ -163,82 +178,103 @@
                 </button>
             </div>
 
-            <div class="container">
-                <div class="card">
-                    <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
-                    <div class="card-content">
-                        <h4>Rekomendasi Event</h4>
-                        <p>Tanggal: 18 Januari 2025</p>
-                        <p>Lokasi: Jember</p>
-                        <p>Stok: 120 Tiket</p>
-                        <p class="price">Rp 200.000</p>
-                        <a href="{{ route('product') }}" class="button">Detail</a>
-                    </div>
-                </div>
 
-                <div class="card">
-                    <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
-                    <div class="card-content">
-                        <h4>Rekomendasi Event</h4>
-                        <p>Tanggal: 18 Januari 2025</p>
-                        <p>Lokasi: Jember</p>
-                        <p>Stok: 120 Tiket</p>
-                        <p class="price">Rp 200.000</p>
-                        <a href="{{ route('product') }}" class="button">Detail</a>
-                    </div>
-                </div>
 
-                <div class="card">
-                    <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
-                    <div class="card-content">
-                        <h4>Rekomendasi Event</h4>
-                        <p>Tanggal: 18 Januari 2025</p>
-                        <p>Lokasi: Jember</p>
-                        <p>Stok: 120 Tiket</p>
-                        <p class="price">Rp 200.000</p>
-                        <a href="{{ route('product') }}" class="button">Detail</a>
+            <div class="container mx-auto py-8 ">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Box 1 -->
+                    <div class="bg-white border rounded-lg shadow-md overflow-hidden event-box mr-5">
+                        <img src="https://via.placeholder.com/400x200" alt="Event Thumbnail">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
+                            <ul class="event-details text-gray-600 mt-2 space-y-1">
+                                <li><i class="fa-solid fa-calendar-days mr-2"></i> 18 Januari 2025</li>
+                                <li><i class="fa-solid fa-map-marker-alt mr-2"></i> Jember</li>
+                                <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
+                            </ul>
+                            <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
+                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                        </div>
                     </div>
+                    <!-- Box 2 -->
+                    <div class="bg-white border rounded-lg shadow-md overflow-hidden event-box">
+                        <img src="https://via.placeholder.com/400x200" alt="Event Thumbnail">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
+                            <ul class="event-details text-gray-600 mt-2 space-y-1">
+                                <li><i class="fa-solid fa-calendar-days mr-2"></i> 18 Januari 2025</li>
+                                <li><i class="fa-solid fa-map-marker-alt mr-2"></i> Jember</li>
+                                <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
+                            </ul>
+                            <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
+                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                        </div>
+                    </div>
+                    <!-- Box 3 -->
+                    <div class="bg-white border rounded-lg shadow-md overflow-hidden event-box">
+                        <img src="https://via.placeholder.com/400x200" alt="Event Thumbnail">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
+                            <ul class="event-details text-gray-600 mt-2 space-y-1">
+                                <li><i class="fa-solid fa-calendar-days mr-2"></i> 18 Januari 2025</li>
+                                <li><i class="fa-solid fa-map-marker-alt mr-2"></i> Jember</li>
+                                <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
+                            </ul>
+                            <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
+                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Box 4 -->
+                    <div class="bg-white border rounded-lg shadow-md overflow-hidden event-box mt-24">
+                        <img src="https://via.placeholder.com/400x200" alt="Event Thumbnail">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
+                            <ul class="event-details text-gray-600 mt-2 space-y-1">
+                                <li><i class="fa-solid fa-calendar-days mr-2"></i> 18 Januari 2025</li>
+                                <li><i class="fa-solid fa-map-marker-alt mr-2"></i> Jember</li>
+                                <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
+                            </ul>
+                            <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
+                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                        </div>
+                    </div>
+                    <!-- Box 5 -->
+                    <div class="bg-white border rounded-lg shadow-md overflow-hidden event-box mt-24">
+                        <img src="https://via.placeholder.com/400x200" alt="Event Thumbnail">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
+                            <ul class="event-details text-gray-600 mt-2 space-y-1">
+                                <li><i class="fa-solid fa-calendar-days mr-2"></i> 18 Januari 2025</li>
+                                <li><i class="fa-solid fa-map-marker-alt mr-2"></i> Jember</li>
+                                <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
+                            </ul>
+                            <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
+                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                        </div>
+                    </div>
+                    <!-- Box 6 -->
+                    <div class="bg-white border rounded-lg shadow-md overflow-hidden event-box mt-24">
+                        <img src="https://via.placeholder.com/400x200" alt="Event Thumbnail" class="w-full h-60 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
+                            <ul class="event-details text-gray-600 mt-2 space-y-1">
+                                <li><i class="fa-solid fa-calendar-days mr-2"></i> 18 Januari 2025</li>
+                                <li><i class="fa-solid fa-map-marker-alt mr-2"></i> Jember</li>
+                                <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
+                            </ul>
+                            <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
+                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
             </div>
 
-
-            <div class="container">
-                <div class="card">
-                    <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
-                    <div class="card-content">
-                        <h4>Rekomendasi Event</h4>
-                        <p>Tanggal: 18 Januari 2025</p>
-                        <p>Lokasi: Jember</p>
-                        <p>Stok: 120 Tiket</p>
-                        <p class="price">Rp 200.000</p>
-                        <a href="{{ route('product') }}" class="button">Detail</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
-                    <div class="card-content">
-                        <h4>Rekomendasi Event</h4>
-                        <p>Tanggal: 18 Januari 2025</p>
-                        <p>Lokasi: Jember</p>
-                        <p>Stok: 120 Tiket</p>
-                        <p class="price">Rp 200.000</p>
-                        <a href="{{ route('product') }}" class="button">Detail</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://pagedone.io/asset/uploads/1695365240.png" alt="Event">
-                    <div class="card-content">
-                        <h4>Rekomendasi Event</h4>
-                        <p>Tanggal: 18 Januari 2025</p>
-                        <p>Lokasi: Jember</p>
-                        <p>Stok: 120 Tiket</p>
-                        <p class="price">Rp 200.000</p>
-                        <a href="{{ route('product') }}" class="button">Detail</a>
-                    </div>
-                </div>
-            </div>
 
 
 

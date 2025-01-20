@@ -1,12 +1,14 @@
-<div class="mt-8 bg-blue-700 pt-9">
+
+
+<div class="mt-8 pt-9 bg-gradient-to-r from-purple-900  to-black -500 ">
     <div class="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
       <div class="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
         <div class="md:w-[316px]">
           <p class="text-[18px] font-medium text-white">
             <div class="flex items-center">
                 <a href="{{ route('dashboard') }}" class="flex items-center">
-                    <img src="{{ asset('assets/removebg.png') }}" alt="Logo" class="h-10 w-10">
-                    <h1 class="font-bold text-xl text-black mt-1">IBSTIK</h1>
+                    <img src="{{ asset('assets/logoo v.png') }}" alt="Logo" class="h-16 w-16">
+                    <h1 class="font-bold text-xl text-white mt-1">IBSTIK</h1>
                 </a>
             </div>
           </p>
