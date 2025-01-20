@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\KonserController;
 use App\Http\Controllers\Admin\TiketController;
+use App\Http\Controllers\Admin\LokasiController;
 
 // Rute untuk admin
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
@@ -60,5 +61,6 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/admin/promo/{id}/edit', [PromoController::class, 'edit'])->name('admin.promo.edit');
     Route::put('/admin/promo/{id}', [PromoController::class, 'update'])->name('admin.promo.update');
     
-
+    //punyae lokasi
+    Route::resource('lokasi', LokasiController::class);
 });
