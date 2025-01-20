@@ -17,9 +17,11 @@
                     <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </span>
-
+            <form action="" method="get">
             <input id="search-input" class="w-32 pl-10 pr-4 rounded-full form-input sm:w-64 focus:border-indigo-600" 
-                type="text" placeholder="Search for something">
+            type="text" placeholder="Search for something" name="search" value="{{ request()->get('search') }}">
+            
+            </form>
         </div>
         <a href="{{ route('admin.konser.create') }}">
             <button class="bg-blue-700 text-white px-6 py-2 text-lg rounded-xl hover:bg-blue-500">

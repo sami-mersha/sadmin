@@ -14,7 +14,12 @@ class KonserController extends Controller
 {
     public function index()
     {
-        $konsers = Konser::with('lokasi')->get();
+        $search = request()->input('search');
+        if ($search){
+            $konsers = konser::where('nama','like','%'.$search.'%')->get();
+        }else {
+            $konsers = Konser::with('lokasi')->get();  
+        }
         // dd($konsers->toArray()); // Load relasi promos
         return view('admin.konser.index', compact('konsers'));
     }
