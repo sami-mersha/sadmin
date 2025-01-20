@@ -6,6 +6,7 @@ use App\Models\Konser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\lokasi;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -22,6 +23,7 @@ class KonserController extends Controller
 
     public function create()
     {
+        $lokasi = lokasi::all();
         return view('admin.konser.create');
     }
 
