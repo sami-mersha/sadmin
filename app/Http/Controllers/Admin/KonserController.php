@@ -14,7 +14,7 @@ class KonserController extends Controller
 {
     public function index()
     {
-        $konsers = Konser::all();
+        $konsers = Konser::with('lokasi')->get();
         // dd($konsers->toArray()); // Load relasi promos
         return view('admin.konser.index', compact('konsers'));
     }
@@ -24,7 +24,7 @@ class KonserController extends Controller
     public function create()
     {
         $lokasi = lokasi::all();
-        return view('admin.konser.create');
+        return view('admin.konser.create',compact('lokasi'));
     }
 
     public function store(Request $request)
@@ -35,7 +35,7 @@ class KonserController extends Controller
             'deskripsi' => 'required|string|max:1000',
             'tanggal' => 'required|date',
             'jam' => 'required|date_format:H:i', // Ubah validasi jam
-            'lokasi' => 'required|string|max:255',
+            'lokasi_id' => 'required|exists:lokasis,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ], [
             'nama.required' => 'Nama tidak boleh kosong',
@@ -58,7 +58,7 @@ class KonserController extends Controller
             'deskripsi' => $request->deskripsi,
             'tanggal' => $request->tanggal,
             'jam' => $request->jam,
-            'lokasi' => $request->lokasi,
+            'lokasi_id' => $request->lokasi_id,
             'image' => $path,
         ]);
 

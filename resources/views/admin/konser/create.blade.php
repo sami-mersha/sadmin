@@ -102,14 +102,15 @@
                 <input type="time" name="jam" id="jam" required>
             </div>
             <div class="input-container">
-                <label for="lokasi">Lokasi</label>
-                <select name="lokasi" id="lokasi" required>
+                <label for="lokasi_id">Lokasi</label>
+                <select name="lokasi_id" id="lokasi_id" required>
                     <option value="" disabled selected>Pilih Lokasi</option>
-                    <option value="Trenggalek">Trenggalek</option>
-                    <option value="Pasuruan">Pasuruan</option>
-                    <option value="Jember">Jember</option>
-                    <option value="Banyuwangi">Banyuwangi</option>
-                    <option value="Probolinggo">Probolinggo</option>
+                    @foreach ($lokasi as $lk)
+                        <option value="{{ $lk->id }}" {{ old('konser_id') == $lk->id ? 'selected' : '' }}>
+                            {{ $lk->location }}
+                        </option>
+                    @endforeach
+
                 </select>
             </div>
         </div>
