@@ -116,21 +116,46 @@
 
         <!-- Tanggal Mulai dan Tanggal Berakhir -->
         <div class="form-group">
-            <div class="input-container">
-                <label for="start-date">Tanggal Mulai</label>
-                <input class="mt-4" type="date" id="start-date" name="tanggal_mulai" value="{{ old('tanggal_mulai') }}">
-                @error('tanggal_mulai')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
-            </div>
-            <div class="input-container">
-                <label for="end-date">Tanggal Berakhir</label>
-                <input class="mt-4" type="date" id="end-date" name="tanggal_berakhir" value="{{ old('tanggal_berakhir') }}">
-                @error('tanggal_berakhir')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
-            </div>
-        </div>
+    <div class="input-container">
+        <label for="start-date">Tanggal Mulai</label>
+        <input class="mt-4" type="date" id="start-date" name="tanggal_mulai" value="{{ old('tanggal_mulai') }}">
+        @error('tanggal_mulai')
+            <span class="text-red-500 text-sm">{{ $message }}</span>
+        @enderror
+    </div>
+    <div class="input-container">
+        <label for="end-date">Tanggal Berakhir</label>
+        <input class="mt-4" type="date" id="end-date" name="tanggal_berakhir" value="{{ old('tanggal_berakhir') }}">
+        @error('tanggal_berakhir')
+            <span class="text-red-500 text-sm">{{ $message }}</span>
+        @enderror
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const startDateInput = document.getElementById('start-date');
+        const endDateInput = document.getElementById('end-date');
+
+        startDateInput.addEventListener('change', function () {
+            const startDate = startDateInput.value; // Ambil nilai tanggal mulai
+            if (startDate) {
+                // Atur min date untuk Tanggal Berakhir
+                endDateInput.min = startDate;
+            }
+        });
+
+        endDateInput.addEventListener('change', function () {
+            const startDate = new Date(startDateInput.value);
+            const endDate = new Date(endDateInput.value);
+
+            if (endDate <= startDate) {
+                alert('Tanggal berakhir harus lebih besar dari tanggal mulai.');
+                endDateInput.value = ''; // Reset nilai
+            }
+        });
+    });
+</script>
+
 
         <!-- Status Promo -->
         <div class="form-group">

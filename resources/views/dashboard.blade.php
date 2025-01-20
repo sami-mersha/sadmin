@@ -186,14 +186,14 @@
                     <div class="bg-white border rounded-lg shadow-md overflow-hidden event-box mr-5">
                         <img src="https://via.placeholder.com/400x200" alt="Event Thumbnail">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800">Rekomendasi Event</h3>
+                            <h3 class="text-lg font-semibold text-gray-800">Rekomendasi</h3>
                             <ul class="event-details text-gray-600 mt-2 space-y-1">
                                 <li><i class="fa-solid fa-calendar-days mr-2"></i> 18 Januari 2025</li>
                                 <li><i class="fa-solid fa-map-marker-alt mr-2"></i> Jember</li>
                                 <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
                             </ul>
                             <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
-                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                            <a href="{{ route('dashboard') }}" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
                         </div>
                     </div>
                     <!-- Box 2 -->
