@@ -175,7 +175,7 @@ nav {
   color: #ffffff;
   margin-top: 4rem;
   margin-bottom: 1rem;
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 600;
   font-family: var(--header-font);
 }
