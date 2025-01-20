@@ -98,6 +98,17 @@
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
+            <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const uppercaseInput = document.getElementById('promo-code');
+
+        // Setiap kali pengguna mengetik, konversi teks menjadi huruf kapital
+        uppercaseInput.addEventListener('input', function () {
+            this.value = this.value.toUpperCase();
+        });
+    });
+</script>
+
 
         <!-- Nilai Diskon -->
             <div class="input-container">
