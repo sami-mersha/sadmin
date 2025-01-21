@@ -9,7 +9,8 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $konsers = Konser::with('tiket')->get();
+        $konsers = Konser::with('tiket')->paginate('6');
+        
         // dd($konsers->toArray());
         return view('dashboard', compact('konsers'));
     }

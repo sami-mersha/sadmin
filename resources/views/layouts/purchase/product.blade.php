@@ -4,24 +4,24 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
   <!-- Container -->
-  <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-60 mb-40">
+  <div class="max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-40 mb-40">
 
 
     <!-- Event Content -->
     <div class="flex flex-col md:flex-row">
       <!-- Image Section -->
       <div class="flex-shrink-0 md:w-1/2 ">
-        <img src="./assets/konser3.jpg" alt="Event Image" class="w-full h-full object-cover rounded-l-lg">
+        <img src="./assets/konser3.jpg" alt="Event Image" class="w-full h-full object-cover rounded-lg">
       </div>
 
       <!-- Event Details -->
-      <div class="p-6 md:w-1/2">
+      <div class=" px-5 md:w-1/2">
     <h2 class="text-lg font-semibold mb-4">Konser Tiket Sedjiwa</h2>
     <ul class="text-sm text-gray-600 space-y-2">
       <div class="mb-4">
       <li>
         📅 <span class=" text-gray-800">Tanggal</span><br>
-        <strong>13 Januari 2024</strong>
+        <strong class="text-bold">13 Januari 2024</strong>
       </li>
       </div>
       <div class="mb-4">
