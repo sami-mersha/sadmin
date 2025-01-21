@@ -353,10 +353,7 @@
                                                     class="fa-solid fa-map-marker-alt mr-2 text-gray-500"></i>
                                                 {{ $knsr->lokasi->location }}</li>
                                         </ul>
-                                        @foreach ($knsr->tiket as $kt)
-                                            
-                                        <p class="text-2xl font-bold text-orange-600 mt-4">Rp {{ $kt->jumlah_tiket }}</p>
-                                        @endforeach
+                                        <p class="text-2xl font-bold text-orange-600 mt-4">Rp 200.000</p>
                                         <a href="{{ route('detail') }}"
                                             class="inline-block bg-blue-700 text-white text-center py-3 mt-6 rounded-md w-full text-lg hover:bg-blue-700 transition duration-200">Detail</a>
                                     </div>
