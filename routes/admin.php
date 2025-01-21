@@ -63,4 +63,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     
     //punyae lokasi
     Route::resource('lokasi', LokasiController::class);
+    Route::get('/admin/lokasi/create', [LokasiController::class, 'index'])->name('admin.lokasi.index');
+    Route::get('/admin/lokasi/create', [LokasiController::class, 'create'])->name('admin.lokasi.create');
+    Route::get('/admin/lokasi/{id}/create', [LokasiController::class, 'create'])->name('admin.lokasi.create');
+    Route::get('admin/lokasi/{id}/edit', [LokasiController::class, 'edit'])->name('admin.lokasi.edit');
+    Route::put('/admin/lokasi/{id}', [LokasiController::class, 'update'])->name('admin.lokasi.update');
 });

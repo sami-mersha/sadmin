@@ -30,7 +30,7 @@ class LokasiController extends Controller
     public function create()
     {
         $konser = konser::all();
-        return view('admin.lokasi.index', compact('konser'));
+        return view('admin.lokasi.create', compact('konser'));
     }
 
     /**
@@ -39,14 +39,14 @@ class LokasiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'lokasi' => 'required|string|max:255'
+            'location' => 'required|string|max:255'
         ]);
 
         lokasi::create([
-            'lokasi' => $request->lokasi
+            'location' => $request->location
         ]);
 
-        return redirect()->route('admin.lokasi.create')->with('success', 'lokasi berhasil ditambahkan');
+        return redirect()->route('admin.lokasi.index')->with('success', 'lokasi berhasil ditambahkan');
     }
 
     /**
@@ -62,9 +62,10 @@ class LokasiController extends Controller
      */
     public function edit($id)
     {
-        $konser = konser::findOrFail($id);
-        return view('admin.lokasi.edit', compact('konser'));
+        $lokasi = Lokasi::findOrFail($id);  // Ambil data berdasarkan ID
+        return view('admin.lokasi.edit', compact('lokasi'));
     }
+    
 
     /**
      * Update the specified resource in storage.
@@ -72,20 +73,20 @@ class LokasiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'lokasi' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
         ]);
-
+    
         $lokasi = Lokasi::findOrFail($id);
-
-        $lokasi->lokasi = $request->input('lokasi');
-
-        $lokasi->save();
-
-        return response()->json([
-            'message' => 'Data berhasil diperbarui.',
-            'lokasi' => $lokasi,
-        ]);
+    
+        $lokasi->location = $request->input('location');
+    
+        if ($lokasi->save()) {
+            return redirect()->route('admin.lokasi.index')->with('success', 'Lokasi berhasil diperbarui.');
+        } else {
+            return back()->withErrors('Terjadi masalah saat menyimpan data.');
+        }
     }
+    
 
 
     /**
@@ -95,6 +96,6 @@ class LokasiController extends Controller
     {
         $lokasi = Lokasi::findOrFail($id);
         $lokasi->delete();
-        return redirect()->route('admin.konser.index')->with('success', 'konser sukses dihapus.');
+        return redirect()->route('admin.lokasi.index')->with('success', 'Lokasi sukses dihapus.');
     }
 }
