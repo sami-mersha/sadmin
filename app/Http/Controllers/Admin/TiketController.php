@@ -86,7 +86,6 @@ if ($search) {
     {
         $tiket = Tiket::findOrFail($id);
         $tiket->delete();
-
         return redirect()->route('admin.tiket.index')->with('success', 'Tiket berhasil dihapus.');
     }
 }

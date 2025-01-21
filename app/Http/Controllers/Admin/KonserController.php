@@ -18,13 +18,13 @@ class KonserController extends Controller
         if ($search){
             $konsers = konser::where('nama','like','%'.$search.'%')->get();
         }else {
-            $konsers = Konser::with('lokasi')->get();  
+            $konsers = Konser::with('lokasi')->get();
         }
         // dd($konsers->toArray()); // Load relasi promo
         return view('admin.konser.index', compact('konsers'));
     }
-    
-    
+
+
 
     public function create()
     {
@@ -144,6 +144,6 @@ class KonserController extends Controller
         $konser->delete();
 
 
-        return redirect()->route('admin.konser.index')->with('success', 'hewan dihapus dan ID diurutkan ulang dengan sukses.');
+        return redirect()->route('admin.konser.index')->with('success', 'konser sukses dihapus.');
     }
 }
