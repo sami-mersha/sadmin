@@ -193,7 +193,7 @@
                                 <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
                             </ul>
                             <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
-                            <a href="{{ route('dashboard') }}" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                            <a href="{{ route('detail') }}" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
                         </div>
                     </div>
                     <!-- Box 2 -->
@@ -207,7 +207,7 @@
                                 <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
                             </ul>
                             <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
-                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                            <a href="{{ route('detail') }}" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
                         </div>
                     </div>
                     <!-- Box 3 -->
@@ -221,7 +221,7 @@
                                 <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
                             </ul>
                             <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
-                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                            <a href="{{ route('detail') }}" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
                         </div>
                     </div>
 
@@ -237,7 +237,7 @@
                                 <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
                             </ul>
                             <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
-                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                            <a href="{{ route('detail') }}" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
                         </div>
                     </div>
                     <!-- Box 5 -->
@@ -251,7 +251,7 @@
                                 <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
                             </ul>
                             <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
-                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                            <a href="{{ route('detail') }}" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
                         </div>
                     </div>
                     <!-- Box 6 -->
@@ -265,7 +265,7 @@
                                 <li class="text-red-600"><i class="fa-solid fa-ticket-alt mr-2"></i> Stok: 120 Tiket</li>
                             </ul>
                             <p class="text-xl font-bold text-orange-600 mt-4">Rp 200.000</p>
-                            <a href="#" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
+                            <a href="{{ route('detail') }}" class="block bg-blue-600 text-white text-center py-2 mt-4 rounded-md text-sm hover:bg-blue-700 transition">Detail</a>
                         </div>
                     </div>
 

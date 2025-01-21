@@ -32,9 +32,9 @@ Route::get('/lainnya', function () {
 
 Route::get('/detail', function () {
     return view('layouts.purchase.product');
-})->name('product');
+})->name('detail');
 
 
 Route::get('/buy-ticket', function () {
     return view('layouts.purchase.user-beli');
-})->name('product');
+})->name('buy-ticket');
