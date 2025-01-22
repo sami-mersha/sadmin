@@ -159,17 +159,24 @@ nav {
 }
 
 .header__container {
-
+  position: relative;
   max-width: fit-content;
   text-align: center;
   color: var(--white);
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.2)
-    ),
-    url("assets/header.jpg");
+  overflow: hidden; 
+  background: rgba(0, 0, 0, 0.5); 
 }
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Untuk memastikan video memenuhi container */
+  z-index: -1; /* Mengatur video di belakang konten lainnya */
+}
+
 
 .header__container h1 {
   color: #ffffff;
@@ -420,6 +427,17 @@ nav {
   margin: auto;
 }
 
+.modern__image img {
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek membesar */
+}
+
+.modern__image img:hover {
+  transform: scale(1.2); /* Membesarkan gambar */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek dramatis */
+  z-index: 1; /* Pastikan gambar terdepan saat di-hover */
+}
+
 .modern__bg {
   position: absolute;
   max-width: 200px;
@@ -521,12 +539,22 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  
+}
+
+.blog__card {
+  transition: transform 0.3s ease;
+}
+
+.blog__card:hover {
+  transform: scale(1.05); 
 }
 
 .blog__card img {
   margin-bottom: 1rem;
   border-radius: 10px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  
 }
 
 .blog__card h4 {
@@ -639,16 +667,6 @@ nav {
     row-gap: 1rem;
   }
 
-  .offer__grid__top,
-  .offer__grid__bottom {
-    gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .offer__grid__top img:first-child,
-  .offer__grid__bottom img:first-child {
-    display: none;
-  }
 
   .craft__container {
     gap: 1rem;
@@ -673,15 +691,6 @@ nav {
     grid-area: 1/1/2/2;
   }
 
-  .offer__grid__top,
-  .offer__grid__bottom {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .offer__grid__top img:nth-child(2),
-  .offer__grid__bottom img:nth-child(4) {
-    display: none;
-  }
 
   .craft__container {
     grid-template-columns: repeat(2, 1fr);
@@ -746,11 +755,6 @@ nav {
     font-size: 3.5rem;
   }
 
-  .offer__grid__top,
-  .offer__grid__bottom {
-    padding-inline: 1rem;
-    grid-template-columns: repeat(1, 1fr);
-  }
 
   .blog__grid {
     grid-template-columns: repeat(1, 1fr);
@@ -2090,6 +2094,29 @@ font-size: var(--normal-font-size);
             margin: 0;
             font-size: 0.9rem;
         }
+
+        .trail {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(72, 0, 149, 0.7); 
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fade 0.8s ease-out forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+
     </style>
 </head>
 <body>
@@ -2134,6 +2161,10 @@ font-size: var(--normal-font-size);
   </header>
 
     <div class="section__container header__container" id="home">
+    <video autoplay muted loop playsinline class="background-video">
+    <source src="assets/bgvideo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
       <h1>Mulai petualangan musik di sini dengan  cepat</h1>
       <p>
         Temukan konser musik yang kamu sukai dengan mudah melalui platform kami gengz.
@@ -2219,7 +2250,6 @@ font-size: var(--normal-font-size);
 
     <section class="section__container modern__container" id="modern">
       <div class="modern__image">
-        <img src="assets/dot-bg.png" alt="bg" class="modern__bg" />
         <img src="assets/bernadya.jpg" alt="modern" class="modern__img-1" />
         <img src="assets/penonton.jpg" alt="modern" class="modern__img-2" />
         <img src="assets/slipknot.jpg" alt="modern" class="modern__img-3" />
@@ -2394,4 +2424,19 @@ font-size: var(--normal-font-size);
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>
+  <script>
+  document.addEventListener('mousemove', (e) => {
+    const trail = document.createElement('div');
+    trail.className = 'trail';
+    trail.style.left = `${e.pageX}px`;
+    trail.style.top = `${e.pageY}px`;
+    document.body.appendChild(trail);
+
+    // Menghapus elemen setelah animasi selesai
+    setTimeout(() => {
+      trail.remove();
+    }, 500); // Sesuaikan durasi sesuai dengan animasi fade
+  });
+</script>
+
 </html>
