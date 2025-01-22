@@ -36,13 +36,14 @@ class KonserController extends Controller
     {
         // Validasi input
         $request->validate([
-            'nama' => 'required|string|max:255',
+            'nama' => 'required|string|max:255|unique:konsers,nama',
             'deskripsi' => 'required|string|max:1000',
             'tanggal' => 'required|date',
             'jam' => 'required|date_format:H:i', // Ubah validasi jam
             'lokasi_id' => 'required|exists:lokasis,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ], [
+            
             'nama.required' => 'Nama tidak boleh kosong',
             'deskripsi.required' => 'Deskripsi tidak boleh kosong',
             'tanggal.required' => 'Tanggal tidak boleh kosong',

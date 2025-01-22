@@ -91,9 +91,21 @@
                 <input type="text" name="nama" id="nama" placeholder="Masukkan Nama Konser" required>
             </div>
             <div class="input-container">
-                <label for="tanggal">Tanggal</label>
-                <input type="date" name="tanggal" id="tanggal" required>
-            </div>
+    <label for="tanggal">Tanggal</label>
+    <input type="date" name="tanggal" id="tanggal" required>
+</div>
+
+<script>
+    // Ambil elemen input tanggal
+    const inputTanggal = document.getElementById('tanggal');
+
+    // Dapatkan tanggal hari ini dalam format YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
+
+    // Set atribut min pada input
+    inputTanggal.setAttribute('min', today);
+</script>
+
         </div>
 
         <div class="form-group">

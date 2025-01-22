@@ -126,7 +126,7 @@
         <div class="form-group">
             <div class="input-container">
                 <label for="harga_tiket">Harga Tiket</label>
-                <input type="text" id="harga_tiket" name="harga_tiket" class="mt-4"
+                <input type="number" id="harga_tiket" name="harga_tiket" class="mt-4"
                        placeholder="Masukan Harga Tiket" value="{{ old('harga_tiket') }}">
                 @error('harga_tiket')
                     <span class="text-red-500 text-sm">{{ $message }}</span>

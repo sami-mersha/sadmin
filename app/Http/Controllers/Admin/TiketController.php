@@ -41,6 +41,15 @@ if ($search) {
             'status_tiket' => 'required|string|max:255',
         ]);
 
+        $exists = Tiket::where('konser_id', $request->konser_id)
+            ->where('jenis_tiket', $request->jenis_tiket)
+            ->exists();
+
+        if ($exists) {
+            return back()->withErrors(['jenis_tiket' => 'Jenis tiket sudah ada untuk konser ini. Pilih jenis tiket lain.'])->withInput();
+        }
+
+        // Simpan data tiket
         Tiket::create([
             'konser_id' => $request->konser_id,
             'jenis_tiket' => $request->jenis_tiket,
@@ -48,6 +57,7 @@ if ($search) {
             'jumlah_tiket' => $request->jumlah_tiket,
             'status_tiket' => $request->status_tiket,
         ]);
+
 
         return redirect()->route('admin.tiket.index')->with('success', 'Tiket berhasil ditambahkan.');
     }
