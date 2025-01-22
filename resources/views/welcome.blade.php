@@ -311,12 +311,36 @@ nav {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
+.offer__grid__top img {
+  width: 100%; /* Gambar menyesuaikan grid */
+  height: auto; /* Pertahankan proporsi gambar */
+  border-radius: 8px; /* Opsional: Estetika */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi halus */
+}
+
+.offer__grid__top img:hover {
+  transform: scale(1.05) translateY(-10px); /* Perbesar sedikit dan naik */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
 
 .offer__grid__bottom {
-  grid-column: 2/4;
+  grid-column: 2/4; /* Sesuai struktur grid utama */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+  gap: 2rem; /* Jarak antar elemen */
+  overflow-x: auto; /* Scroll horizontal jika konten melebihi lebar */
+}
+
+.offer__grid__bottom img {
+  width: 100%; /* Gambar menyesuaikan grid */
+  height: auto; /* Pertahankan proporsi gambar */
+  border-radius: 8px; /* Opsional: Estetika */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi halus */
+}
+
+.offer__grid__bottom img:hover {
+  transform: scale(1.05) translateY(-10px); /* Perbesar sedikit dan naik */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
 }
 
 .offer__container img {
@@ -2243,6 +2267,7 @@ font-size: var(--normal-font-size);
         <img src="assets/konser3.jpg" alt="offer" />
         <img src="assets/konser2.jpg" alt="offer" />
         <img src="assets/konser4.jpg" alt="offer" />
+        
       </div>
     </section>
 
