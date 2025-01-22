@@ -10,15 +10,39 @@
         .hero-section {
             position: relative;
             width: 100%;
-            min-height: 100vh;
-            background: url('assets/frame 4036.png') no-repeat center center/cover;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             text-align: center;
+            overflow:hidden;
         }
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  background-color: rgba(0, 0, 0, 5); 
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 80%; 
+    max-width: 900px;
+   
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
 
 
         .card {
@@ -106,10 +130,6 @@
 
         }
 
-        .card img {
-            width: 100%;
-            height: auto;
-        }
 
         .card-content {
             padding: 10px;
@@ -144,6 +164,8 @@
             flex-shrink: 0;
             width: 100%;
         }
+
+
     </style>
 
     <x-app-layout>
@@ -153,12 +175,15 @@
                 <section class="w-full">
 
                     <div class="hero-section">
-
+                    <video autoplay muted loop playsinline class="background-video">
+    <source src="assets/bgvideo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
                         <div class="hero-content mt-9 ">
                             <h1 class="text-5xl py-4 font-black">Mulai Petualangan Musikmu di Sini!</h1>
-                            <p class="pb-12 text-xl py-3">Temukan Konser Favoritmu di Sini! Dapatkan tiket ke momen tak
-                                terlupakan, langsung dari
-                                ujung jarimu.</p>
+                            <p class="pb-12 text-xl py-3">Temukan Konser Favoritmu di Sini! Dapatkan tiket ke momen tak terlupakan, 
+                                <br>
+                                langsung dari ujung jarimu.</p>
                             <div>
                                 <div class="relative pt-20">
                                     <div
@@ -185,7 +210,7 @@
 
                     <!-- Slider Header -->
                     <div id="targetSection"
-                        class="relative py-0 mx-auto w-[90%] max-w-6xl overflow-hidden bg-gray-100 mb-0 mt-20 rounded-lg">
+                        class="relative py-0 mx-auto w-[90%] max-w-7xl overflow-hidden bg-gray-100 mb-0 mt-20 rounded-lg">
                         <div id="slider"
                             class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide transition-transform duration-500 ease-in-out">
 
@@ -292,46 +317,55 @@
 
 
 
+<div class="container mx-auto px-4 3xl:px-8 py-8">
+    <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-8 justify-center">
+        <!-- Box 1 -->
+        @foreach ($konsers as $knsr)
+            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
+                <!-- Menampilkan gambar -->
+                @if ($knsr->image)
+                    <img src="{{ asset('storage/' . $knsr->image) }}" alt="Gambar {{ $knsr->nama }}"
+                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out">
+                @else
+                    <img src="{{ asset('images/default.jpg') }}" alt="Default Gambar"
+                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out">
+                @endif
 
+                <div class="p-4">
+                    <h3
+                        class="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200">
+                        {{ $knsr->nama }}</h3>
+                    <ul class="event-details text-gray-600 mt-2 space-y-1">
+                        <li class="flex items-center text-sm"><i
+                                class="fa-solid fa-calendar-days mr-2 text-gray-500"></i>{{ $knsr->tanggal }}</li>
+                        <li class="flex items-center text-sm"><i
+                                class="fa-solid fa-map-marker-alt mr-2 text-gray-500"></i>{{ $knsr->lokasi->location }}</li>
+                    </ul>
 
-                    <div class="container mx-auto py-8">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-center">
-                            <!-- Box 1 -->
-                            @foreach ($konsers as $knsr)
-                                <div
-                                    class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl m-4">
-                                    <!-- Menampilkan gambar -->
-                                    @if ($knsr->image)
-                                        <img src="{{ asset('storage/' . $knsr->image) }}"
-                                            alt="Gambar {{ $knsr->nama }}"
-                                            class="w-full h-48 object-cover transition-transform duration-300 ease-in-out">
-                                    @else
-                                        <img src="{{ asset('images/default.jpg') }}" alt="Default Gambar"
-                                            class="w-full h-48 object-cover transition-transform duration-300 ease-in-out">
-                                    @endif
+                    <div class="flex items-center justify-between mt-4">
+    <!-- Informasi Tiket -->
+    @foreach ($knsr->tiket as $kt)
+        <div class="flex flex-col justify-between">
+            <!-- Stok Tiket -->
+            <p class="text-sm font-bold text-orange-600 mb-2">Stok: {{ $kt->jumlah_tiket }} tiket</p>
+            
+            <!-- Harga Tiket -->
+            <p class="text-xl font-bold text-orange-600 mb-2">Rp:{{ number_format($kt->harga_tiket, 0, ',', '.') }},00</p>
+        </div>
+    @endforeach
 
-                                    <div class="p-6">
-                                        <h3
-                                            class="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200">
-                                            {{ $knsr->nama }}</h3>
-                                        <ul class="event-details text-gray-600 mt-2 space-y-1">
-                                            <li class="flex items-center text-sm"><i
-                                                    class="fa-solid fa-calendar-days mr-2 text-gray-500"></i>
-                                                {{ $knsr->tanggal }}</li>
-                                            <li class="flex items-center text-sm"><i
-                                                    class="fa-solid fa-map-marker-alt mr-2 text-gray-500"></i>
-                                                {{ $knsr->lokasi->location }}</li>
-                                        </ul>
-                                        @foreach ($knsr->tiket as $kt)
-                                        <p class="text-2xl font-bold text-orange-600 mt-4">Rp:{{ $kt->harga_tiket }}</p>
-                                        @endforeach
-                                        <a href="{{ route('detail') }}"
-                                            class="inline-block bg-blue-700 text-white text-center py-3 mt-6 rounded-md w-full text-lg hover:bg-blue-700 transition duration-200">Detail</a>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
+    <!-- Tombol Detail -->
+    <a href="{{ route('product.index') }}"
+        class="mt-6 inline-block bg-blue-700 text-white text-center py-2 px-6 rounded-md text-sm hover:bg-blue-800 transition duration-200 h-full flex items-center justify-center">
+        Detail
+    </a>
+</div>
+
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
 
 
 
@@ -339,7 +373,7 @@
                     <center class="flex justify-center">
                         <div>
                             <button
-                                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-10 mb-2">
+                                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-9 py-3 text-center mt-10 mb-10">
                                 <a href="{{ route('lainnya') }}" class="button">Lainnya</a>
                             </button>
 

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KonserController;
 use App\Http\Controllers\TiketController;
+use App\Http\Controllers\ProductController;
 
 // Rute yang dapat diakses oleh semua user (guest dan login)
 Route::get('/', function () {
@@ -33,6 +34,9 @@ Route::get('/lainnya', function () {
 Route::get('/detail', function () {
     return view('layouts.purchase.product');
 })->name('detail');
+
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+
 
 
 Route::get('/buy-ticket', function () {
