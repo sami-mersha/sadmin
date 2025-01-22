@@ -4,13 +4,6 @@
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
-
-
-        }
-
-        /* CSS untuk menonaktifkan scroll */
-        body.no-scroll {
-            overflow: hidden;
         }
 
 
@@ -169,7 +162,7 @@
                             <div>
                                 <div class="relative pt-20">
                                     <div
-                                        class="flex items-center border border-gray-300 rounded-md focus-within:ring-2 focus-within:ring-blue-600 p-1 bg-white">
+                                        class="flex items-center border border-gray-300 rounded-md focus-within:ring-2 focus-within:ring-blue-600 p-3 px-3 bg-white">
                                         <i class="pl-3 pr-3 fas fa-search text-gray-500"></i>
                                         <input id="search-bar" placeholder="Pilih tiket anda"
                                             class="w-full p-2 rounded-md focus:outline-none border-none text-gray-900">
@@ -179,14 +172,7 @@
                                                 Search
                                             </button>
                                         </div>
-                                        <button id="scrollDownBtn"
-                                            class="fixed bottom-10 left-1/2 transform  bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 15l7 7 7-7" />
-                                            </svg>
-                                        </button>
+
                                     </div>
                                 </div>
 
@@ -249,26 +235,9 @@
 
                     <!-- Script -->
                     <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            // Menonaktifkan scroll saat halaman pertama kali dimuat
-                            document.body.classList.add("no-scroll");
+                      
+    // Saat halaman dimua
 
-                            // Menangani klik tombol panah
-                            document.getElementById("scrollDownBtn").addEventListener("click", function() {
-                                // Menghapus tombol setelah diklik
-                                this.style.display =
-                                "none"; // atau gunakan this.classList.add('hidden') jika menggunakan Tailwind
-
-                                // Menghapus kelas 'no-scroll' dari body untuk memungkinkan scroll
-                                document.body.classList.remove("no-scroll");
-
-                                // Scroll ke bagian bawah
-                                const targetSection = document.getElementById("targetSection");
-                                targetSection.scrollIntoView({
-                                    behavior: "smooth"
-                                });
-                            });
-                        });
 
 
                         let currentIndex = 0;
@@ -353,7 +322,9 @@
                                                     class="fa-solid fa-map-marker-alt mr-2 text-gray-500"></i>
                                                 {{ $knsr->lokasi->location }}</li>
                                         </ul>
-                                        <p class="text-2xl font-bold text-orange-600 mt-4">Rp 200.000</p>
+                                        @foreach ($knsr->tiket as $kt)
+                                        <p class="text-2xl font-bold text-orange-600 mt-4">Rp:{{ $kt->harga_tiket }}</p>
+                                        @endforeach
                                         <a href="{{ route('detail') }}"
                                             class="inline-block bg-blue-700 text-white text-center py-3 mt-6 rounded-md w-full text-lg hover:bg-blue-700 transition duration-200">Detail</a>
                                     </div>
