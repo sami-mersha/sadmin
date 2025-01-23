@@ -21,7 +21,7 @@
       <div class="mb-4">
       <li>
         📅 <span class=" text-gray-800">Tanggal</span><br>
-        <strong class="text-bold">13 Januari 2024</strong>
+        <strong class="text-bold">13 Januari 2024 - 15 Januari 2024</strong>
       </li>
       </div>
       <div class="mb-4">
@@ -53,10 +53,10 @@
         <h2 class="text-lg font-semibold mb-4">Konser Tiket Sedjiwa</h2>
         <ul class="text-sm text-gray-600 space-y-2">
             <div>
-              <h5 class="text-gray-800 font-semibold">Penyelenggara</h5>
+              <h5 class="text-orange-800 font-semibold">Stok</h5>
             </div>
             <div>
-                <h1 class="text-black font-extrabold text-2xl">NDX AKA</h1>
+                <h1 class="text-orange-800 font-extrabold text-2xl">1234</h1>
             </div>
           <div class="mb-4">
 

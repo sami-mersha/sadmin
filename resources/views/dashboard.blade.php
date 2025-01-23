@@ -27,7 +27,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover; 
-  background-color: rgba(0, 0, 0, 5); 
+  background-color: rgba(0, 0, 0, 9); 
 }
 
 .hero-content {
@@ -179,33 +179,39 @@
     <source src="assets/bgvideo.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
-                        <div class="hero-content mt-9 ">
-                            <h1 class="text-5xl py-4 font-black">Mulai Petualangan Musikmu di Sini!</h1>
-                            <p class="pb-12 text-xl py-3">Temukan Konser Favoritmu di Sini! Dapatkan tiket ke momen tak terlupakan, 
-                                <br>
-                                langsung dari ujung jarimu.</p>
-                            <div>
-                                <div class="relative pt-20">
-                                    <div
-                                        class="flex items-center border border-gray-300 rounded-md focus-within:ring-2 focus-within:ring-blue-600 p-3 px-3 bg-white">
-                                        <i class="pl-3 pr-3 fas fa-search text-gray-500"></i>
-                                        <input id="search-bar" placeholder="Pilih tiket anda"
-                                            class="w-full p-2 rounded-md focus:outline-none border-none text-gray-900">
-                                        <div class="px-5">
-                                            <button
-                                                class="bg-blue-700 text-white px-6 py-1 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600 text-1xl">
-                                                Search
-                                            </button>
-                                        </div>
+  <div class="hero-content mt-9 ">
+    <h1 class="text-5xl py-4 font-black">Mulai Petualangan Musikmu di Sini!</h1>
+    <p class="pb-12 text-xl py-3">Temukan Konser Favoritmu di Sini! Dapatkan tiket ke momen tak terlupakan, 
+        <br>
+        langsung dari ujung jarimu.</p>
+    <div>
+        <div class="relative pt-20">
+            <div
+                class="flex items-center border border-gray-300 rounded-3xl focus-within:ring-2 focus-within:ring-blue-600 p-3 px-3 bg-white">
+                <i class="pl-3 pr-3 fas fa-search text-gray-500"></i>
+                <input id="search-bar" placeholder="Pilih tiket anda"
+                    class="w-full p-2 rounded-md focus:outline-none border-none text-gray-900">
+                <div class="px-5">
+                    <button
+                        class="bg-blue-700 text-white px-6 py-1 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600 text-1xl">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                    </div>
-                                </div>
+    <!-- Tambahkan margin-bottom di sini -->
+    <a href="#choose" class="scroll-btn fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white p-3 rounded-full shadow-lg">
+        <i class="ri-arrow-down-double-line"></i>
+    </a>
+
+</div>
 
 
 
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Slider Header -->
@@ -260,6 +266,15 @@
 
                     <!-- Script -->
                     <script>
+
+document.querySelector('a[href="#choose"]').addEventListener('click', function (e) {
+        e.preventDefault(); // Mencegah aksi default
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+            behavior: 'smooth', // Animasi scroll halus
+            block: 'start'
+        });
+    });
                       
     // Saat halaman dimua
 
@@ -356,7 +371,7 @@
 
     <!-- Tombol Detail -->
     <a href="{{ route('product.index') }}"
-        class="mt-6 inline-block bg-blue-700 text-white text-center py-2 px-6 rounded-md text-sm hover:bg-blue-800 transition duration-200 h-full flex items-center justify-center">
+        class="mt-9 inline-block bg-blue-700 text-white text-center py-2 px-6 rounded-md text-sm hover:bg-blue-800 transition duration-200 h-full flex items-center justify-center">
         Detail
     </a>
 </div>
@@ -416,6 +431,49 @@
                     </script>
 
                     <style>
+            .scroll-btn {
+                position: absolute; /* Mengatur posisi tombol relatif ke container terdekat */
+                bottom: -60px; /* Tombol berada 60px di bawah elemen pencarian */
+                left: 50%; /* Pusatkan tombol secara horizontal */
+                transform: translateX(-50%); /* Menyesuaikan posisi agar benar-benar di tengah */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 70px; /* Lebar tombol */
+                height: 70px; /* Tinggi tombol */
+                border:2px solid white;
+                background-color: transparent;
+                color: white; /* Warna teks di tombol */
+                font-size: 24px;
+                border-radius: 50%; /* Membuat tombol bundar */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Menambah bayangan */
+                transition: transform 0.3s ease-in-out, background-color 0.3s;
+                cursor: pointer;
+                margin-top:20px;
+            }
+
+            .scroll-btn:hover {
+                background-color: rgba(13, 54, 165, 0.21); /* Biru lebih gelap saat hover */
+                transform: translateX(-50%) scale(1.1); /* Menjaga posisi tengah saat diperbesar */
+            }
+
+            .scroll-btn i {
+                animation: bounce 2s infinite; /* Menambahkan animasi melompat */
+            }
+            .ri-arrow-down-double-line {
+    font-size: 2.5rem; /* Sesuaikan ukuran panah */
+}
+
+            /* Animasi untuk ikon */
+            @keyframes bounce {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
                         .scrollbar-hide {
                             -ms-overflow-style: none;
                             /* IE and Edge */

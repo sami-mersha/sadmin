@@ -2194,10 +2194,6 @@ font-size: var(--normal-font-size);
         Temukan konser musik yang kamu sukai dengan mudah melalui platform kami gengz.
         Kami menawarkan akses cepat dan aman untuk berbagai konser dari artis ternama di seluruh dunia.
       </p>
-      <form action="/">
-        <input type="text" placeholder="Search furniture" />
-        <button><i class="ri-search-line"></i></button>
-      </form>
       <a href="#choose"><i class="ri-arrow-down-double-line"></i></a>
     </div>
 
