@@ -2,27 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\konser;
 use Illuminate\Http\Request;
 
-class FrontController extends Controller
+class LainyaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $konsers = konser::whereHas('tiket', function ($query) {
-            $query->where('jenis_tiket', 'Regular');
-        })->with([
-                    'tiket' => function ($query) {
-                        $query->where('jenis_tiket', 'Regular');
-                    }
-                ])->get();
-
-
-        // dd($konsers->toArray());
-        return view('dashboard', compact('konsers'));
+        return view('lainya.index');
     }
 
     /**
@@ -46,7 +35,7 @@ class FrontController extends Controller
      */
     public function show(string $id)
     {
-        return view('product.index');
+        //
     }
 
     /**

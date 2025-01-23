@@ -4,6 +4,7 @@ use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KonserController;
+use App\Http\Controllers\LainyaController;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\ProductController;
 
@@ -36,7 +37,7 @@ Route::get('/detail', function () {
 })->name('detail');
 
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-
+Route::get('/lainya',[LainyaController::class,'index'])->name('lainya.index');
 
 
 Route::get('/buy-ticket', function () {

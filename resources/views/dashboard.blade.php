@@ -331,57 +331,82 @@ document.querySelector('a[href="#choose"]').addEventListener('click', function (
                     </script>
 
 
-
 <div class="container mx-auto px-4 3xl:px-8 py-8">
-    <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-8 justify-center">
-        <!-- Box 1 -->
-        @foreach ($konsers as $knsr)
-            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
-                <!-- Menampilkan gambar -->
-                @if ($knsr->image)
-                    <img src="{{ asset('storage/' . $knsr->image) }}" alt="Gambar {{ $knsr->nama }}"
-                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out">
-                @else
-                    <img src="{{ asset('images/default.jpg') }}" alt="Default Gambar"
-                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out">
-                @endif
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            @foreach ($konsers as $knsr)
+                <div class="swiper-slide">
+                    <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
+                        <!-- Menampilkan gambar -->
+                        @if ($knsr->image)
+                            <img src="{{ asset('storage/' . $knsr->image) }}" alt="Gambar {{ $knsr->nama }}"
+                                class="w-full h-48 object-cover transition-transform duration-300 ease-in-out">
+                        @else
+                            <img src="{{ asset('images/default.jpg') }}" alt="Default Gambar"
+                                class="w-full h-48 object-cover transition-transform duration-300 ease-in-out">
+                        @endif
 
-                <div class="p-4">
-                    <h3
-                        class="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200">
-                        {{ $knsr->nama }}</h3>
-                    <ul class="event-details text-gray-600 mt-2 space-y-1">
-                        <li class="flex items-center text-sm"><i
-                                class="fa-solid fa-calendar-days mr-2 text-gray-500"></i>{{ $knsr->tanggal }}</li>
-                        <li class="flex items-center text-sm"><i
-                                class="fa-solid fa-map-marker-alt mr-2 text-gray-500"></i>{{ $knsr->lokasi->location }}</li>
-                    </ul>
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200">
+                                {{ $knsr->nama }}</h3>
+                            <ul class="event-details text-gray-600 mt-2 space-y-1">
+                                <li class="flex items-center text-sm">
+                                    <i class="fa-solid fa-calendar-days mr-2 text-gray-500"></i>{{ $knsr->tanggal }}</li>
+                                <li class="flex items-center text-sm">
+                                    <i class="fa-solid fa-map-marker-alt mr-2 text-gray-500"></i>{{ $knsr->lokasi->location }}</li>
+                            </ul>
 
-                    <div class="flex items-center justify-between mt-4">
-    <!-- Informasi Tiket -->
-    @foreach ($knsr->tiket as $kt)
-        <div class="flex flex-col justify-between">
-            <!-- Stok Tiket -->
-            <p class="text-sm font-bold text-orange-600 mb-2">Stok: {{ $kt->jumlah_tiket }} tiket</p>
-            
-            <!-- Harga Tiket -->
-            <p class="text-xl font-bold text-orange-600 mb-2">Rp:{{ number_format($kt->harga_tiket, 0, ',', '.') }},00</p>
-        </div>
-    @endforeach
+                            <div class="flex items-center justify-between mt-4">
+                                @foreach ($knsr->tiket as $kt)
+                                    <div class="flex flex-col justify-between">
+                                        <p class="text-sm font-bold text-orange-600 mb-2">Stok: {{ $kt->jumlah_tiket }} tiket</p>
+                                        <p class="text-xl font-bold text-orange-600 mb-2">Rp:{{ number_format($kt->harga_tiket, 0, ',', '.') }},00</p>
+                                    </div>
+                                @endforeach
 
-    <!-- Tombol Detail -->
-    <a href="{{ route('product.index') }}"
-        class="mt-9 inline-block bg-blue-700 text-white text-center py-2 px-6 rounded-md text-sm hover:bg-blue-800 transition duration-200 h-full flex items-center justify-center">
-        Detail
-    </a>
-</div>
-
+                                <a href="{{ route('product.index') }}"
+                                    class="mt-9 inline-block bg-blue-700 text-white text-center py-2 px-6 rounded-md text-sm hover:bg-blue-800 transition duration-200 h-full flex items-center justify-center">
+                                    Detail
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
+        <!-- Tombol Navigasi -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
     </div>
 </div>
-
+<script>
+    const swiper = new Swiper('.mySwiper', {
+        slidesPerView: 3, // Jumlah slide yang terlihat sekaligus
+        spaceBetween: 30, // Jarak antar slide
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            // Responsif
+            640: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
+</script>
 
 
 
@@ -389,7 +414,7 @@ document.querySelector('a[href="#choose"]').addEventListener('click', function (
                         <div>
                             <button
                                 class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-9 py-3 text-center mt-10 mb-10">
-                                <a href="{{ route('lainnya') }}" class="button">Lainnya</a>
+                                <a href="{{ route('lainya.index') }}" class="button">Lainnya</a>
                             </button>
 
 
