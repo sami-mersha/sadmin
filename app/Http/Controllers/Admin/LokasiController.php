@@ -18,7 +18,7 @@ class LokasiController extends Controller
         if ($search){
             $lokasi = Lokasi::where('nama','like','%'.$search.'%')->get();
         }else {
-            $lokasi = Lokasi::with('konser')->get();
+            $lokasi = Lokasi::with('konser')->orderBy('location','asc')->get();
         }
         // dd($konsers->toArray()); // Load relasi promo
         return view('admin.lokasi.index', compact('lokasi'));
@@ -39,7 +39,7 @@ class LokasiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'location' => 'required|string|max:255'
+            'location' => 'required|string|max:255|unique:lokasis,location'
         ]);
 
         lokasi::create([

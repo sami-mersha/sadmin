@@ -18,7 +18,7 @@ class FrontController extends Controller
                     'tiket' => function ($query) {
                         $query->where('jenis_tiket', 'Regular');
                     }
-                ])->get();
+                ])->paginate('4');
 
 
         // dd($konsers->toArray());
