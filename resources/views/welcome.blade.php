@@ -2123,7 +2123,7 @@ font-size: var(--normal-font-size);
   position: absolute;
   width: 10px;
   height: 10px;
-  background: rgba(72, 0, 149, 0.7); 
+  background: rgba(0, 89, 255, 0.7); 
   border-radius: 50%;
   pointer-events: none;
   animation: fade 0.8s ease-out forwards;
@@ -2255,7 +2255,7 @@ font-size: var(--normal-font-size);
             Eksplor tiket konsermu sekarang hanya di vibestix
 
           </p>
-          <button class="btn">jelajahi sekarang</button>
+
         </div>
       </div>
       <div class="offer__grid__bottom">
@@ -2319,7 +2319,6 @@ font-size: var(--normal-font-size);
             </p>
           </div>
         </div>
-        <button class="btn">Jelajahi</button>
       </div>
     </section>
 

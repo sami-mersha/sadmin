@@ -20,28 +20,7 @@
             overflow:hidden;
         }
 
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  background-color: rgba(0, 0, 0, 9); 
-}
 
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    width: 80%; 
-    max-width: 900px;
-   
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
 
 
 
@@ -174,61 +153,53 @@
             <div>
                 <section class="w-full">
 
-                    <div class="hero-section">
-                    <video autoplay muted loop playsinline class="background-video">
-    <source src="assets/bgvideo.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <div class="hero-content mt-9 ">
-    <h1 class="text-5xl py-4 font-black">Mulai Petualangan Musikmu di Sini!</h1>
-    <p class="pb-12 text-xl py-3">Temukan Konser Favoritmu di Sini! Dapatkan tiket ke momen tak terlupakan, 
-        <br>
-        langsung dari ujung jarimu.</p>
-    <div>
-        <div class="relative pt-20">
-            <div
-                class="flex items-center border border-gray-300 rounded-3xl focus-within:ring-2 focus-within:ring-blue-600 p-3 px-3 bg-white">
-                <i class="pl-3 pr-3 fas fa-search text-gray-500"></i>
-                <input id="search-bar" placeholder="Pilih tiket anda"
-                    class="w-full p-2 rounded-md focus:outline-none border-none text-gray-900">
-                <div class="px-5">
-                    <button
-                        class="bg-blue-700 text-white px-6 py-1 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600 text-1xl">
-                        Search
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tambahkan margin-bottom di sini -->
-    <a href="#choose" class="scroll-btn fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white p-3 rounded-full shadow-lg">
-        <i class="ri-arrow-down-double-line"></i>
-    </a>
-
-</div>
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+                    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
                     </div>
 
                     <!-- Slider Header -->
                     <div id="targetSection"
-                        class="relative py-0 mx-auto w-[90%] max-w-7xl overflow-hidden bg-gray-100 mb-0 mt-20 rounded-lg">
+                        class="relative py-0 mx-auto w-[90%] max-w-7xl overflow-hidden bg-gray-100 mb-0 mt-40 rounded-lg">
                         <div id="slider"
                             class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide transition-transform duration-500 ease-in-out">
 
                             <!-- Slide 1 -->
                             <div class="snap-start flex-shrink-0 w-full">
-                                <img src="assets/foto3.jpg" alt="Slide 2" class="w-full h-auto rounded-lg">
+                                <img src="assets/hd1.png" alt="Slide 1" class="w-full h-auto rounded-lg">
 
                             </div>
 
                             <!-- Slide 2 -->
                             <div class="snap-start flex-shrink-0 w-full">
-                                <img src="assets/foto2.jpg" alt="Slide 1" class="w-full h-auto rounded-lg">
+                                <img src="assets/hd2.png" alt="Slide 2" class="w-full h-auto rounded-lg">
+                            </div>
+
+                            <div class="snap-start flex-shrink-0 w-full">
+                                <img src="assets/hd3.png" alt="Slide 2" class="w-full h-auto rounded-lg">
+                            </div>
+
+                            <div class="snap-start flex-shrink-0 w-full">
+                                <img src="assets/hd4.png" alt="Slide 2" class="w-full h-auto rounded-lg">
+                            </div>
+
+                            <div class="snap-start flex-shrink-0 w-full">
+                                <img src="assets/hd5.png" alt="Slide 2" class="w-full h-auto rounded-lg">
+                            </div>
+
+                            <div class="snap-start flex-shrink-0 w-full">
+                                <img src="assets/hd6.png" alt="Slide 2" class="w-full h-auto rounded-lg">
+                            </div>
+
+                            <div class="snap-start flex-shrink-0 w-full">
+                                <img src="assets/hd7.png" alt="Slide 2" class="w-full h-auto rounded-lg">
+                            </div>
+
+                            <div class="snap-start flex-shrink-0 w-full">
+                                <img src="assets/hd8.png" alt="Slide 2" class="w-full h-auto rounded-lg">
+                            </div>
+
+                            <div class="snap-start flex-shrink-0 w-full">
+                                <img src="assets/hd9.png" alt="Slide 2" class="w-full h-auto rounded-lg">
                             </div>
 
                             <!-- Tambahkan slide lainnya -->
@@ -259,7 +230,6 @@
                                 class="w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-all duration-300"></span>
                             <span
                                 class="w-3 h-3 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-600 transition-all duration-300"></span>
-                            <!-- Tambahkan lebih banyak titik sesuai jumlah slide -->
                         </div>
                     </div>
 
@@ -331,10 +301,10 @@ document.querySelector('a[href="#choose"]').addEventListener('click', function (
                     </script>
 
 
-<div class="container mx-auto px-4 3xl:px-8 py-8">
+<div class="container mx-auto px-4 3xl:px-8 py-8 mt-20">
     <div class="grid grid-cols-4 gap-6">
         @foreach ($konsers as $knsr)
-            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
+            <div class="m-4 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
                 <!-- Menampilkan gambar -->
                 @if ($knsr->image)
                     <img src="{{ asset('storage/' . $knsr->image) }}" alt="Gambar {{ $knsr->nama }}"

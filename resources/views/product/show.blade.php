@@ -43,7 +43,7 @@
                 <div class="mb-4">
                     <li>
                         <div class="flex">
-                            <i class="fa-solid fa-location-dot fa-1x"></i>
+                                <i class="fa-solid fa-location-dot fa-1x"></i>
 
                             <span class=" text-gray-800 pl-2">Lokasi</span><br>
                         </div>
