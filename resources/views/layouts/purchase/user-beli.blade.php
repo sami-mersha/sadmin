@@ -1,7 +1,6 @@
 @include('layouts.app')
-@extends('layouts.footer')
 
-<div class="max-w-5xl  mx-auto grid grid-cols-2 bg-white mt-40 mb-40">
+<div class="max-w-5xl  mx-auto grid grid-cols-2 bg-white mt-[7rem] mb-6">
 
     <!-- Bagian Kiri -->
     <div class="mr-4 bg-white rounded-lg">
@@ -51,9 +50,9 @@
     <img src="assets/hd2.png" alt="Gambar HD2" class="rounded-md w-full h-full">
     </div>
     <h2 class="mb-6 mt-4 text-lg font-semibold text-gray-800">Tiket Konser Sedjiwa</h2>
-      <div class="flex items-start mb-5 space-x-4">
+      <div class="flex items-start mb-0 space-x-4">
   <!-- Informasi Tanggal -->
-  <div class="flex-1 mb-6">
+  <div class="flex-1 mb-4">
     <div class="flex items-center space-x-2">
       <i class="fa-solid fa-calendar-days text-blue-500"></i>
       <span class="text-gray-800">Tanggal</span>
@@ -79,6 +78,7 @@
     <strong class="text-black pl-5 block">Jakarta</strong>
   </div>
 </div>
+        <hr class="border-t-2 border-gray-300 my-2">
 
       <div class="mb-2">
         <div class="flex justify-between">
