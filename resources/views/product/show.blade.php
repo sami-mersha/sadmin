@@ -4,7 +4,7 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Container -->
-<div class="max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-40 mb-40">
+<div class="max-w-5xl mx-auto bg-white rounded-lg overflow-hidden mt-40 mb-40">
 
 
     <!-- Event Content -->
@@ -26,7 +26,7 @@
                             <i class="fa-solid fa-calendar fa-1x"></i>
                             <span class=" text-gray-800 pl-1">Tanggal</span><br>
                         </div>
-                        <strong class="text-bold text-black"> {{ $konser->tanggal }}</strong>
+                        <strong class="text-bold text-black pl-5"> {{ $konser->tanggal }}</strong>
                     </li>
                 </div>
                 <div class="mb-4">
@@ -36,7 +36,7 @@
                                 <i class="fa-solid fa-clock fa-1x"></i>
                                 <span class=" text-gray-800 pl-1">Waktu</span><br>
                             </div>
-                            <strong class="text-black">{{ $konser->jam }}</strong>
+                            <strong class="text-black pl-5">{{ $konser->jam }}</strong>
                         </li>
                     </div>
                 </div>
@@ -47,13 +47,13 @@
 
                             <span class=" text-gray-800 pl-2">Lokasi</span><br>
                         </div>
-                        <strong class=" text-black">{{ $konser->lokasi->location }}</strong>
+                        <strong class=" text-black pl-5">{{ $konser->lokasi->location }}</strong>
                     </li>
 
                 </div>
             </ul>
             <button
-                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-10 mb-2">
+                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-48 py-2.5 text-center mt-10 mb-2">
                 <a href="{{ route('buy-ticket') }}" class="button">beli sekarang</a>
             </button>
             <!-- Description -->

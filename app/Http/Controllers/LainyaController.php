@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\konser;
 use Illuminate\Http\Request;
 
 class LainyaController extends Controller
@@ -11,7 +12,17 @@ class LainyaController extends Controller
      */
     public function index()
     {
-        return view('lainya.index');
+        $konsers = konser::whereHas('tiket', function ($query) {
+            $query->where('jenis_tiket', 'Regular');
+        })->with([
+                    'tiket' => function ($query) {
+                        $query->where('jenis_tiket', 'Regular');
+                    }
+                ])->get();
+
+
+        // dd($konsers->toArray());
+        return view('lainya.index', compact('konsers'));
     }
 
     /**
