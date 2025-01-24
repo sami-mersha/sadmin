@@ -364,7 +364,7 @@ document.querySelector('a[href="#choose"]').addEventListener('click', function (
                                     </div>
                                 @endforeach
 
-                                <a href="{{ route('product.index') }}"
+                                <a href="{{ route('product.show',$knsr->id)  }}"
                                     class="mt-9 inline-block bg-blue-700 text-white text-center py-2 px-6 rounded-md text-sm hover:bg-blue-800 transition duration-200 h-full flex items-center justify-center">
                                     Detail
                                 </a>

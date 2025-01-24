@@ -27,9 +27,9 @@ Route::get('/tiket', [TiketController::class, 'index'])->name('tiket.index');
 Route::get('/tiket/{tiket}', [TiketController::class, 'show'])->name('tiket.show');
 
 
-Route::get('/lainnya', function () {
-    return view('layouts.purchase.lainnya');
-})->name('lainnya');
+// Route::get('/lainnya', function () {
+//     return view('layouts.purchase.lainnya');
+// })->name('lainnya');
 
 
 Route::get('/detail', function () {
@@ -37,6 +37,7 @@ Route::get('/detail', function () {
 })->name('detail');
 
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::resource('/product',ProductController::class);
 Route::get('/lainya',[LainyaController::class,'index'])->name('lainya.index');
 
 

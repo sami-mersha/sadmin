@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\konser;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -35,7 +36,9 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $konser = konser::with('tiket')->findOrFail($id);
+        // dd($konser->toArray());
+        return view('product.show',compact('konser'));
     }
 
     /**
