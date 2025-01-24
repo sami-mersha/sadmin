@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\konser;
+use App\Models\lokasi;
 use Illuminate\Http\Request;
 
 class LainyaController extends Controller
@@ -10,20 +11,35 @@ class LainyaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $konsers = konser::whereHas('tiket', function ($query) {
+        $city = $request->input('city'); // Lokasi yang dipilih
+        $search = $request->input('search'); // Nama konser yang dicari
+
+        $konsers = Konser::with(['lokasi', 'tiket'])->whereHas('tiket', function ($query) {
             $query->where('jenis_tiket', 'Regular');
-        })->with([
-                    'tiket' => function ($query) {
-                        $query->where('jenis_tiket', 'Regular');
-                    }
-                ])->get();
+        });
 
+        if ($search) {
+            $konsers->where('nama', 'like', '%' . $search . '%');
+        }
 
-        // dd($konsers->toArray());
-        return view('lainya.index', compact('konsers'));
+        if ($city) {
+            $konsers->whereHas('lokasi', function ($query) use ($city) {
+                $query->where('location', $city);
+            });
+        }
+
+        $konsers = $konsers->get();
+
+        $locations = Lokasi::select('location')->distinct()->get();
+        $isEmpty = $city && $konsers->isEmpty();
+
+        return view('lainya.index', compact('konsers', 'locations', 'city', 'isEmpty'));
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.

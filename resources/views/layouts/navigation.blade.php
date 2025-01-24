@@ -57,7 +57,7 @@
             <!-- Navigation Links -->
             <div class="hidden md:flex md:items-center md:gap-6">
                 <a class="text-sm font-medium text-gray-900 transition-all duration-200 hover:text-blue-600 hover:scale-110 transform" href="{{ route('dashboard') }}">Home</a>
-                <a class="text-sm font-medium text-gray-900 transition-all duration-200 hover:text-blue-600 hover:scale-110 transform" href="#">Rekomendasi</a>
+                <a class="text-sm font-medium text-gray-900 transition-all duration-200 hover:text-blue-600 hover:scale-110 transform" href="{{ route('lainya.index') }}">Rekomendasi</a>
                 <a class="text-sm font-medium text-gray-900 transition-all duration-200 hover:text-blue-600 hover:scale-110 transform" href="#">Hubungi Kami</a>
             </div>
 

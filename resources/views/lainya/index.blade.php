@@ -15,37 +15,46 @@
                         <h3 class="text-lg font-semibold -2 pt-3  text-indigo-700">Lokasi</h3>
                         <ul class="space-y-2">
                             <li class="py-4">
-                                <input type="text" placeholder="Cari di DekoVista"
+                                <form action="" method="get">
+                                <input type="text" placeholder="Cari di DekoVista" name="search" value="{{ request()->get('search') }}"
                                     class="w-full px-4 py-1 text-sm border rounded-lg focus:outline-none focus:ring focus:ring-blue-200 bg-gray-200">
+                                    </form>
                             </li>
+
                             <div class="max-w-md mx-auto">
     <h2 class="text-lg font-semibold mb-4">Pilih Kota</h2>
     <div class="space-y-2">
+<!-- Filter Form -->
+<form method="GET" action="{{ route('lainya.index') }}" class="mb-5">
+    <div class="space-y-3">
+        <!-- Tambahkan filter berdasarkan lokasi -->
+        @foreach ($locations as $loc)
         <label class="flex items-center space-x-3">
-            <input type="radio" name="city" value="Jember" class="hidden peer">
+            <input
+                type="radio"
+                name="city"
+                value="{{ $loc->location }}"
+                class="hidden peer"
+                {{ request('city') == $loc->location ? 'checked' : '' }}
+            >
             <div class="w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 peer-checked:bg-blue-500"></div>
-            <span class="font-bold peer-checked:text-blue-500">Jember</span>
+            <span class="font-bold peer-checked:text-blue-500">{{ $loc->location }}</span>
         </label>
-        <label class="flex items-center space-x-3">
-            <input type="radio" name="city" value="Pasuruan" class="hidden peer">
-            <div class="w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 peer-checked:bg-blue-500"></div>
-            <span class="font-bold peer-checked:text-blue-500">Pasuruan</span>
-        </label>
-        <label class="flex items-center space-x-3">
-            <input type="radio" name="city" value="Banyuwangi" class="hidden peer">
-            <div class="w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 peer-checked:bg-blue-500"></div>
-            <span class="font-bold peer-checked:text-blue-500">Banyuwangi</span>
-        </label>
-        <label class="flex items-center space-x-3">
-            <input type="radio" name="city" value="Probolinggo" class="hidden peer">
-            <div class="w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 peer-checked:bg-blue-500"></div>
-            <span class="font-bold peer-checked:text-blue-500">Probolinggo</span>
-        </label>
-        <label class="flex items-center space-x-3">
-            <input type="radio" name="city" value="Trenggalek" class="hidden peer">
-            <div class="w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 peer-checked:bg-blue-500"></div>
-            <span class="font-bold peer-checked:text-blue-500">Trenggalek</span>
-        </label>
+        @endforeach
+    </div>
+
+    <div class="mt-3 flex space-x-3">
+        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            Filter
+        </button>
+        <!-- Tombol Reset -->
+        <a href="{{ route('lainya.index') }}" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">
+            Reset
+        </a>
+    </div>
+</form>
+
+
     </div>
 </div>
 
@@ -56,7 +65,13 @@
 
                 <!-- Main Content -->
                 <div class="container mx-auto px-4 3xl:px-1 py-8">
-    <div class="grid grid-cols-3 gap-6 py-9">
+                    <div class="grid grid-cols-3 gap-6 py-9">
+        @if ($isEmpty)
+<!-- Jika tidak ada konser pada lokasi -->
+<p class="text-red-500 font-semibold ">
+Konser tidak ada pada lokasi ini.
+</p>
+@else
         @foreach ($konsers as $knsr)
             <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
                 <!-- Menampilkan gambar -->
@@ -95,6 +110,7 @@
             </div>
         @endforeach
     </div>
+    @endif
 </div>
             </div>
         </div>
