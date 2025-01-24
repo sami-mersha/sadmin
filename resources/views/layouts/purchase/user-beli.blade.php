@@ -47,13 +47,15 @@
 
     <!-- Bagian Kanan -->
     <div class="p-6 bg-white border border-gray-200 rounded-lg" style="box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.06);">
-    <img src="assets/hd2.png" alt="Gambar HD2" class="w-auto h-60 border border-gray-300 rounded-md">
-      <h2 class="mb-6 mt-4 text-lg font-semibold text-gray-800">Tiket Konser Sedjiwa</h2>
+    <div  class="w-auto h-60 border border-gray-300 rounded-md">
+    <img src="assets/hd2.png" alt="Gambar HD2" class="rounded-md w-full h-full">
+    </div>
+    <h2 class="mb-6 mt-4 text-lg font-semibold text-gray-800">Tiket Konser Sedjiwa</h2>
       <div class="flex items-start mb-5 space-x-4">
   <!-- Informasi Tanggal -->
   <div class="flex-1 mb-6">
     <div class="flex items-center space-x-2">
-      <i class="fa-solid fa-calendar-days text-gray-500"></i>
+      <i class="fa-solid fa-calendar-days text-blue-500"></i>
       <span class="text-gray-800">Tanggal</span>
     </div>
     <strong class="text-black pl-5 block">1 Januari 2025</strong>
@@ -62,7 +64,7 @@
   <!-- Informasi Waktu -->
   <div class="flex-1">
     <div class="flex items-center space-x-2">
-      <i class="fa-solid fa-clock text-gray-500"></i>
+      <i class="fa-solid fa-clock text-blue-500"></i>
       <span class="text-gray-800">Waktu</span>
     </div>
     <strong class="text-black pl-5 block">19:00 WIB</strong>
@@ -71,7 +73,7 @@
   <!-- Informasi Lokasi -->
   <div class="flex-1">
     <div class="flex items-center space-x-2">
-      <i class="fa-solid fa-location-dot text-gray-500"></i>
+      <i class="fa-solid fa-location-dot text-blue-500"></i>
       <span class="text-gray-800">Lokasi</span>
     </div>
     <strong class="text-black pl-5 block">Jakarta</strong>
