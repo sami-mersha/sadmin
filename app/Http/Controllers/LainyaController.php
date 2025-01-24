@@ -16,9 +16,14 @@ class LainyaController extends Controller
         $city = $request->input('city'); // Lokasi yang dipilih
         $search = $request->input('search'); // Nama konser yang dicari
 
-        $konsers = Konser::with(['lokasi', 'tiket'])->whereHas('tiket', function ($query) {
+        $konsers = konser::with(['lokasi','tiket'])->whereHas('tiket', function ($query) {
             $query->where('jenis_tiket', 'Regular');
-        });
+        })->with([
+                    'tiket' => function ($query) {
+                        $query->where('jenis_tiket', 'Regular');
+                    }
+                ]);
+       
 
         if ($search) {
             $konsers->where('nama', 'like', '%' . $search . '%');
