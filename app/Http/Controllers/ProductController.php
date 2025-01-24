@@ -36,10 +36,23 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        $konser = konser::with('tiket')->findOrFail($id);
+        $konser = konser::with(['lokasi', 'tiket'])->whereHas('tiket', function ($query) {
+            $query->where('jenis_tiket', 'Regular');
+        })->with([
+                    'tiket' => function ($query) {
+                        $query->where('jenis_tiket', 'Regular');
+                    }
+                ])->findOrFail($id);
         // dd($konser->toArray());
         return view('product.show',compact('konser'));
     }
+    public function buy($id)
+    {
+        $konser = Konser::with('tiket')->findOrFail($id);
+        //  dd($konser->toArray());
+        return view('product.buy', compact('konser'));
+    }
+
 
     /**
      * Show the form for editing the specified resource.

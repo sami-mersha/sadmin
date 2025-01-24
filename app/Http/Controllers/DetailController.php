@@ -13,7 +13,7 @@ class DetailController extends Controller
     public function index()
     {
         $detail = detail::all();
-        return view('detail.index', compact('detail'));
+        return view('detail.index', data: compact('detail'));
     }
 
     /**

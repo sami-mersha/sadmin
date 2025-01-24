@@ -52,7 +52,7 @@
 
                 </div>
             </ul>
-            <a href="{{ route('buy-ticket') }}" class="button">
+            <a href="{{ route('productbuy',$konser->id) }}" class="button">
             <button
                 class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-48 py-2.5 text-center mt-10 mb-2">
 beli sekarang
@@ -77,7 +77,7 @@ beli sekarang
             @endforeach
             <div class="mb-4">
 
-    
+
                 <!-- Reviews Section -->
 
                 <button class="flex mt-5   bg-blue-600 hover:bg-blue-700 text-white py-2 px-6  rounded-3xl shadow">
